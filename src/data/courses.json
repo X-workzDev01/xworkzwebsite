@@ -1,0 +1,952 @@
+
+
+   {
+     "Completed": [
+       {
+         "courseName": "ANGULAR Js",
+         "startDate": "26-MAR-2022",
+         "time": "10:00 AM",
+         "type": "Weekend Online Completed",
+         "facultyName": "Sathish",
+         "placed": 0
+       },
+       {
+         "courseName": "ANGULAR Js",
+         "startDate": "19-MAR-2022",
+         "time": "10:00 AM",
+         "type": "Weekend Online Completed",
+         "facultyName": "Sathish",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "21-FEB-2022",
+         "time": "08:00 AM",
+         "type": "WeekDay Offline Completed",
+         "facultyName": "Nikunj",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "14-FEB-2022",
+         "time": "10:00 AM",
+         "type": "WeekDay Offline Completed",
+         "facultyName": "Nikunj",
+         "placed": 0
+       },
+       {
+         "courseName": "JDBC",
+         "startDate": "09-FEB-2022",
+         "time": "08:00 AM",
+         "type": "WeekDay Offline Completed",
+         "facultyName": "Pavan",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "09-FEB-2022",
+         "time": "08:00 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Kiran",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "24-JAN-2022",
+         "time": "05:00 PM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Sharath",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "06-JAN-2022",
+         "time": "08:00 AM",
+         "type": "WeekDay Offline Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "22-NOV-2021",
+         "time": "04:00 PM",
+         "type": "WeekDay Offline Completed",
+         "facultyName": "Nikunj",
+         "placed": 4
+       },
+       {
+         "courseName": "Web Technologies",
+         "startDate": "16-NOV-2021",
+         "time": "11:30 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Sathish",
+         "placed": 0
+       },
+       {
+         "courseName": "Web Technologies",
+         "startDate": "15-Nov-2021",
+         "time": "02:30 PM",
+         "type": "WeekDay Offline Completed",
+         "facultyName": "Nikunj",
+         "placed": 0
+       },
+       {
+         "courseName": "SQL",
+         "startDate": "05-NOV-2021",
+         "time": "6:00 PM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Vinay.s",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "04-OCT-2021",
+         "time": "08:00 AM",
+         "type": "WeekDay Offline Completed",
+         "facultyName": "Nikunj",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "04-OCT-2021",
+         "time": "07:30 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "SQL",
+         "startDate": "27-SEPT-2021",
+         "time": "7:00 PM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Vinay.s",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "20-SEPT-2021",
+         "time": "08:00 AM",
+         "type": "WeekDay Offline Completed",
+         "facultyName": "Nikunj",
+         "placed": 4
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "06-SEPT-2021",
+         "time": "10:30 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "06-SEPT-2021",
+         "time": "09:00 AM",
+         "type": "WeekDay Online & Offline Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "30-AUG-2021",
+         "time": "08:00 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Krupa",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "26-AUG-2021",
+         "time": "06:00 PM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Kiran",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "23-AUG-2021",
+         "time": "10:30 AM",
+         "type": "WeekDay Online & Offline Completed",
+         "facultyName": "Devendra",
+         "placed": 46
+       },
+       {
+         "courseName": "Web Technologies",
+         "startDate": "21-AUG-2021",
+         "time": "10:00 AM",
+         "type": "Weekend Online Completed",
+         "facultyName": "Nikunj",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "08-JULY-2021",
+         "time": "06:30 PM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "31-MAY-2021",
+         "time": "08:30 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName": "Web Technologies",
+         "startDate": "05-AUG-2021",
+         "time": "05:00 PM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Sathish",
+         "placed": 0
+       },
+       {
+         "courseName": "SQL",
+         "startDate": "05-JULY-2021",
+         "time": "4:30 PM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Vinay.s",
+         "placed": 0
+       },
+       {
+         "courseName": "Web Technologies",
+         "startDate": "07-JUNE-2021",
+         "time": "03:00 PM",
+         "type": "Weekend Online Completed",
+         "facultyName": "Vinay.s",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "17-MAY-2021",
+         "time": "08:00 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Sharath",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "18-MAY-2021",
+         "time": "10:30 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Krupa",
+         "placed": 0
+       }, 
+       {
+         "courseName": "Core Java",
+         "startDate": "13-MAY-2021",
+         "time": "10:30 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Krupa",
+         "placed": 0
+       },
+       {
+         "courseName": "Web Technologies",
+         "startDate": "12-MAY-2021",
+         "time": "11:00 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Vinay.s",
+         "placed": 0
+       },
+       {
+         "courseName": "React JS",
+         "startDate": "24-MAY-2021",
+         "time": "10:00 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Sathish",
+         "placed": 0
+       },
+       {
+         "courseName": "Jdbc",
+         "startDate": "17-May-2021",
+         "time": "10:00 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Krupa",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "07-APR-2021",
+         "time": "10:00 AM",
+         "type": "WeekDay Online & Offline Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "SQL",
+         "startDate": "03-APR-2021",
+         "time": "10:00 AM",
+         "type": "Weekend Offline Completed",
+         "facultyName": "Vinay.s",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "22-FEB-2021",
+         "time": "08:00 AM",
+         "type": "WeekDay offline Completed",
+         "facultyName": "Kiran",
+         "placed": 3
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "15-FEB-2021",
+         "time": "08:00 AM",
+         "type": "WeekDay Online & offline Completed",
+         "facultyName": "Omkar",
+         "placed": 4
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "27-JAN-2021",
+         "time": "09:30 AM",
+         "type": "WeekDay Offline Completed",
+         "facultyName": "Devendra",
+         "placed": 4
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "18-JAN-2021",
+         "time": "08:00 AM",
+         "type": "Offline Completed",
+         "facultyName": "Devendra",
+         "placed": 5
+       },
+       {
+         "courseName": "Manual Testing",
+         "startDate": "13-Mar-2021",
+         "time": "10:00 AM",
+         "type": "Weekend Online & Offline Completed",
+         "facultyName": "Nethra Chakradhar",
+         "placed": 0
+       },
+       {
+         "courseName": "SQL",
+         "startDate": "06-FEB-2021",
+         "time": "09:00 AM",
+         "type": "Weekend Offline Completed",
+         "facultyName": "Vinod",
+         "placed": 0
+        },
+        {
+         "courseName": "SQL",
+         "startDate": "25-JAN-2021",
+         "time": "11:00 AM",
+         "type": "WeekDay Online Completed",
+         "facultyName": "Vinod",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "28-DEC-2020",
+         "time": "07:00 AM",
+         "type": "Online & Offline Completed",
+         "facultyName": "Omkar",
+         "placed": 5
+       },
+       {
+         "courseName": "Web technologies",
+         "startDate": "21-DEC-2020",
+         "time": "08:00 AM",
+         "type": "Offline Completed",
+         "facultyName": "Lokesh",
+         "placed": 0
+       },
+       {
+         "courseName": "Web technologies",
+         "startDate": "21-DEC-2020",
+         "time": "08:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Sathish",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "21-DEC-2020",
+         "time": "08:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Kiran",
+         "placed": 4
+       },
+       {
+         "courseName": "SQL",
+         "startDate": "3-DEC-2020",
+         "time": "08:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Vinod",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "15-DEC-2020",
+         "time": "09:00 AM",
+         "type": "Offline Completed",
+         "facultyName": "Devendra",
+         "placed": 3
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "15-DEC-2020",
+         "time": "08:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Krupa",
+         "placed": 8
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "16-NOV-2020",
+         "time": "09:00 AM",
+         "type": "Offline Completed",
+         "facultyName": "Devendra",
+         "placed": 3
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "16-NOV-2020",
+         "time": "08:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Asha",
+         "placed": 7
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "02-NOV-2020",
+         "time": "09:00 AM",
+         "type": "Offline Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName":"Core Java",
+         "startDate": "22-OCT-2020",
+         "time": "07:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Kiran",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "08-OCT-2020",
+         "time": "8:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Ashok",
+          "placed": 5
+       },
+       {
+         "courseName": "JEE",
+         "startDate": "26-SEP-2020",
+         "time": "11:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "05-SEP-2020",
+         "time": "08:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "Java selenium",
+         "startDate": "05-SEP-2020",
+         "time": "10:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Sharath",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "31-AUG-2020",
+         "time": "08:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Krupa",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "31-AUG-2020",
+         "time": "08:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Ashok",
+         "placed": 0
+       },
+       {
+         "courseName": "Python",
+         "startDate": "08-AUG-2020",
+         "time": "10:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Vinod",
+         "placed": 0
+       },
+       {
+         "courseName": "Web services",
+         "startDate": "16-AUG-2020",
+         "time": "11:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "Web technologies",
+         "startDate": "10-AUG-2020",
+         "time": "08:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Lokesh",
+         "placed": 0
+       },
+       {
+         "courseName": "Angular",
+         "startDate": "06-AUG-2020",
+         "time": "08:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "Core Java",
+         "startDate": "27-JUN-2020",
+         "time": "09:00 AM",
+         "type": "Online Completed",
+         "facultyName": "Krupa",
+         "placed": 0
+       },  
+       {
+         "courseName": "Web Technologies",
+         "startDate": "25-JAN-2020",
+         "time": "08:30 AM",
+         "type": "Completed",
+         "facultyName": "wt",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "23-JAN-2020",
+         "time": "08:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },        
+       {
+         "courseName": "JAVA",
+         "startDate": "16-JAN-2020",
+         "time": "08:00 AM",
+         "type": "Completed",
+         "facultyName": "Ashok",
+         "placed": 0
+       },
+       {
+         "courseName": "Angular 8",
+         "startDate": "04-JAN-2020",
+         "time": "11:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "Selenium",
+         "startDate": "18-JAN-2020",
+         "time": "09:00 AM",
+         "type": "Completed",
+         "facultyName": "selenium",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "12-DEC-2019",
+         "time": "08:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "Java",
+         "startDate": "09-NOV-2019",
+         "time": "11:00 AM",
+         "type": "Completed",
+         "facultyName": "Krupa",
+         "placed": 0
+       },
+       {
+         "courseName": "Java",
+         "startDate": "18-NOV-2019",
+         "time": "08:00 AM",
+         "type": "Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "14-DEC-2019",
+         "time": "11:00 AM",
+         "type": "Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName": "Angular 8",
+         "startDate": "28-DEC-2019",
+         "time": "11:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "JEE",
+         "startDate": "09-DEC-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName": "Java",
+         "startDate": "05-SEP-2019",
+         "time": "08:00 AM",
+         "type": "Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "Angular 7",
+         "startDate": "12-OCT-2019",
+         "time": "11:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "23-SEP-2019",
+         "time": "8:30 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "SQL",
+         "startDate": "09-OCT-2019",
+         "time": "03:00 PM",
+         "type": "Completed",
+         "facultyName": "Varun",
+         "placed": 0
+       },
+       {
+         "courseName": "Manual Testing",
+         "startDate": "16-OCT-2019",
+         "time": "08:00 AM",
+         "type": "Completed",
+         "facultyName": "MT",
+         "placed": 0
+       },
+       {
+         "courseName": "JEE",
+         "startDate": "21-SEP-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName": "JAVA",
+         "startDate": "18-JUL-2019",
+         "time": "08:00 AM",
+         "type": "Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "13-JUL-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName": "JAVA",
+         "startDate": "06-JUN-2019",
+         "time": "08:00 AM",
+         "type": "Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "22-JUL-2019",
+         "time": "08:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "Angular 7",
+         "startDate": "27-JUL-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "JEE",
+         "startDate": "29-AUG-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName": "Web Technologies",
+         "startDate": "07-SEP-2019",
+         "time": "11:00 AM",
+         "type": "Completed",
+         "facultyName": "Arun",
+         "placed": 0
+       },
+       {
+         "courseName": "SQL",
+         "startDate": "24-AUG-2019",
+         "time": "03:00 PM",
+         "type": "Completed",
+         "facultyName": "Varun",
+         "placed": 0
+       },
+       {
+         "courseName": "JEE",
+         "startDate": "06-JUL-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "Pavan",
+         "placed": 0
+       },
+       {
+         "courseName": "Angular 6",
+         "startDate": "01-JUN-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "JAVA",
+         "startDate": "25-MAY-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "Srinivas",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "16-MAY-2019",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "SQL",
+         "startDate": "18-MAY-2019",
+         "time": "2:00 PM",
+         "type": "Completed",
+         "facultyName": "Varun",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "27-APR-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "Devendra",
+         "placed": 0
+       },
+       {
+         "courseName": "Java",
+         "startDate": "17-JAN-2019",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "JEE",
+         "startDate": "16-MAR-2019",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Ashok",
+         "placed": 0
+       },
+       {
+         "courseName": "JAVA",
+         "startDate": "21-MAR-2019",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Ashok",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "21-MAR-2019",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 0
+       },
+       {
+         "courseName": "Angular 6",
+         "startDate": "23-MAR-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "Arun",
+         "placed": 0
+       },
+       {
+         "courseName": "JEE",
+         "startDate": "20-APR-2019",
+         "time": "10:00 AM",
+         "type": "Completed",
+         "facultyName": "JEE",
+         "placed": 0
+       },
+       {
+         "courseName": "REST",
+         "startDate": "16-MAY-2019",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Rest",
+         "placed": 0
+       },
+       {
+         "courseName": "Web Technologies",
+         "startDate": "09-MAR-2019",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Arun",
+         "placed": 0
+       },
+       {
+         "courseName": "REST",
+         "startDate": "30-MAR-2019",
+         "time": "2:00 PM",
+         "type": "Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "JAVA",
+         "startDate": "09-FEB-2019",
+         "time": "9:30 AM",
+         "type": "Completed",
+         "facultyName": "Srinivas",
+         "placed": 0
+       },
+       {
+         "courseName": "SQL",
+         "startDate": "02-FEB-2019",
+         "time": "11:00 AM",
+         "type": "Completed",
+         "facultyName": "Varun",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "09-FEB-2019",
+         "time": "9:30 AM",
+         "type": "Completed",
+         "facultyName": "Devendra",
+         "placed": 2
+       },
+       {
+         "courseName": "JDBC",
+         "startDate": "11-MAR-2019",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Asha",
+         "placed": 0
+       },
+       {
+         "courseName": "Java",
+         "startDate": "03-DEC-2018",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Asha",
+         "placed": 3
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "07-JAN-2019",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 6
+       },
+       {
+         "courseName": "Java",
+         "startDate": "15-DEC-2018",
+         "time": "2:00 PM",
+         "type": "Completed",
+         "facultyName": "Srinivas",
+         "placed": 2
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "22-NOV-2018",
+         "time": "8:00 AM",
+         "type": "Completed",
+         "facultyName": "Omkar",
+         "placed": 10
+       },
+       {
+         "courseName": "Angular 6",
+         "startDate": "12-JAN-2019",
+         "time": "9:30 AM",
+         "type": "Completed",
+         "facultyName": "Harsha",
+         "placed": 0
+       },
+       {
+         "courseName": "Frameworks(Hibernate,Spring)",
+         "startDate": "15-DEC-2018",
+         "time": "2:00 PM",
+         "type": "Completed",
+         "facultyName": "Devendra",
+         "placed": 2
+       },
+       {
+         "courseName": "Angular 6",
+         "startDate": "01-DEC-2018",
+         "time": "9:30 AM",
+         "type": "Completed",
+         "facultyName": "Harsha",
+         "placed": 4
+       },
+       {
+         "courseName": "REST",
+         "startDate": "02-FEB-2019",
+         "time": "2:00 PM",
+         "type": "Completed",
+         "facultyName": "Arun",
+         "placed": 0
+       },
+       {
+         "courseName": "Web Technologies",
+         "startDate": "18-DEC-2018",
+         "time": "9:30 AM",
+         "type": "Completed",
+         "facultyName": "Arun",
+         "placed": 0
+       },
+       {
+         "courseName": "Angular 6",
+         "startDate": "04-FEB-2019",
+         "time": "6:00 PM",
+         "type": "Completed",
+         "facultyName": "Arun",
+         "placed": 4
+       }
+     ]
+   }
+ 
+        

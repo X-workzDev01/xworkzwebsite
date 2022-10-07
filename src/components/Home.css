@@ -1,0 +1,238 @@
+
+.row{
+  padding-left: 100px;
+  margin-top: 20px;
+  flex-direction: row;
+}
+.hero {
+    position: relative;
+    background-color: #FFF;
+    
+     
+  
+  }
+  .hero h3 {
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+  .hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    animation-name: moveRight;
+    animation-duration: 1.1s;
+    padding-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    height: 200px;
+
+  }
+  .hero image{
+    
+  }
+  
+  .hero h1 span {
+    animation-name: moveRight;
+    animation-duration: 1.1s;
+    color: #ff014f;
+  }
+  .hero h2 {
+    animation-name: moveLeft;
+    animation-duration: 1s;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  .hero h2 span {
+    animation-name: moveLeft;
+    animation-duration: 1s;
+    color: #ff014f;
+  }
+  .hero p {
+    color: #878e99;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 30px;
+  }
+  .hero_btn {
+    margin-top: 20%;
+  }
+  .hero_btn h4 {
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #43474b;
+    font-size: 15px;
+    margin: 30px 0 30px 0;
+  }
+  .hero_btn button {
+    margin-right: 30px;
+  }
+  .hero_btn i {
+    font-size: 20px;
+  }
+  
+  .hero_btn button img {
+    width: 20px;
+    height: 20px;
+  }
+  .hero .left {
+   
+    margin-top: 6%;
+    padding-left: 70px;
+
+  }
+  .hero .right {
+    width: 40%;
+    position: relative;
+  }
+  .hero .right_img {
+    background: linear-gradient(145deg, #e2e8ec, #ffffff);
+    box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
+    border-radius: 10px;
+    height: 580px;
+    width: 510px;
+    margin-top: 20%;
+  }
+  .hero .right_img img {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 510px;
+  }
+  @media (max-width: 768px) {
+
+    .about-info{
+      display: none;
+    }
+    .hero h1, 
+    .hero h2{
+      font-size: 40px;
+      height: 150px;
+      letter-spacing: 0px;
+    }
+
+    .hero .right,
+    .hero .left {
+      width: 100%;
+      padding-left: 0;
+      
+    }
+  
+    .hero .f_flex {
+      flex-direction: column;
+      flex-direction: column-reverse;
+    }
+    .hero .right_img {
+      width: 100%;
+      height: 54vh;
+    }
+    .row{
+      flex-direction: column-reverse;
+      margin: 0px;
+      padding-left: 0;
+    }
+    
+  }
+
+  @keyframes moveRight {
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }    
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+
+
+}
+@keyframes moveLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(-150px);
+    }    
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+
+}
+
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+button {
+  margin-top: 20px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-5 {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: rgb(255,27,0);
+background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+}
+.btn-5:hover {
+  color: #f0094a;
+  background: transparent;
+   box-shadow:none;
+}
+.btn-5:before,
+.btn-5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #f0094a;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+._1qse9 {
+ 
+  z-index: 10;
+}
+
+._2qp0Z {
+  z-index: 10;
+}
+
+
+
+
+  

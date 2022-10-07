@@ -1,0 +1,120 @@
+{
+    "Components" : [
+        {
+            "order" : "1",
+            "name" : "About Us",
+            "content" : [
+                {
+                    "list" : "We are professionals from IT industry, having vast experience in development and training of JAVA and various UI related technologies."
+                },
+                {
+                    "list" : "We have been training and placing students over a decade now in various training institutes, we are the pioneers who introduced different training models which not only focus on theory but on practical implementations."
+                },
+                {
+                    "list" : "Our training methodologies include best industry standards and practices, which suits freshers(zero-experience) to all(leads)."
+                },
+                {
+                    "list" : "We focus on providing quality training on cutting edge technologies that are used to build softwares in the current world."
+                },
+                {
+                    "list" : "Well skilled industry trainers, with development knowledge to bridge the gap between learning and development."
+                }
+            ]
+            
+        },
+            
+        {
+            "order" : "2",
+            "name" : "Faculties",
+            "content" : [
+                
+                    {
+                        "name": "Omkar",
+                        "designation": "Founder & Trainer",
+                        "description": "Founder X-workz Development Center. Ten years of IT development and training experience. Trained more than 10000 students on java and jee technologies.Specialiazed in Hibernate, Spring, Angular and Cloud. Experience in corporate training.Expert in enterprise application development",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Omkar.png"
+                    },
+                    {
+                        "name": "Vinay Kumar PV",
+                        "designation": "HR Manager",
+                        "description": "HR Manager at X-workZ ODC.6 years of experience into HR and placement department.Areas Of Expertise - Market Research and Analysis | Marketing, sales strategy and communications | Competitive Intelligence | New Business development | Team Mentoring, Training, and Management.Placed more than 4000+ candidates.worked with more than 200+ clients",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Vinay%20Kumar%20PV.jpg"
+                    },
+                    {
+                        "name": "Akshara P",
+                        "designation": "Sr Business Development Associate",
+                        "description": "Sr Business Development Associate.5 years of experience into Business Development and client engagement.Expertise in campus and corporate relationship.Identifying and mapping business strengths and customer needs.Developing growth strategies and plans.worked with more than 300+ clients",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Akshara%20P.jpg"
+                    },
+                    {
+                        "name": "Devendra Singh",
+                        "designation": "Trainer",
+                        "description": "Has an experience of 3 years in IT and 2 years in training.Trained over 1000 students.Helping students to practically impelement projects. Expert in advance java technologies",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Devendra.png"
+                    },
+                    {
+                        "name": "Krupa L J",
+                        "designation": "Trainer",
+                        "description": "Have 8+ years of experience in software development.Have trained over 1000s of students on different technologies and majorly on Java development and practical sessions.Have been exposed to different technologies like Hibernate, spring, ELK, SQL, REST/Soap web services, Angular JS, React, GWT, Google Guice, etc",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Krupa.png"
+                    },
+                    {
+                        "name": "Asha",
+                        "designation": "Trainer",
+                        "description": "6+ years of experience in IT industry.Extensive knowledge on java and jee technologies.4 years of experience in Java training.Currently working as a full-stack developer.Extensive knowledge on non-relational database.Expert in developing enterprises application",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Asha.png"
+                    },
+                    {
+                        "name": "Pavan",
+                        "designation": "Trainer",
+                        "description": "More than Three years of Development and training experience.Trained more than 4000 students on Java and in other Web technologies and frameworks.Full Stack Developer.Expert in backend Technologies",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Pavan.png"
+                    },
+                    {
+                        "name": "Ashok",
+                        "designation": "Trainer",
+                        "description": "Has an experience of 5+ years in IT and 4+ years in training.Has conducted training session for more than 2000 students on technologies like Java, JEE and Frameworks.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Ashok.png"
+                    },
+                    {
+                        "name": "Nikunj B",
+                        "designation": "Software Developer",
+                        "description": "Has an experience of 1 year in IT Development. Software Developer at X-workz ODC (Omkar Development Center). Working as full stack developer at X-workz ODC. Having practical knowledge on java and frameworks of java , spring boot , different Automation tools like selenium, appium etc, DataBase like MySQL, H2 console. Managing Enterprise Web Applications",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Nikunj.png"
+                    },
+                    {
+                        "name": "Vinay S",
+                        "designation": "Software Developer",
+                        "description": "Software Developer X-workz Development Center.Managing Enterprise Web Applications.Started career as a full stack developer at X-Workz.Completed full stack development course at X-Workz.Better knowledge in Web Technologies, Frameworks as well as backend technologies like Java and Jee",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Vinay.s.png"
+                    },
+                    {
+                        "name": "Vinod",
+                        "designation": "Trainer",
+                        "description": "Has an experience of 3+ years in IT and  2 years in training.Has conducted training sessions for more than 250  students on technologies like Java, Web Technologies, Frameworks, and Python.Extensive knowledge in developing Web applications and helped students to practically implement applications on their own",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Vinod.png"
+                    },
+                    {
+                        "name": "Lokesh",
+                        "designation": "Trainer",
+                        "description": "Has an experience of 3+ years in IT development.Trained students on java, web technologies, and framework.Experience in backend technologies",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Lokesh.png"
+                    },
+                    {
+                        "name": "Sharath K",
+                        "designation": "Trainer",
+                        "description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Sharath.png"
+                    },
+                    {
+                        "name": "Kiran kumar P C",
+                        "designation": "Trainer",
+                        "description": "Java fullstack developer.3years of developing experience.Trained more than 1000s students.Expertise in java, frameworks, angular.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
+                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Kiran.png"
+                    }
+                
+            ]
+
+        }
+    ]
+}
