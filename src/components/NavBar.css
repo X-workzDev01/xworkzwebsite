@@ -32,7 +32,7 @@
     text-align: center;
     width: 70vw;
     justify-content: end;
-    margin-right: 2rem;
+   
     justify-content: center;
   }
   
@@ -70,7 +70,36 @@
   .menu-icon {
     display: none;
   }
-  
+  .facebook{
+      color: #FFF
+  }
+  .twitter{
+    color: #FFF;
+  }
+  .instagram{
+    color: #FFF
+  }
+  .header-social-icon span {
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+  }
+  .header-social-icon a {
+    color: #fff;
+    font-size: 16px;
+    margin-right: 15px;
+  }
+  .header-social-icon i {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+  }
+ 
   @media screen and (max-width: 960px) {
     .NavbarItems {
       position: relative;
@@ -149,6 +178,12 @@
       color: #1888ff;
       transition: 250ms;
     }
+    
+    .header-social-icon{
+      display: none;
+    }
+    
+
   
     
   }

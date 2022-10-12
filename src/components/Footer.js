@@ -1,7 +1,22 @@
 import React from 'react'
 import "./Footer.css"
+import emailjs from "emailjs-com"
 
 function Footer() {
+    function sendEmail(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_gdf9o6a',
+        'template_l50t6hc',
+         e.target ,
+         'vhlq2wUUQwHQPOf-f').then(res=>{
+            console.log(res);
+         }).catch(err=>{
+            console.log(err)
+         });
+
+
+    }
   return (
     <footer class="footer-section">
         <div class="container">
@@ -16,9 +31,9 @@ function Footer() {
                             
                             <div class="footer-social-icon">
                                 <span>Follow us</span>
-                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                                <a href="https://www.facebook.com/xworkzdevelopmentcenter/"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="https://twitter.com/workz_x"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-instagram instagram-bg"></i></a>
                             </div>
                         </div>
                     </div>
@@ -32,9 +47,9 @@ function Footer() {
                                 <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
                             </div>
                             <div class="subscribe-form">
-                                <form action="#">
-                                    <input type="text" placeholder="Email Address" />
-                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                <form onSubmit={sendEmail}>
+                                    <input type="text" name='email' placeholder="Email Address" />
+                                    <button type='submit'><i class="fab fa-telegram-plane"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -47,15 +62,15 @@ function Footer() {
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 text-center text-lg-left">
                         <div class="copyright-text">
-                            <p>Copyright &copy; 2022, All Right Reserved <a href="">Xworkz</a></p>
+                            <p>Copyright &copy; 2022, All Right Reserved </p>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="/home">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li><a href="/about">about</a></li>
-                                <li><a href="/software">Software</a></li>
+                                <li><a href="/softwares">Software</a></li>
                                 <li><a href="/courses">Courses</a></li>
                                 <li><a href="/directions">Directions</a></li>
                             </ul>

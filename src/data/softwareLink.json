@@ -15,7 +15,7 @@
         {
             "name": "Eclipse IDE",
             "description": "The Eclipse IDE 2021‑03 Tool for Java developers includin   g creating Java EE and Web applications.",
-            "directLink": "https://drive.google.com/u/2/uc?id=1hfqracKOAx87oRem9HqpE4z9keEPVmq0&export=download",
+            "directLink": "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2022-09/R/eclipse-jee-2022-09-R-win32-x86_64.zip&mirror_id=1287",
             "extranalLink": "https://www.eclipse.org/downloads/"
         },
         {
@@ -39,7 +39,7 @@
         {
             "name": "Git Bash",
             "description": "You are downloading the latest (2.28.0) 64-bit version of Git for Windows.",
-            "directLink": "https://drive.google.com/u/3/uc?id=1npiwy38NaelHAZqIGcFwdmmJTRhYCShr&export=download",
+            "directLink": "https://github.com/git-for-windows/git/releases/download/v2.38.0.windows.1/Git-2.38.0-64-bit.exe",
             "extranalLink": "https://git-scm.com/downloads"
         },
         {

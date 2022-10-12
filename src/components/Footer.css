@@ -76,14 +76,23 @@ ul {
   line-height: 38px;
   border-radius: 50%;
 }
-.facebook-bg{
-  background: #3B5998;
+.facebook-bg:hover{
+  background-color: #3B5998;
+  -webkit-transition: background-color 1.2s ease-out;
+  
 }
-.twitter-bg{
-  background: #55ACEE;
+.twitter-bg:hover{
+  background-color: #55ACEE;
+  -webkit-transition: background-color 1.2s ease-out;
+ 
+  
+
+  
 }
-.google-bg{
-  background: #DD4B39;
+.instagram-bg:hover{
+  background:  radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+  -webkit-transition: background-color 1.2s ease-out;
+  
 }
 .footer-widget-heading h3 {
   color: #fff;
@@ -153,6 +162,7 @@ ul {
 .footer-menu li {
   display: inline-block;
   margin-left: 20px;
+  
 }
 .footer-menu li:hover a{
   color: #ff5e14;
@@ -160,6 +170,7 @@ ul {
 .footer-menu li a {
   font-size: 14px;
   color: #878787;
+  text-decoration: none;
 }
 .row{
   justify-content: center;

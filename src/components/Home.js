@@ -4,7 +4,7 @@ import "./Home.css"
 import JsonData from '../data/data.json';
 
 import Typewriter from "typewriter-effect"
-
+// import { ReactComponent as CompanyIcon } from '../img/xworkz_logo.png'
 
 import { Tech } from "./Tech";
 import code from '../img/coding_img.png'
@@ -66,7 +66,7 @@ const Home = (props) => {
       <Tech />
 
       
-      <WhatsAppWidget  open={true} companyName='Xworkz ODC'  phoneNumber="+919514726209sleep" />
+      <WhatsAppWidget  open={true} companyName='Xworkz ODC'  phoneNumber="+919886971483"  />
       <div>
         <section className="about" id="about">
           <div className="container">
@@ -91,42 +91,37 @@ const Home = (props) => {
           </div>
         </section>
         <Accordion >
-          <Accordion.Item >
+          <Accordion.Item eventKey="1">
             <Accordion.Header>
               Why Xworkz
             </Accordion.Header>
             <Accordion.Body>
 
-              <div className="row1-container">
-                <div className="box box-down cyan">
-                  <h2>Student Guidance</h2>
-                  <p>We make sure every Student is guided towards their future carrer</p>
-                  <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="" />
-                </div>
+            <div className="row1-container">
+        <div className="box box-down cyan">
+          <h2>Guidance and Placements</h2>
+          <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="" />
+        </div>
 
-                <div className="box red">
-                  <h2>Best Trainers</h2>
-                  <p>We have the best trainers to teach you the best tech</p>
-                  <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="" />
-                </div>
+        <div className="box red">
+          <h2>Best Trainers</h2>
+          <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="" />
+        </div>
 
-                <div className="box box-down blue">
-                  <h2>Best Skills</h2>
-                  <p>We make sure that every students are skilled </p>
-                  <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="" />
-                </div>
-              </div>
-              <div className="row2-container">
-                <div className="box orange">
-                  <h2>Landing Dream Job</h2>
-                  <p>Get into your dream job with all the skilset needed    </p>
-                  <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="" />
-                </div>
-              </div>
-
+        <div className="box box-down blue">
+          <h2>Technical Skills</h2>
+          <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="" />
+        </div>
+      </div>
+      <div className="row2-container">
+        <div className="box orange">
+          <h2>Learn Application Development</h2>
+          <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="" />
+        </div>
+      </div>
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="1" alwaysOpen={false}>
+          <Accordion.Item eventKey="2" alwaysOpen={false}>
             <Accordion.Header>Team</Accordion.Header>
             <Accordion.Body>
               <Team value={props.value.Components[1]} />

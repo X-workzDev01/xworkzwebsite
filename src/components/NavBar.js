@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import Dropdown from './Dropdown';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function NavBar() {
   const [click, setClick] = useState(false);
@@ -31,8 +32,8 @@ function NavBar() {
     <>
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-        <img src="https://raw.githubusercontent.com/X-workzDev01/xworkzwebsite/master/src/main/webapp/assets/images/Logo.png" width="140" height="70" alt='Xworkz' className='logo-img'/>
-          
+          <img src="https://raw.githubusercontent.com/X-workzDev01/xworkzwebsite/master/src/main/webapp/assets/images/Logo.png" width="140" height="70" alt='Xworkz' className='logo-img' />
+
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -54,14 +55,14 @@ function NavBar() {
               onClick={closeMobileMenu}
             >
               About
-            {/* <i className='fas fa-caret-down' /> */}
+              {/* <i className='fas fa-caret-down' /> */}
             </Link>
             {dropdown && <Dropdown />}
           </li>
           <li className='nav-item'>
             <Link
-              to='/softwares' 
-                className='nav-links'         
+              to='/softwares'
+              className='nav-links'
               onClick={closeMobileMenu}
             >
               Softwares
@@ -85,10 +86,17 @@ function NavBar() {
               Directions
             </Link>
           </li>
-          
+
         </ul>
-        
+        <div class="header-social-icon">
+
+          <a href="https://www.facebook.com/xworkzdevelopmentcenter/"><i class="fab fa-facebook-f facebook-bg facebook"></i></a>
+          <a href="https://twitter.com/workz_x"><i class="fab fa-twitter twitter twitter-bg"></i></a>
+          <a href="#"><i class="fab fa-instagram  instagram-bg"></i></a>
+        </div>
       </nav>
+
+
     </>
   );
 }

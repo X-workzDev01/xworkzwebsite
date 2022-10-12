@@ -40,27 +40,23 @@ export const About = (props) => {
 
       <div className="row1-container">
         <div className="box box-down cyan">
-          <h2>Student Guidance</h2>
-          <p>We make sure every Student is guided towards their future carrer</p>
+          <h2>Guidance and Placements</h2>
           <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="" />
         </div>
 
         <div className="box red">
           <h2>Best Trainers</h2>
-          <p>We have the best trainers to teach you the best tech</p>
           <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="" />
         </div>
 
         <div className="box box-down blue">
-          <h2>Best Skills</h2>
-          <p>We make sure that every students are skilled </p>
+          <h2>Technical Skills</h2>
           <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="" />
         </div>
       </div>
       <div className="row2-container">
         <div className="box orange">
-          <h2>Landing Dream Job</h2>
-          <p>Get into your dream job with all the skilset needed </p>
+          <h2>Learn Application Development</h2>
           <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="" />
         </div>
       </div>

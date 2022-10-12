@@ -15,18 +15,25 @@ const Directions = () => {
 			</section>
         
 			<section class="section2 clearfix">
-				<div class="col2 column1 first">
-				<iframe width="611" height="650" id="gmap_canvas" src="https://maps.google.com/maps?q=xworkz%20btm&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>	
+				<div className='map-div'>
+					<div className='map-row'>
+				<div class="map-1">
+					<h2>Rajaji Nagar</h2>
+					<iframe width="550" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=xworkz&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="2" scrolling="no" marginheight="0" marginwidth="10"></iframe>
 				</div>
-				<div class="col2 column2 last">
-					<div class="sec2innercont">
-						<div class="sec2addr">
-							<p># 50, 1st Floor, 100 Feet Ring Rd, Vysya Bank Colony, BTM 2nd Stage, Bengaluru, Karnataka 560076</p>
-							<p><span class="collig">Phone :</span> +91-9886971480/9886971483</p>
-							<p><span class="collig">Email :</span> contact@x-workz.in</p>
-							
-						</div>
 					</div>
+					<div className='map-row'>
+					<div class="map-2">
+					<h2>BTM Layout</h2>
+				<iframe width="550" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=xworkz%20btm&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="2" scrolling="no" marginheight="0" marginwidth="10"></iframe>	
+				</div>
+				</div>
+				
+				
+					</div>
+					
+					
+					
 					<div class="sec2contactform">
 						<h3 class="sec2frmtitle">Want to Know More?? Drop Us a Mail</h3>
 						<form action="">
@@ -45,7 +52,7 @@ const Directions = () => {
 						</form>
 					</div>
 
-				</div>
+				
 			</section>
 		
 		</div>

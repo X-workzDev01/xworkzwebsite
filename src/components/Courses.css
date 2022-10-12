@@ -2,17 +2,17 @@
     display: flex;
 	align-items: center;
 	justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
 	min-height: 100vh;
-	margin: 0;
+	margin: 0 150px;
 }
 
 .courses-container {
     display: flex;
     flex-direction: row;
-	width:90%;
     flex-wrap: wrap;
     justify-content: center;
+	margin: 0 30px;
     
     
 }
@@ -32,6 +32,7 @@
 	max-width: 100%;
 	 margin: 20px;
 	overflow: hidden;
+	flex-direction: column;
 	
 }
 
@@ -51,10 +52,11 @@
 
 
 .course-preview {
-	background-color: #2A265F;
+	background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
 	color: #fff;
 	padding: 30px;
-	max-width: 250px;
+	max-width: 300px;
+    min-width: 250px;
 }
 
 .course-preview a {
@@ -76,6 +78,8 @@
 }
 .course-info h5{
 	font-size: 15px;
+	height: 30px;
+    width: 200px;
 }
 .course-info h6{
 	font-size: 15px;
@@ -130,8 +134,9 @@
 
 }
 
-@media (max-width: 650px) {
-    .courses-container {
-        margin-top: 100px;
-    }
+@media (max-width: 870px) {
+    .course-page{
+		padding: 0;
+		margin: 0;
+	}
 }

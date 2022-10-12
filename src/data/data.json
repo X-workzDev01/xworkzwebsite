@@ -52,12 +52,7 @@
                         "description": "Has an experience of 3 years in IT and 2 years in training.Trained over 1000 students.Helping students to practically impelement projects. Expert in advance java technologies",
                         "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Devendra.png"
                     },
-                    {
-                        "name": "Krupa L J",
-                        "designation": "Trainer",
-                        "description": "Have 8+ years of experience in software development.Have trained over 1000s of students on different technologies and majorly on Java development and practical sessions.Have been exposed to different technologies like Hibernate, spring, ELK, SQL, REST/Soap web services, Angular JS, React, GWT, Google Guice, etc",
-                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Krupa.png"
-                    },
+                    
                     {
                         "name": "Asha",
                         "designation": "Trainer",
@@ -70,30 +65,9 @@
                         "description": "More than Three years of Development and training experience.Trained more than 4000 students on Java and in other Web technologies and frameworks.Full Stack Developer.Expert in backend Technologies",
                         "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Pavan.png"
                     },
-                    {
-                        "name": "Ashok",
-                        "designation": "Trainer",
-                        "description": "Has an experience of 5+ years in IT and 4+ years in training.Has conducted training session for more than 2000 students on technologies like Java, JEE and Frameworks.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
-                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Ashok.png"
-                    },
-                    {
-                        "name": "Nikunj B",
-                        "designation": "Software Developer",
-                        "description": "Has an experience of 1 year in IT Development. Software Developer at X-workz ODC (Omkar Development Center). Working as full stack developer at X-workz ODC. Having practical knowledge on java and frameworks of java , spring boot , different Automation tools like selenium, appium etc, DataBase like MySQL, H2 console. Managing Enterprise Web Applications",
-                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Nikunj.png"
-                    },
-                    {
-                        "name": "Vinay S",
-                        "designation": "Software Developer",
-                        "description": "Software Developer X-workz Development Center.Managing Enterprise Web Applications.Started career as a full stack developer at X-Workz.Completed full stack development course at X-Workz.Better knowledge in Web Technologies, Frameworks as well as backend technologies like Java and Jee",
-                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Vinay.s.png"
-                    },
-                    {
-                        "name": "Vinod",
-                        "designation": "Trainer",
-                        "description": "Has an experience of 3+ years in IT and  2 years in training.Has conducted training sessions for more than 250  students on technologies like Java, Web Technologies, Frameworks, and Python.Extensive knowledge in developing Web applications and helped students to practically implement applications on their own",
-                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Vinod.png"
-                    },
+                    
+                    
+                  
                     {
                         "name": "Lokesh",
                         "designation": "Trainer",
@@ -105,13 +79,8 @@
                         "designation": "Trainer",
                         "description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
                         "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Sharath.png"
-                    },
-                    {
-                        "name": "Kiran kumar P C",
-                        "designation": "Trainer",
-                        "description": "Java fullstack developer.3years of developing experience.Trained more than 1000s students.Expertise in java, frameworks, angular.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
-                        "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Kiran.png"
                     }
+                    
                 
             ]
 
