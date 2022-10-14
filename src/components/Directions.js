@@ -1,7 +1,20 @@
 import React from 'react'
 import "./Directions.css"
+import emailjs from "emailjs-com"
 
-const Directions = () => {
+function Directions(){
+	function sendMail(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_gdf9o6a',
+        'template_j3z5jvd',
+         e.target ,
+         'vhlq2wUUQwHQPOf-f').then(res=>{
+            console.log(res);
+         }).catch(err=>{
+            console.log(err)
+         });
+		}
     return (
         <div class="map-container">
 		<div class="innerwrap">
@@ -36,19 +49,19 @@ const Directions = () => {
 					
 					<div class="sec2contactform">
 						<h3 class="sec2frmtitle">Want to Know More?? Drop Us a Mail</h3>
-						<form action="">
+						<form onSubmit={sendMail}>
 							<div class="clearfix">
-								<input class="col2 first" type="text" placeholder="FirstName" />
-								<input class="col2 last" type="text" placeholder="LastName" />
+								<input class="col2 first" type="text" placeholder="FirstName" name='firstName'/>
+								<input class="col2 last" type="text" placeholder="LastName" name='lastName'/>
 							</div>
 							<div class="clearfix">
-								<input  class="col2 first" type="Email" placeholder="Email" />
-								<input class="col2 last" type="text" placeholder="Contact Number" />
+								<input  class="col2 first" type="Email" placeholder="Email"  name='email'/>
+								<input class="col2 last" type="text" placeholder="Contact Number"  name='contactNumber'/>
 							</div>
 							<div class="clearfix">
-								<textarea name="textarea" id="" cols="30" rows="7">Your message here...</textarea>
+								<textarea name="message" id="" cols="30" rows="7" >Your message here...</textarea>
 							</div>
-							<div class="clearfix"><input type="submit" value="Send" /></div>
+							<div class="clearfix"><input type="submit"  /></div>
 						</form>
 					</div>
 
@@ -59,5 +72,6 @@ const Directions = () => {
 	</div>
     )
 }
+
 
 export default Directions
