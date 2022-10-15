@@ -10,9 +10,7 @@ import CourseData from './data/courses.json';
 import { About } from './components/About';
 
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+
 
 import Home from './components/Home';
 import Software from './components/Software';
@@ -42,13 +40,14 @@ const App = () => {
     <Routes>
 
     
-    <Route path="/about" element={<About value={JsonData}/>}/>
-    <Route path="/" element={<Home  value={JsonData}/>}/>
-    <Route path="/softwares" element={<Software value={SoftwareData}   />}/>
-    <Route path="/courses" element={<Courses  value={CourseData} />}/>
+    <Route path="/about" element={<About value={data}/>}/>
+    <Route path="/" element={<Home  value={data}/>}/>
+    <Route path="/softwares" element={<Software value={softwareData}   />}/>
+    <Route path="/courses" element={<Courses  value={courseData} />}/>
     <Route path="/directions" element={<Directions />}/>
     
-    
+    8998_Bang
+
   </Routes>
 
   

@@ -32,7 +32,7 @@ function Directions(){
 					<div className='map-row'>
 				<div class="map-1">
 					<h2>Rajaji Nagar</h2>
-					<iframe width="550" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=xworkz&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="2" scrolling="no" marginheight="0" marginwidth="10"></iframe>
+					<iframe width="550" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=xworkz%20rajaji&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 				</div>
 					</div>
 					<div className='map-row'>

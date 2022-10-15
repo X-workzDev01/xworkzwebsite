@@ -6,6 +6,7 @@ import mySql from '../img/mysql.png'
 import angular from '../img/angular.png'
 import html from '../img/html.png'
 import css from '../img/css.png'
+import hibernate from '../img/hibernate.png'
 import javaScript from "../img/javaScript.png"
 import git from '../img/git.png'
 
@@ -82,6 +83,14 @@ export const Tech = () => {
                     <div className='skill-title'>
                         <div className='skill-img'>
                             <img src={git} className='skill-icon'></img>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div className='skill-box'>
+                    <div className='skill-title'>
+                        <div className='skill-img'>
+                            <img src={hibernate} className='skill-icon'></img>
                         </div>
                         
                     </div>
