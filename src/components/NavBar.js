@@ -30,6 +30,7 @@ function NavBar() {
 
   return (
     <>
+    
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           <img src="https://raw.githubusercontent.com/X-workzDev01/xworkzwebsite/master/src/main/webapp/assets/images/Logo.png" width="140" height="70" alt='Xworkz' className='logo-img' />

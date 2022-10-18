@@ -18,6 +18,7 @@ import 'react-whatsapp-widget/dist/index.css'
 
 
 const Home = (props) => {
+
   return (
     <>
 
@@ -124,7 +125,7 @@ const Home = (props) => {
           <Accordion.Item eventKey="2" alwaysOpen={false}>
             <Accordion.Header>Team</Accordion.Header>
             <Accordion.Body>
-              <Team value={props.value.Components[1]} />
+              <Team />
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>

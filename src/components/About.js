@@ -67,7 +67,7 @@ export const About = (props) => {
       <div className='team-component'>
       <Messenger />      
       
-      <Team value={props.value.Components[1]}/>
+      <Team />
       </div>
 
     </div>

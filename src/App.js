@@ -2,14 +2,13 @@
 import './App.css';
 import  React , { useState , useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import JsonData from './data/data.json';
 import SoftwareData from './data/softwareLink.json';
 import CourseData from './data/courses.json';
-
 import { About } from './components/About';
+import TeamData from './data/team.json';
 
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {BrowserRouter , Routes, Route } from "react-router-dom";
 
 
 import Home from './components/Home';
@@ -23,20 +22,22 @@ const App = () => {
   const [data, setData] = useState({});
   const [softwareData , setSoftwareData] = useState({});
   const [courseData , setCourseData] = useState({});
+  const [TeamData , setTeamData]= useState({});
+
   useEffect(() => {
     setData(JsonData);
     setSoftwareData(SoftwareData);
     setCourseData(CourseData);
+    setTeamData(TeamData);
     
   }, []);
 
   return (
     <div className='App'>
-      <div className='App-header'>
-      <Router>
-        <NavBar />
-        
-   
+     
+      
+     <NavBar />
+    
     <Routes>
 
     
@@ -46,19 +47,20 @@ const App = () => {
     <Route path="/courses" element={<Courses  value={courseData} />}/>
     <Route path="/directions" element={<Directions />}/>
     
-    8998_Bang
-
-  </Routes>
-
-  
-
-</Router>
-
-
-        </div>
     
 
-  <Footer />
+  </Routes>
+  
+  
+  
+
+
+
+
+        <Footer />
+    
+
+  
     </div>
   );
 };

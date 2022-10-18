@@ -1,12 +1,14 @@
 import React from 'react'
 import "./Software.css"
 import {Link} from 'react-router-dom'
+import NavBar from './NavBar'
 
 
 const Software = (props) => {
     
     return (
         <div className='software-page'>
+            
         <div className='software col-12'>
 
 

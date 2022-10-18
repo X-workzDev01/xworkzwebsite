@@ -1,4 +1,4 @@
-import React from 'react'
+import  React , { useState , useEffect } from 'react';
 import "./Team.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar, A11y, FreeMode, Autoplay } from "swiper";
@@ -6,10 +6,18 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Button, Modal } from 'semantic-ui-react'
+import TeamData from '../data/team.json';
 
 
 
-export const Team = (props) => {
+export const Team = () => {
+    const [teamData , setTeamData]= useState({});
+
+    useEffect(() => {
+        
+        setTeamData(TeamData);
+        
+      }, []);
 
 
 
@@ -59,8 +67,8 @@ export const Team = (props) => {
                     navigation
                 >
 
-                    {props.value.content
-                        ? props.value.content.map((d, i) => (
+                    {teamData.content
+                        ? teamData.content.map((d, i) => (
                             <SwiperSlide key={`${d.name}-${i}`} >
 
 
