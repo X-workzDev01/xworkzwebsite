@@ -1,0 +1,219 @@
+{
+    "Topic" : [
+        {
+            "name": "Controlled Statements",
+            "Questions": [ 
+   {
+    "question": "Is there a way to access an iteration-counter in Java's for-each loop?"
+   },  
+   {
+    "question": "What are the Advantages of declaring loop variable as final in enhanced for-loop"
+   },
+   {
+    "question": "Does returning a value from the loop body break the loop?"
+   },
+   {
+    "question": "What is the difference between ++i and i++ under increment operators?"
+   },
+   {
+    "question": "What happens when we forget break in switch case?"
+   },
+   {
+    "question": "What types of loops does Java support?"
+   },
+   {
+    "question": "How will you exit anticipatedly from a loop?."
+   },
+   {
+    "question": "Which is considered as a selection statement?"
+   },
+   {
+    "question": "What is the Difference between dead code and unreachable code in Java."
+   },
+   {
+    "question": "Can you create switch statement using enum?"
+   },
+   {
+    "question": "Describe the if-then and if-then-else statements. What types of expressions can be used as conditions?"
+   },
+   {
+    "question": "What is an enhanced for loop?"
+   },
+   {
+    "question": "What is the difference between an unlabeled and a labeled break statement?"
+   },
+   {
+    "question": " In which situations the finally block may not be executed?"
+   },
+   {
+    "question": "What is the difference between an unlabeled and a labeled continue statement?"
+   }
+  ]
+        },{
+            "name" : "File Handling",
+            "Questions": [ 
+                {
+                 "question": "Which class is used to create a directory in Java"
+                },  
+                {
+                 "question": "How do you create a file and directory in Java?"
+                },
+                {
+                 "question": "What is the difference between InputStream and OutputStream in Java?"
+                },
+                {
+                 "question": "What are the basic methods in File class?"
+                },
+                {
+                 "question": "How do you handle directories in Java?"
+                },
+                {
+                 "question": "How do you write to a file using FileWriter class?"
+                },
+                {
+                 "question": "How do you read from a file using FileReader class?"
+                },
+                {
+                 "question": "What is the use of BufferedWriter and BufferedReader classes in Java?"
+                },
+                {
+                 "question": "What is the use of PrintWriter class?"
+                }
+               ]
+        },{
+            "name" : "JDBC",
+            "Questions": [ 
+		{
+		"question": "What is JDBC ?"
+		},  
+		{
+		"question": "What is JDBC Driver?"
+		},  
+		{
+		"question": "What are the steps to connect to the database in java?"
+		},  
+		{
+		"question": "What are the JDBC API components?"
+		},  
+		{
+		"question": "What are the JDBC statements?"
+		},  
+		{
+		"question": "What is the return type of Class.forName() method?"
+		},  
+		{
+		"question": "What are the differences between Statement and PreparedStatement interface?"
+		},  
+		{
+		"question": "How can we set null value in JDBC PreparedStatement?"
+		},  
+		{
+		"question": "What are the benefits of PreparedStatement over Statement?"
+		},  
+		{
+		"question": "What are the differences between execute, executeQuery, and executeUpdate?"
+		},  
+		{
+		"question": "What are the different types of ResultSet?"
+		},  
+		{
+		"question": "What are the differences between ResultSet and RowSet?"
+		},  
+		{
+		"question": "How can we execute stored procedures using CallableStatement?"
+		},  
+		{
+		"question": "What is the role of the JDBC DriverManager class?"
+		},  
+		{
+		"question": "What are the functions of the JDBC Connection interface?"
+		},  
+		{
+		"question": "What does the JDBC ResultSet interface?"
+		},  
+		{
+		"question": "What does the JDBC ResultSetMetaData interface?"
+		},  
+		{
+		"question": "What is batch processing and how to perform batch processing in JDBC??"
+		},  
+		{
+		"question": "Which interface is responsible for transaction management in JDBC?"
+		},  
+		{
+		"question": "What are CLOB and BLOB data types in JDBC?"
+		},  
+		{
+		"question": "What are the different types of lockings in JDBC?"
+		},  
+		{
+		"question": "How can we store and retrieve images from the database?"
+		},  
+		{
+		"question": "How can we store the file in the Oracle database?"
+		},  
+		{
+		"question": "How can we retrieve the file in the Oracle database?"
+		},  
+		{
+		"question": "What are the differences between stored procedure and functions?"
+		},  
+		{
+		"question": "How can we maintain the integrity of a database by using JDBC?"
+		},  
+		{
+		"question": "What is the JDBC Rowset?"
+		},  
+		{
+		"question": " What is the major difference between java.util.Date and java.sql.Date data type?"
+		},  
+		{
+		"question": "What does JDBC setMaxRows method do?"
+		}
+	]
+        },{
+            "name" : "Thread",
+            "Questions": [ 
+   {
+    "question": "What are the different ways to define threads in Java programming language?"
+   },  
+   {
+    "question": "Describe the life-cycle of threads. What are the different states of threads?"
+   },
+   {
+    "question": "How does the thread transition from one state to the other?"
+   },
+   {
+    "question": "How do you pause a thread from executing for a certain period of time?"
+   },
+   {
+    "question": "What is the function of join() method in Thread class in Java programming language?"
+   },
+   {
+    "question": "What is the function of sleep() method in Thread class in Java programming language?"
+   },
+   {
+    "question": "What is the function of yeild() method in Thread class in Java programming language?"
+   },
+   {
+    "question": "In the case of multiple threads, how do you prevent data corruption of shared data?"
+   },
+   {
+    "question": "What are locks or monitors in Java programming language?"
+   },
+   {
+    "question": "What do you understand by Reentrant Synchronization in Java programming language?"
+   },
+   {
+    "question": "What is the function of wait(), notify() and notifyAll() methods in Java programming language?"
+   },
+   {
+    "question": " What happens when a thread cannot acquire a lock on an object?"
+   },
+   {
+    "question": "Describe synchronization in respect to multithreading?"
+   }
+  ]
+        }
+    ]
+}

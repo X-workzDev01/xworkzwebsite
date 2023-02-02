@@ -17,7 +17,7 @@ const Courses = (props) => {
 									<div className="course-preview">
 										<h6>Course</h6>
 										<h2>{d.courseName}</h2>
-										<a href="#">View all chapters <i class="fas fa-chevron-right"></i></a>
+										<a href="#">View all chapters <i className="fas fa-chevron-right"></i></a>
 									</div>
 									<div className="course-info">
 
@@ -42,7 +42,7 @@ const Courses = (props) => {
 				</div>
 				<div className='course-heading'>
 				<h1>Ongoing Courses</h1>
-					<div className="courses-container ">
+					<div className="courses-container">
 
 						{props.value.Batches[1]
 							? props.value.Batches[1].Ongoing.map((d, i) => (
@@ -51,7 +51,7 @@ const Courses = (props) => {
 									<div className="course-preview">
 										<h6>Course</h6>
 										<h2>{d.courseName}</h2>
-										<a href="#">View all chapters <i class="fas fa-chevron-right"></i></a>
+										<a href="#">View all chapters <i className="fas fa-chevron-right"></i></a>
 									</div>
 									<div className="course-info">
 
@@ -87,16 +87,14 @@ const Courses = (props) => {
 									<div className="course-preview">
 										<h6>Course</h6>
 										<h2>{d.courseName}</h2>
-										<a href="#">View all chapters <i class="fas fa-chevron-right"></i></a>
+										<a href="#">View all chapters <i className="fas fa-chevron-right"></i></a>
 									</div>
 									<div className="course-info">
-
 										<h6>Trainer</h6>
 										<h2>{d.facultyName}</h2>
 										<h5>{d.type}</h5>
 										<h6>starts from</h6>
 										<h6>{d.startDate}</h6>
-
 									</div>
 								</div>
 

@@ -1,0 +1,22 @@
+{
+    "Reviews": [
+        {
+            "name": "HARSHITH SHETTY",
+            "content": "I strongly recomended to join the institute X-workZ is a great platform for the freshers to gain knowledge and have good hands-on on technical skills. And there is free Java course for a month. To be honest I have gained lot of knowledge regarding java. Trainers are really good and their teaching is industry manner. Training is not only concerned about finishing the topics but they are concerned about communication skills, aptitude skills, interview skills etc. My personal experience was really good everyone is supporting for our success. They encourage more to get placed in a company.",
+            "rating": "5",
+            "review_url": "https://goo.gl/maps/cdXHjQWApH3SvgSp6"
+        },
+        {
+            "name": "Chandana S",
+            "content": "My overall experience in X-Workz was really good. For all freshers who are looking to start their IT Career I recommend this institute. One of the best institute to learn java. All the trainers are IT professionals they provide more practical knowledge which are at industry level standards. Assignments were given on regular basis which helped me a lot to learn the technologies. Constant presentations and mock interviews gave me a boost of confidence for interview preparation.Thanks to X-Workz",
+            "rating": "5",
+            "review_url": "https://goo.gl/maps/GmxWtiEsNr4atNPp7"
+        },
+        {
+            "name": "Mahendra M",
+            "content" : "My overall experience in X-Workz was really good.For all freshers who are looking to start their IT Career I recommend this institute. One of the best institute to learn java. All the trainers are IT professionals they provide more practical knowledge which are at industry level standards. Assignments were given on regular basis which helped me a lot to learn the technologies. Constant presentations and mock interviews gave me a boost of confidence for interview preparation. Thanks to X-Workz",
+            "rating" :"5",
+            "review_url" : "https://goo.gl/maps/Jp2N9m3N8fwxPp1X9"
+        }
+    ]
+}

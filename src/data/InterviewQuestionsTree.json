@@ -1,0 +1,20 @@
+{
+    "Module" : [
+        {
+            "name" : "Core Java",
+            "url" : "http://localhost:8080/getCoreJavaQuestions"
+        },
+        {
+            "name" : "My Sql",
+            "url" : "http://localhost:8080/getMySqlQuestions"
+        },
+        {
+            "name" : "Advanced Java",
+            "url" : "http://localhost:8080/getAdvancedJavaQuestions"
+        },
+        {
+            "name" : "Spring",
+            "url" : "http://localhost:8080/getSpringQuestions"
+        }
+    ]
+}

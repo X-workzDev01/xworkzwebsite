@@ -8,7 +8,7 @@ import CourseData from './data/courses.json';
 import { About } from './components/About';
 import TeamData from './data/team.json';
 
-import {BrowserRouter , Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 
 import Home from './components/Home';
@@ -17,18 +17,20 @@ import Courses from './components/Courses';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Directions from './components/Directions';
+import InterviewQuestions from './components/InterviewQuestions';
+import Testimonials from './components/Testimonials';
   
 const App = () => {
   const [data, setData] = useState({});
   const [softwareData , setSoftwareData] = useState({});
   const [courseData , setCourseData] = useState({});
-  const [TeamData , setTeamData]= useState({});
+ 
 
   useEffect(() => {
     setData(JsonData);
     setSoftwareData(SoftwareData);
     setCourseData(CourseData);
-    setTeamData(TeamData);
+   
     
   }, []);
 
@@ -43,10 +45,11 @@ const App = () => {
     
     <Route path="/about" element={<About value={data}/>}/>
     <Route path="/" element={<Home  value={data}/>}/>
-    <Route path="/softwares" element={<Software value={softwareData}   />}/>
+    <Route path="/softwares" element={<Software  />}/>
     <Route path="/courses" element={<Courses  value={courseData} />}/>
     <Route path="/directions" element={<Directions />}/>
-    
+    <Route path="/testimonials" element={<Testimonials />}/>
+    <Route path="/InterviewQuestions" element={<InterviewQuestions />}/>
     
 
   </Routes>

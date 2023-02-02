@@ -1,0 +1,661 @@
+{
+    "Topic": [
+        {
+            "name": "Abstraction",
+            "Questions": [
+                {
+                    "question": "What is Abstraction?"
+                },
+                {
+                    "question": "How achieve Abstraction in Java ?"
+                },
+                {
+                    "question": "Real life example of Abstraction ?"
+                },
+                {
+                    "question": "Can I create an abstract variable?"
+                },
+                {
+                    "question": "What is an abstract class?"
+                },
+                {
+                    "question": "Can an abstract class be instantiated?"
+                },
+                {
+                    "question": "Can a abstract class be defined without any abstract methods?"
+                },
+                {
+                    "question": "What is the difference between an Interface and an Abstract class?"
+                },
+                {
+                    "question": "Can an abstract method be declared static in Java?"
+                },
+                {
+                    "question": "Can abstract class have Constructor?"
+                },
+                {
+                    "question": "Can abstract class implement an interface in Java?"
+                },
+                {
+                    "question": "Can an abstract class be final in Java?"
+                },
+                {
+                    "question": "Can abstract class have a static method in Java?"
+                },
+                {
+                    "question": "Can an abstract class have the main method?"
+                },
+                {
+                    "question": "Can we call an abstract method from a non-abstract method?"
+                },
+                {
+                    "question": "Can we mark a local inner class as abstract?"
+                },
+                {
+                    "question": "Can abstract method include throws clause?"
+                }
+            ]
+        },
+        {
+            "name": "Arrays",
+            "Questions": [
+                {
+                    "question": "What are arrays in Java programming language?"
+                },
+                {
+                    "question": "How do you declare, instantiate and initialize arrays?"
+                },
+                {
+                    "question": "What are multi-dimensional arrays?"
+                },
+                {
+                    "question": "How do you declare, instantiate and initialize multi-dimensional arrays?"
+                },
+                {
+                    "question": "How do you find the size of arrays?"
+                },
+                {
+                    "question": "What are the default initialization values of elements in an array?"
+                },
+                {
+                    "question": "How do you reverse the elements in an array?"
+                },
+                {
+                    "question": "What happens if you try to access an element with an index greater than the size of the array?"
+                },
+                {
+                    "question": "How do I initialize a String array?"
+                },
+                {
+                    "question": "How do I create a list from Array which is completely independent of the original array?"
+                },
+                {
+                    "question": "What is the index of the first element in an array?"
+                },
+                {
+                    "question": "How do you print the content of an array in Java?"
+                },
+                {
+                    "question": "How do you print the content of a multi dimensional array in Java?"
+                },
+                {
+                    "question": "What is the tradeoff between using an unordered array versus an ordered array?"
+                },
+                {
+                    "question": "Which algorithm does Arrays.sort use in Java?"
+                },
+                {
+                    "question": "Difference between Arrays.sort and Arrays.parallelSort in Java 8."
+                }
+            ]
+        },
+        {
+            "name": "Constructors",
+            "Questions": [
+                {
+                    "question": "What is a Constructor?"
+                },
+                {
+                    "question": "Rules for creating a Java constructor."
+                },
+                {
+                    "question": "What are Types of Java constructor Java?"
+                },
+                {
+                    "question": "Explain method chaining in Java.?"
+                },
+                {
+                    "question": "What is Java Default Constructor. in Java?"
+                },
+                {
+                    "question": "What is Java parameterized constructor.s in Java?"
+                },
+                {
+                    "question": "Advantages of parameterized constructor?"
+                },
+                {
+                    "question": "What is the Purpose of default constructor?"
+                },
+                {
+                    "question": "What is Constructor Overloading in Java?"
+                },
+                {
+                    "question": "What is Copy-Constructor?"
+                },
+                {
+                    "question": "Difference between constructor and method in Java?"
+                },
+                {
+                    "question": "What are pass by reference and pass by value?"
+                },
+                {
+                    "question": "Can constructor perform other tasks instead of initialization?"
+                },
+                {
+                    "question": "Can a constructor call/invoke a static method?"
+                },
+                {
+                    "question": "Can a constructor invoke a non-static/instance method?"
+                },
+                {
+                    "question": "Can abstract class have constructors?"
+                },
+                {
+                    "question": "What is the access modifier of the Default constructor?"
+                },
+                {
+                    "question": "Can the class with private constructor be extended?"
+                },
+                {
+                    "question": "Can the inner class with private constructor be extended??"
+                },
+                {
+                    "question": "Can you use this() and super() both together in a constructor"
+                },
+                {
+                    "question": "Is constructor inherited?"
+                },
+                {
+                    "question": "Can we call the constructor of a class more than once for an object in Java"
+                }
+            ]
+        },
+        {
+            "name": "Datatypes",
+            "Questions": [
+                {
+                    "question": "Is there a way to access an iteration-counter in Java's for-each loop?"
+                },
+                {
+                    "question": "What are the Advantages of declaring loop variable as final in enhanced for-loop"
+                },
+                {
+                    "question": "Does returning a value from the loop body break the loop?"
+                },
+                {
+                    "question": "What is the difference between ++i and i++ under increment operators?"
+                },
+                {
+                    "question": "What happens when we forget break in switch case?"
+                },
+                {
+                    "question": "What types of loops does Java support?"
+                },
+                {
+                    "question": "How will you exit anticipatedly from a loop?."
+                },
+                {
+                    "question": "Which is considered as a selection statement?"
+                },
+                {
+                    "question": "What is the Difference between dead code and unreachable code in Java."
+                },
+                {
+                    "question": "Can you create switch statement using enum?"
+                },
+                {
+                    "question": "Describe the if-then and if-then-else statements. What types of expressions can be used as conditions?"
+                },
+                {
+                    "question": "What is an enhanced for loop?"
+                },
+                {
+                    "question": "What is the difference between an unlabeled and a labeled break statement?"
+                },
+                {
+                    "question": " In which situations the finally block may not be executed?"
+                },
+                {
+                    "question": "What is the difference between an unlabeled and a labeled continue statement?"
+                }
+            ]
+        },
+        {
+            "name": "Encapsulation",
+            "Questions": [
+                {
+                    "question": "What is Encapsulation ?"
+                },
+                {
+                    "question": "Why use Encapsulation ?"
+                },
+                {
+                    "question": "Real life example of Encapsulation ?"
+                },
+                {
+                    "question": "Advantage of Encapsulation in java ?"
+                },
+                {
+                    "question": "What are the features of encapsulation ?"
+                },
+                {
+                    "question": "What is difference between Encapsulation And Abstraction ?"
+                },
+                {
+                    "question": "Why it's a good practice to expose member elements through getter methods ?"
+                },
+                {
+                    "question": "How can we hide a class in Java ?"
+                },
+                {
+                    "question": "Mention some important points about encapsulation in Java"
+                },
+                {
+                    "question": "Explain design pattern based on encapsulation in Java"
+                },
+                {
+                    "question": "What are the benefits of encapsulation?"
+                },
+                {
+                    "question": "How can the variables of the EncapTest class be accessed?"
+                }
+            ]
+        },
+        {
+            "name": "Exception",
+            "Questions": [
+                {
+                    "question": "What is an exception?"
+                },
+                {
+                    "question": "How are the exceptions handled in Java?"
+                },
+                {
+                    "question": "Exceptions are defined in which java package?"
+                },
+                {
+                    "question": "Explain the exception hierarchy in java."
+                },
+                {
+                    "question": "What is Runtime Exception or unchecked exception?"
+                },
+                {
+                    "question": "What is a checked exception?"
+                },
+                {
+                    "question": "What is difference between an error and exception?"
+                },
+                {
+                    "question": "What is the use of 'throws' keyword?"
+                },
+                {
+                    "question": "What is a 'throw' keyword?"
+                },
+                {
+                    "question": "What is difference between 'ClassNotFoundException' and 'NoClassDefFoundError'?"
+                },
+                {
+                    "question": "What are the possible combinations to write try, catch and finally block?"
+                },
+                {
+                    "question": "When to make a custom checked Exception or custom unchecked Exception?"
+                },
+                {
+                    "question": "How to create a custom Exception?"
+                },
+                {
+                    "question": "What is StackOverflowError?"
+                },
+                {
+                    "question": "Why did the designers decide to force a method to specify all uncaught checked exceptions that can be thrown within its scope?"
+                },
+                {
+                    "question": "Once the control switches to the catch block does it return back to the try block to execute the balance code?"
+                },
+                {
+                    "question": "Where is the clean up code like release of resources put in try-catch-finally block and why?"
+                },
+                {
+                    "question": "Does the order of the catch blocks matter if the exceptions caught by them are not subtype or supertype of each other?"
+                },
+                {
+                    "question": "Is it valid to have a try block without catch or finally?"
+                },
+                {
+                    "question": "How do you get the descriptive information about the Exception occurred during the program execution?"
+                },
+                {
+                    "question": "Why it is not considered a good practice to write a single catch all handler instead of catch all the exceptions?"
+                },
+                {
+                    "question": "Why it is not considered a good practice to write a single catch all handler instead of catch all the exceptions?"
+                }
+            ]
+        },
+        {
+            "name": "Inheritance",
+            "Questions": [
+                {
+                    "question": "What is a Inheritance?"
+                },
+                {
+                    "question": "What is a composition?"
+                },
+                {
+                    "question": "How many types of inheritances available in Java programming language?"
+                },
+                {
+                    "question": "What is Super Keyword in Java?"
+                },
+                {
+                    "question": "What is the difference between Inheritance and Encapsulation?"
+                },
+                {
+                    "question": "Why do we need inheritance ?"
+                },
+                {
+                    "question": "What type of inheritance does java support?"
+                },
+                {
+                    "question": "Explain inheritance with an example."
+                },
+                {
+                    "question": "Can a class extend more than one class?"
+                },
+                {
+                    "question": "What is Copy-Constructor?"
+                },
+                {
+                    "question": "Can I access the sub class methods using a super class object?"
+                },
+                {
+                    "question": "What is the difference between Inheritance and Association?"
+                },
+                {
+                    "question": "What is the difference between Inheritance and Polymorphism?"
+                },
+                {
+                    "question": "Can a Class Extend Itself in Java?"
+                },
+                {
+                    "question": "How do you restrict a member of a class from inheriting to it’s sub classes?"
+                },
+                {
+                    "question": "Are static members inherited to sub classes in Java?"
+                },
+                {
+                    "question": "Is constructor inherited?"
+                }
+            ]
+        },
+        {
+            "name": "Interface",
+            "Questions": [
+                {
+                    "question": "What is Interface ?"
+                },
+                {
+                    "question": "Main features of Interface ?"
+                },
+                {
+                    "question": "Can an Interface be final ?"
+                },
+                {
+                    "question": "What is marker interface ?"
+                },
+                {
+                    "question": "What is difference between abstract class and interface ?"
+                },
+                {
+                    "question": "How to implement Interface in Java ?"
+                },
+                {
+                    "question": "Can a class be defined inside an Interface?"
+                },
+                {
+                    "question": "Advantages of Inner Interface?"
+                },
+                {
+                    "question": "What are the access modifiers applicable for the nested interface declared inside a class?"
+                },
+                {
+                    "question": "Can an interface inherit/extend multiple interface?"
+                },
+                {
+                    "question": "Example of a nested interface"
+                },
+                {
+                    "question": "Can an Interface implement another interface?"
+                },
+                {
+                    "question": "What is a Marker(Tag) Interface?"
+                },
+                {
+                    "question": "Are Nested interfaces declared static?"
+                },
+                {
+                    "question": "can we have non-static inner interface?"
+                },
+                {
+                    "question": "Should the nested interface must be public?"
+                },
+                {
+                    "question": "How will you call a default method of an interface in a class?"
+                }
+            ]
+        },
+        {
+            "name": "Java Introduction Questions",
+            "Questions": [
+                {
+                    "question": "What are the differences between C++ and Java?"
+                },
+                {
+                    "question": "List the features of Java Programming language."
+                },
+                {
+                    "question": "What do you understand by Java virtual machine?"
+                },
+                {
+                    "question": "What is the difference between JDK, JRE, and JVM?"
+                },
+                {
+                    "question": "How many types of memory areas are allocated by JVM?"
+                },
+                {
+                    "question": "What is JIT compiler?"
+                },
+                {
+                    "question": "What are the main differences between the Java platform and other platforms?"
+                },
+                {
+                    "question": "What gives Java its 'write once and run anywhere' nature?"
+                },
+                {
+                    "question": "What is classloader?"
+                },
+                {
+                    "question": "Is Empty .java file name a valid source file name?"
+                },
+                {
+                    "question": "What if I write static public void instead of public static void?"
+                },
+                {
+                    "question": "What is the default value of the local variables?"
+                },
+                {
+                    "question": "What are the various access specifiers in Java?"
+                },
+                {
+                    "question": "What is the purpose of static methods and variables?"
+                },
+                {
+                    "question": "What are the advantages of Packages in Java?"
+                },
+                {
+                    "question": "What is object-oriented paradigm?"
+                },
+                {
+                    "question": "What is an object?"
+                },
+                {
+                    "question": "What is the difference between an object-oriented programming language and object-based programming language?"
+                },
+                {
+                    "question": "What will be the initial value of an object reference which is defined as an instance variable?"
+                }
+            ]
+        },
+        {
+            "name": "Methods",
+            "Questions": [
+                {
+                    "question": "What is virtual function/method in Java?"
+                },
+                {
+                    "question": "Can we define a static method in a Java interface?"
+                },
+                {
+                    "question": "What is synthetic method in Java?"
+                },
+                {
+                    "question": "Explain method chaining in Java.?"
+                },
+                {
+                    "question": "What is bridge method in Java?"
+                },
+                {
+                    "question": "Can we Overload or Override static methods in Java?"
+                },
+                {
+                    "question": "How do I extend Interfaces that contain Default Methods?"
+                },
+                {
+                    "question": "Why the main method is static in java?"
+                },
+                {
+                    "question": "What is meant by Method Overriding?"
+                },
+                {
+                    "question": "What happens if you remove static modifier from the main method?"
+                },
+                {
+                    "question": "Can we overload main() method?"
+                },
+                {
+                    "question": "Can you define a method with the same name as the class?"
+                },
+                {
+                    "question": "What is the scope of default methods in Java8?"
+                },
+                {
+                    "question": "How to invoke a static method of an interface?"
+                }
+            ]
+        },
+        {
+            "name": "Modifiers",
+            "Questions": [
+                {
+                    "question": "What Is Different modifiers and its access levels?"
+                },
+                {
+                    "question": "Can an inner class be declared private?"
+                },
+                {
+                    "question": "Does the order of public and static declaration is important in main() method?"
+                },
+                {
+                    "question": "Can a class be declared private?"
+                },
+                {
+                    "question": "What are access modifiers?"
+                },
+                {
+                    "question": "What are non-access modifiers in java?"
+                },
+                {
+                    "question": "Where protected is used?"
+                },
+                {
+                    "question": "Explain the scope of a protected method."
+                },
+                {
+                    "question": "How do I prevent my class to be not inherited?"
+                },
+                {
+                    "question": "can an abstract class be final?"
+                },
+                {
+                    "question": "Can a class be declared as static?"
+                },
+                {
+                    "question": "Explain the final keyword in Java.?"
+                },
+                {
+                    "question": "Explain the native keyword in Java?"
+                },
+                {
+                    "question": "What is the default implementation of hashcode method??"
+                },
+                {
+                    "question": "Modifiers that disallow overriding when applied?"
+                }
+            ]
+        },
+        {
+            "name": "Variables",
+            "Questions": [
+                {
+                    "question": "What Is The Variable?"
+                },
+                {
+                    "question": "How To Declare A Variable In Java?"
+                },
+                {
+                    "question": "How To Assign A Value To Variable?"
+                },
+                {
+                    "question": "What Is Variable Initialization?"
+                },
+                {
+                    "question": "Can We Declare And Initialize A Variable Together?"
+                },
+                {
+                    "question": "Why Is Specifying DataType Mandatory In Java?"
+                },
+                {
+                    "question": "How Many Types Of Datatypes Are There In Java?"
+                },
+                {
+                    "question": "How Can You Create Constants In Java?"
+                },
+                {
+                    "question": "What are local variables in Java programming language?"
+                },
+                {
+                    "question": "What are block variables in Java programming language?"
+                },
+                {
+                    "question": "What are final variables in Java programming language?"
+                },
+                {
+                    "question": "What are transient variables in Java programming language?"
+                },
+                {
+                    "question": "What are volatile variables in Java programming language?"
+                }
+            ]
+        }
+    ]
+}

@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import Dropdown from './Dropdown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import logo from "../img/Logo.png"
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function NavBar() {
   const [click, setClick] = useState(false);
@@ -33,7 +34,7 @@ function NavBar() {
     
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          <img src="https://raw.githubusercontent.com/X-workzDev01/xworkzwebsite/master/src/main/webapp/assets/images/Logo.png" width="140" height="70" alt='Xworkz' className='logo-img' />
+          <img src={logo} width="140" height="70" alt='Xworkz' className='logo-img' />
 
         </Link>
         <div className='menu-icon' onClick={handleClick}>
@@ -87,13 +88,30 @@ function NavBar() {
               Directions
             </Link>
           </li>
+          <li className='nav-item'>
+            <Link
+              to='/testimonials'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Reviews
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link
+              to='/interviewQuestions'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >Interview Questions
+            </Link>
+          </li>
 
         </ul>
-        <div class="header-social-icon">
+        <div className="header-social-icon">
 
-          <a href="https://www.facebook.com/xworkzdevelopmentcenter/"><i class="fab fa-facebook-f facebook-bg facebook"></i></a>
-          <a href="https://twitter.com/workz_x"><i class="fab fa-twitter twitter twitter-bg"></i></a>
-          <a href="#"><i class="fab fa-instagram  instagram-bg"></i></a>
+          <a href="https://www.facebook.com/xworkzdevelopmentcenter/"><i className="fab fa-facebook-f facebook-bg facebook"></i></a>
+          <a href="https://twitter.com/workz_x"><i className="fab fa-twitter twitter twitter-bg"></i></a>
+          <a href="#"><i className="fab fa-instagram  instagram-bg"></i></a>
         </div>
       </nav>
 

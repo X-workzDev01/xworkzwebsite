@@ -1,25 +1,33 @@
-import  React , { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Team.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar, A11y, FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Button, Modal } from 'semantic-ui-react'
-import TeamData from '../data/team.json';
+import axios from 'axios'
+
+
 
 
 
 export const Team = () => {
-    const [teamData , setTeamData]= useState({});
+    const [teamData, setTeamData] = useState([]);
 
     useEffect(() => {
-        
-        setTeamData(TeamData);
-        
-      }, []);
-
-
+        axios.request({
+            method: "GET",
+            url: "https://ombn.in/xworkz_api/getFaculties"
+        })
+            .then(res => {
+                
+                setTeamData(res.data.Faculties)
+                console.log(teamData);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, []);
 
     return (
 
@@ -30,9 +38,9 @@ export const Team = () => {
 
                 <Swiper
                     // install Swiper modules
-                    modules={[Navigation ,Scrollbar, A11y, FreeMode, Autoplay]}
+                    modules={[Navigation, Scrollbar, A11y, FreeMode, Autoplay]}
                     freeMode={true}
-                    autoplay={true}
+                    autoplay={false}
 
 
                     breakpoints={{
@@ -67,37 +75,36 @@ export const Team = () => {
                     navigation
                 >
 
-                    {teamData.content
-                        ? teamData.content.map((d, i) => (
-                            <SwiperSlide key={`${d.name}-${i}`} >
+                    {teamData
+                        ? teamData.map((d, i) => (
+
+                            <SwiperSlide key={i} >
 
 
-                                <div class="team-container">
-                                    <input type="radio" name="dot" id="one" />
-                                    <input type="radio" name="dot" id="two" />
-                                    <div class="main-card">
-                                        <div class="cards">
-                                            <div class="card">
-                                                <div class="content">
-                                                    <div class="img">
-                                                        <img src={d.imgSrc} alt="" />
-                                                    </div>
-                                                    <div class="details">
-                                                        <div class="name">{d.name}</div>
-                                                        <div class="job">{d.designation}</div>
-
-                                                    </div>
-                                                   
+                            <div className="team-container">
+                                <input type="radio" name="dot" id="one" />
+                                <input type="radio" name="dot" id="two" />
+                                <div className="main-card">
+                                    <div className="cards">
+                                        <div className="card">
+                                            <div className="content">
+                                                <div className="img">
+                                                    <img src ={d.imgSrc} alt="" />
                                                 </div>
+                                                <div className="details">
+                                                    <div className="name">{d.name}</div>
+                                                    <div className="job">{d.designation}</div>
+
+                                                </div>
+                                               
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
 
-                            </SwiperSlide>
-
-
+                        </SwiperSlide>
                         ))
                         : 'loading'}
 

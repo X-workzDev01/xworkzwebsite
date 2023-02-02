@@ -14,13 +14,14 @@ import { Team } from "./Team";
 
 import { WhatsAppWidget } from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css'
+import Testimonials from "./Testimonials";
 
 
 
 const Home = (props) => {
 
   return (
-    <>
+    <div>
 
       <section className='hero' id='home'>
         <div className='container'>
@@ -47,7 +48,7 @@ const Home = (props) => {
                   />
                 </span>
               </h1>
-              <button class="custom-btn btn-5">Enroll Now</button>
+              <button className="custom-btn btn-5">Enroll Now</button>
 
 
 
@@ -67,7 +68,7 @@ const Home = (props) => {
       <Tech />
 
       
-      <WhatsAppWidget  open={true} companyName='Xworkz ODC'  phoneNumber="+919886971483"  />
+      <WhatsAppWidget  open={false} companyName='Xworkz ODC'  phoneNumber="+919886971483"  />
       <div>
         <section className="about" id="about">
           <div className="container">
@@ -122,17 +123,17 @@ const Home = (props) => {
       </div>
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="2" alwaysOpen={false}>
+          <Accordion.Item eventKey="2" >
             <Accordion.Header>Team</Accordion.Header>
             <Accordion.Body>
               <Team />
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-
+        {/* <Testimonials /> */}
       </div>
 
-    </>
+    </div>
   )
 }
 

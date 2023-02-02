@@ -1,0 +1,224 @@
+{
+    "Topic" : [
+        {
+            "name" : "Servlets",
+            "Questions": [ 
+		{
+		"question": "How many objects of a servlet is created?"
+		},  
+		{
+		"question": "What is the life-cycle of a servlet?"
+		},  
+		{
+		"question": "What are the life-cycle methods for a servlet?"
+		},  
+		{
+		"question": "Who is responsible to create the object of servlet?"
+		},  
+		{
+		"question": "When servlet object is created?"
+		},  
+		{
+		"question": "What is difference between Get and Post method?"
+		},  
+		{
+		"question": "What is difference between PrintWriter and ServletOutputStream?"
+		},  
+		{
+		"question": "What is difference between GenericServlet and HttpServlet?"
+		},  
+		{
+		"question": "What is servlet collaboration?"
+		},  
+		{
+		"question": "What is the purpose of RequestDispatcher Interface?"
+		},  
+		{
+		"question": "Can you call a jsp from the servlet?"
+		},  
+		{
+		"question": "Difference between forward() method and sendRedirect() method ?"
+		},  
+		{
+		"question": "What is difference between ServletConfig and ServletContext?"
+		},  
+		{
+		"question": "What is Session Tracking?"
+		},  
+		{
+		"question": "What are Cookies?"
+		},  
+		{
+		"question": "What is difference between Cookies and HttpSession?"
+		},  
+		{
+		"question": "What is filter?"
+		},  
+		{
+		"question": "How can we perform any action at the time of deploying the project?"
+		},  
+		{
+		"question": "What is the disadvantage of cookies?"
+		},  
+		{
+		"question": "How can we upload the file to the server using servlet?"
+		},  
+		{
+		"question": "What is load-on-startup in servlet?"
+		},  
+		{
+		"question": "What if we pass negative value in load-on-startup?"
+		},  
+		{
+		"question": "What is war file?"
+		},  
+		{
+		"question": "How to create war file?"
+		},  
+		{
+		"question": "What are the annotations used in Servlet 3?"
+		},  
+		{
+		"question": "Which event is fired at the time of project deployment and undeployment?"
+		},  
+		{
+		"question": "Which event is fired at the time of session creation and destroy?"
+		},  
+		{
+		"question": "Which event is fired at the time of setting, getting or removing attribute from application scope?"
+		},  
+		{
+		"question": "What is the use of welcome-file-list?"
+		},  
+		{
+		"question": "What is the use of attribute in servlets?"
+		}
+	]
+        },{
+            "name" : "JSP",
+            "Questions": [ 
+                {
+                "question": "What is JSP?"
+                },  
+                {
+                "question": "What are the life-cycle methods for a JSP?"
+                },  
+                {
+                "question": "List out some advantages of using JSP."
+                },  
+                {
+                "question": "Give the syntax for JSP comments."
+                },  
+                {
+                "question": " What is the difference between hide comment and output comment?"
+                },  
+                {
+                "question": "What are the JSP implicit objects?"
+                },  
+                {
+                "question": "What is the difference between include directive and include action?"
+                },  
+                {
+                "question": "Is JSP technology extensible?"
+                },  
+                {
+                "question": "How can I implement a thread-safe JSP page? What are the advantages and Disadvantages of using it?"
+                },  
+                {
+                "question": "How to disable caching on the back button of the browser?"
+                },  
+                {
+                "question": "How can we handle the exceptions in JSP?"
+                },  
+                {
+                "question": "What are the two ways to include the result of another page. ?"
+                },  
+                {
+                "question": "How can we forward the request from JSP page to the servlet?"
+                },  
+                {
+                "question": "Can we use the exception implicit object in any JSP page?"
+                },  
+                {
+                "question": "How is JSP used in the MVC model?"
+                },  
+                {
+                "question": "What are context initialization parameters?"
+                },  
+                {
+                "question": "What are the different scope values for the <jsp:useBean> tag?"
+                },  
+                {
+                "question": "What do JSP literals consist of?"
+                },  
+                {
+                "question": "What is the purpose of <jsp:useBean>?"
+                },  
+                {
+                "question": "What is the purpose of <jsp:setProperty >?"
+                },  
+                {
+                "question": "What is the purpose of <jsp:getProperty >?"
+                },  
+                {
+                "question": "List out the various scope values of JSP action."
+                },  
+                {
+                "question": "What is the use of 'out' implicit object?"
+                },  
+                {
+                "question": "Give the use of session object."
+                },  
+                {
+                "question": "Give the use of exception object."
+                },  
+                {
+                "question": "What is the difference between ServletContext and PageContext?"
+                },  
+                {
+                "question": "What is the difference in using request.getRequestDispatcher() and context.getRequestDispatcher()?"
+                },  
+                {
+                "question": "What is EL in JSP?"
+                },  
+                {
+                "question": "What are the primary differences between the JSP custom tags and java beans?"
+                },  
+                {
+                "question": "Can an interface be implemented in the JSP file?"
+                },  
+                {
+                "question": "What is JSTL?"
+                },  
+                {
+                "question": "How many tags are provided in JSTL?"
+                },  
+                {
+                "question": "Which directive is used in JSP custom tag?"
+                },  
+                {
+                "question": "What are the three tags used in JSP bean development?"
+                },  
+                {
+                "question": "How to disable session in JSP?"
+                },  
+                {
+                "question": "List the various action tags used in JSP."
+                },  
+                {
+                "question": "Explain the steps for creating custom tags in JSP?"
+                },  
+                {
+                "question": "How can the applets be displayed in the JSP? Explain with an example."
+                },  
+                {
+                "question": "What is Expression language in JSP?"
+                },  
+                {
+                "question": "Explain various implicit objects in expression language."
+                }
+                
+            ]
+        }
+    ]
+}
