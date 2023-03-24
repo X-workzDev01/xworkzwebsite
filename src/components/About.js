@@ -65,7 +65,7 @@ export const About = (props) => {
     
      
       <div className='team-component'>
-      <Messenger />      
+          
       
       <Team />
       </div>

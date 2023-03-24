@@ -48,7 +48,7 @@ const Home = (props) => {
                   />
                 </span>
               </h1>
-              <button className="custom-btn btn-5">Enroll Now</button>
+              <button className="custom-btn btn-5"><a className="enroll-link" href="https://docs.google.com/forms/d/e/1FAIpQLSekHsT-hmxJKKgjIe6YXh7Uobf9imokdR1TUB1zANwyAZA0Nw/viewform?usp=sf_link">Enroll Now</a></button>
 
 
 

@@ -1,12 +1,8 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import "./Testimonials.css"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Scrollbar, A11y, FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import { Rating } from 'semantic-ui-react'
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import review from "../data/Reviews.json"
 
@@ -18,18 +14,22 @@ const Testimonials = () => {
 
 
   useEffect(() => {
-    axios.request({
-      method: "GET",
-      url: "https://ombn.in/xworkz_api/getReviews"
-    })
+    axios.get("https://ombn.in/xworkz_api/getReviews")
       .then(res => {
-        // setReviewData(res.data.result.reviews)
-        setReviewData(review.Reviews)
-        console.log("getRevivews");
+        setReviewData(res.data.Reviews)
       })
       .catch(err => {
         console.log(err)
+        console.log("data from secondary source")
+        axios.get("https://raw.githubusercontent.com/xworkzodc/JSON/master/Reviews.json")
+      .then(res => {
+        setReviewData(res.data.Reviews)
+      })
+      .catch(err => {
+        console.log(err)
+        console.log("data from third source")
         setReviewData(review.Reviews)
+      })
       })
   }, []);
 

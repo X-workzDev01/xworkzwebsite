@@ -1,0 +1,20 @@
+{
+    "Module" : [
+        {
+            "name" : "Core Java",
+            "url" : "https://raw.githubusercontent.com/xworkzodc/JSON/master/Interview-Questions-Updated/Core-Java.json"
+        },
+        {
+            "name" : "My Sql",
+            "url" : "https://raw.githubusercontent.com/xworkzodc/JSON/master/Interview-Questions-Updated/mysql.json"
+        },
+        {
+            "name" : "Advanced Java",
+            "url" : "https://raw.githubusercontent.com/xworkzodc/JSON/master/Interview-Questions-Updated/Advanced-Java.json"
+        },
+        {
+            "name" : "Spring",
+            "url" : "https://github.com/xworkzodc/JSON/blob/master/Interview-Questions-Updated/Spring.json"
+        }
+    ]
+}

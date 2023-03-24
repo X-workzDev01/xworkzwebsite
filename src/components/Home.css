@@ -97,6 +97,11 @@
     right: 10%;
     width: 510px;
   }
+  .enroll-link{
+    text-decoration: none;
+    color: initial;
+
+  }
   @media (max-width: 768px) {
 
     .about-info{

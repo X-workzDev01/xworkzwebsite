@@ -1,8 +1,14 @@
-import React from 'react'
+
 import "./Directions.css"
 import emailjs from "emailjs-com"
+import React, { useState} from 'react'
 
 function Directions(){
+
+	const [Firstname, setFirstName] = useState("");
+	const [email, setEmail] = useState("");
+	const [mobileNumber, setMobileNumber] = useState("");
+
 	function sendMail(e) {
         e.preventDefault();
 
@@ -15,6 +21,8 @@ function Directions(){
             console.log(err)
          });
 		}
+
+
     return (
         <div className="map-container">
 		<div className="innerwrap">

@@ -10,17 +10,21 @@ const Software = () => {
     const [softwareData , setSoftwareData ] = useState([])
 
     useEffect(() => {
-      axios.request({
-        method: "GET",
-        url: "https://ombn.in/xworkz_api/getSoftwareLinkData"
-      })
+      axios.get("https://ombn.in/xworkz_api/getSoftwareLinkData")
       .then(res =>{
-        console.log(res)
         setSoftwareData(res.data.Softwares)
         
       })
     .catch(err => {
-      console.log(err)
+      console.log(err);
+      axios.get("https://raw.githubusercontent.com/xworkzodc/JSON/master/SoftwareLinks.json")
+        .then(res => {
+          console.log("data getting from secondary source")
+          setSoftwareData(res.data.Softwares);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     })
     },[]); 
     
@@ -29,9 +33,6 @@ const Software = () => {
         <div className='software-page'>
             
         <div className='software col-12'>
-
-
-
             {softwareData
                 ? softwareData.map((d, i) => (
                   
@@ -49,7 +50,6 @@ const Software = () => {
                                 </a>
                             <div className="accent-line"></div>
                         </div>
-
                 ))
                 : 'loading'}
 

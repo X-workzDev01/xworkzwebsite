@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import axios from 'axios'
+import teamData from "../data/Faculties.json" 
 
 
 
@@ -15,17 +16,22 @@ export const Team = () => {
     const [teamData, setTeamData] = useState([]);
 
     useEffect(() => {
-        axios.request({
-            method: "GET",
-            url: "https://ombn.in/xworkz_api/getFaculties"
-        })
-            .then(res => {
-                
+        axios.get("https://ombn.in/xworkz_api/getFaculties")
+            .then(res => {  
                 setTeamData(res.data.Faculties)
-                console.log(teamData);
             })
             .catch(err => {
                 console.log(err)
+                axios.get("https://raw.githubusercontent.com/xworkzodc/JSON/master/Faculties.json")
+            .then(res => {
+                console.log("getting data from secondary source")
+                setTeamData(res.data.Faculties)
+            })
+            .catch(err => { 
+                console.log(err)
+                setTeamData(teamData)
+                console.log("getting data from third source")
+            })
             })
     }, []);
 
@@ -71,7 +77,7 @@ export const Team = () => {
 
 
                     scrollbar={{ draggable: true }}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    // onSwiper={(swiper) => console.log(swiper)}
                     navigation
                 >
 

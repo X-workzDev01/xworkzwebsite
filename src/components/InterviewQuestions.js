@@ -15,18 +15,29 @@ const InterviewQuestions = () => {
     const [active , setActive] = useState(false);
 
     useEffect(() => {
-      axios.request({
-        method: "GET",
-        url: "https://ombn.in/xworkz_api/getInterviewQuestionsTree"
-      })
+      axios.get("https://ombn.in/xworkz_api/getInterviewQuestionsTree")
       .then(res => {
         setQuestionTree(res.data);
         HandleClick(res.data.Module[0].url);
       })
       .catch(err => {
         console.log(err)
+
+        axios.get("https://raw.githubusercontent.com/xworkzodc/JSON/master/Interview-Questions-Updated/SecondaryInterviewQuestionsTree")
+      .then(res => {
+        setQuestionTree(res.data);
+        console.log("getting data from secondary source")
+        HandleClick(res.data.Module[0].url);
+
+      })
+      .catch(err => {
+        setQuestionTree(InterviewQuestionTree);
+        console.log("getting data from Third source")
+        HandleClick(InterviewQuestionTree.Module[0].url);
+        console.log(err)
       });
-    },[]);
+      });
+    },[]); 
 
 
     const HandleClick = (props) => {
@@ -34,7 +45,10 @@ const InterviewQuestions = () => {
         axios.get(props)
         .then(res =>{
           setData(res.data);
-        });
+        })
+        .catch(err =>{
+          setData(coreJava)
+        })
         setActive(false)
        
     }
@@ -53,7 +67,7 @@ const InterviewQuestions = () => {
     </Button.Group>}
     </div>
     <div className="topics">
-    { Data && <Accordion panels={Data.Topic.map((topic ,index )=>{
+    { Data && <Accordion panels={Data.Topic.map((topic , index )=>{
       
         return{
           key: index,

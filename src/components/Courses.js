@@ -1,7 +1,31 @@
 import React from 'react'
+
 import "./Courses.css"
 
+
 const Courses = (props) => {
+	// const [CourseData , setCourseData ] = useState([])
+
+
+	// useEffect(() => {
+	// 	axios.get("https://ombn.in/xworkz_api/getBatches")
+	// 	.then(res =>{
+	// 		setCourseData(res.data.Softwares)
+		  
+	// 	})
+	//   .catch(err => {
+	// 	console.log(err);
+	// 	axios.get("https://raw.githubusercontent.com/xworkzodc/JSON/master/Batches.json")
+	// 	  .then(res => {
+	// 		console.log("data getting from secondary source")
+	// 		setCourseData(res.data.Softwares);
+	// 	  })
+	// 	  .catch(err => {
+	// 		console.log(err);
+	// 	  });
+	//   })
+	//   },[]);
+
 	return (
 		<div>
 			

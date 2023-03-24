@@ -6,7 +6,7 @@ import JsonData from './data/data.json';
 import SoftwareData from './data/softwareLink.json';
 import CourseData from './data/courses.json';
 import { About } from './components/About';
-import TeamData from './data/team.json';
+
 
 import { Routes, Route } from "react-router-dom";
 

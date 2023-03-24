@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Footer.css"
 import emailjs from "emailjs-com"
+import Logo from "../img/Logo.png"
 
 
 function Footer() {
@@ -30,7 +31,7 @@ function Footer() {
                     <div className="col-xl-4 col-lg-4 mb-50">
                         <div className="footer-widget">
                             <div className="footer-logo">
-                                <a href=""><img src="https://raw.githubusercontent.com/X-workzDev01/xworkzwebsite/master/src/main/webapp/assets/images/Logo.png"  className="img-fluid" alt="logo" /> </a>
+                                <a href=""><img src={Logo}  className="img-fluid" alt="logo" /> </a>
                             </div>
                             
                             <div className="footer-social-icon">
