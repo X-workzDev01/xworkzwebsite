@@ -36,7 +36,7 @@ const Testimonials = () => {
   return (
     <div className='testimonials'>
       <section>
-        <div className="heading"><h1>Testimonials</h1></div>
+        <div className="heading"><h1>Reviews</h1></div>
         <div className="wrapper">
 
 

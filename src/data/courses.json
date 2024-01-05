@@ -4,19 +4,44 @@
       "Upcoming": [
         {
           "courseName": "Core Java",
-          "startDate": "27-MAR-2023",
-          "time": "11:00 AM",
-          "type": "WeekDay Offline Ongoing",
-          "facultyName": "Devendra",
+          "startDate": "12-JUN-2023",
+          "time": "08:00 AM",
+          "type": "WeekDay Online Upcoming",
+          "facultyName": "Sathish",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "06-SEP-2023",
+          "time": "9:00 AM",
+          "type": "WeekDay Offline Upcoming",
+          "facultyName": "Abishek",
           "placed": 0
         }
+       
       ]
     },
     {
       "Ongoing": [
         {
           "courseName": "Core Java",
-          "startDate": "20-OCT-2022",
+          "startDate": "21-AUG-2023",
+          "time": "6:00 PM",
+          "type": "WeekDay Offline Ongoing",
+          "facultyName": "Vinoda",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "10-AUG-2023",
+          "time": "6:00 PM",
+          "type": "WeekDay Offline Ongoing",
+          "facultyName": "Sharath",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "24-JUL-2023",
           "time": "9:00 AM",
           "type": "WeekDay Offline Ongoing",
           "facultyName": "Devendra",
@@ -24,7 +49,7 @@
         },
         {
           "courseName": "Core Java",
-          "startDate": "20-DEC-2022",
+          "startDate": "19-JUN-2023",
           "time": "08:00 AM",
           "type": "WeekDay Offline Ongoing",
           "facultyName": "Omkar",
@@ -32,9 +57,87 @@
         },
         {
           "courseName": "Core Java",
+          "startDate": "12-JUN-2023",
+          "time": "12:00 AM",
+          "type": "WeekDay Offline Ongoing",
+          "facultyName": "Abishek",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "07-JUN-2023",
+          "time": "12:30 PM",
+          "type": "WeekDay Offline Ongoing",
+          "facultyName": "Omkar",
+          "placed": 0
+        },
+        
+        {
+          "courseName": "Core Java",
+          "startDate": "05-JUN-2023",
+          "time": "11:30 AM",
+          "type": "WeekDay Offline Ongoing",
+          "facultyName": "Devendra",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "15-MAY-2023",
+          "time": "12:30 PM",
+          "type": "WeekDay Offline Ongoing",
+          "facultyName": "Vinoda",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "20-FEB-2023",
+          "time": "10:00 AM",
+          "type": "WeekDay Offline Ongoing",
+          "facultyName": "Abishek",
+          "placed": 0
+        }
+        
+      ]
+    },
+    {
+      "Completed": [
+        {
+          "courseName": "Core Java",
+          "startDate": "17-APR-2023",
+          "time": "11:00 AM",
+          "type": "WeekDay Online Completed",
+          "facultyName": "Sathish",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "27-MAR-2023",
+          "time": "11:00 AM",
+          "type": "WeekDay Offline Completed",
+          "facultyName": "Devendra",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "20-OCT-2022",
+          "time": "9:00 AM",
+          "type": "WeekDay Offline Completed",
+          "facultyName": "Devendra",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "20-DEC-2022",
+          "time": "08:00 AM",
+          "type": "WeekDay Offline Completed",
+          "facultyName": "Omkar",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
           "startDate": "20-DEC-2022",
           "time": "7:00 PM",
-          "type": "WeekDay Online Ongoing",
+          "type": "WeekDay Online Completed",
           "facultyName": "Sathish",
           "placed": 0
         },
@@ -42,19 +145,15 @@
           "courseName": "Core Java",
           "startDate": "09-SEP-2022",
           "time": "11:00 AM",
-          "type": "WeekDay Offline Ongoing",
+          "type": "WeekDay Offline Completed",
           "facultyName": "Abishek",
           "placed": 0
-        }
-      ]
-    },
-    {
-      "Completed": [
+        },
         {
           "courseName": "Core Java",
           "startDate": "20-OCT-2022",
           "time": "06:00 PM",
-          "type": "WeekDay Offline Ongoing",
+          "type": "WeekDay Offline Completed",
           "facultyName": "Devendra",
           "placed": 0
         },
@@ -62,7 +161,7 @@
           "courseName": "Core Java",
           "startDate": "22-AUG-2022",
           "time": "08:30 AM",
-          "type": "WeekDay Offline Ongoing",
+          "type": "WeekDay Offline Completed",
           "facultyName": "Omkar",
           "placed": 0
         },
@@ -70,7 +169,7 @@
           "courseName": "Core Java",
           "startDate": "16-MAY-2022",
           "time": "08:30 AM",
-          "type": "WeekDay Offline Ongoing",
+          "type": "WeekDay Offline Completed",
           "facultyName": "Devendra",
           "placed": 0
         },

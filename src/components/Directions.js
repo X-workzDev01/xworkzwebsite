@@ -2,24 +2,40 @@
 import "./Directions.css"
 import emailjs from "emailjs-com"
 import React, { useState} from 'react'
+import axios from 'axios';
 
 function Directions(){
 
-	const [Firstname, setFirstName] = useState("");
-	const [email, setEmail] = useState("");
-	const [mobileNumber, setMobileNumber] = useState("");
+	// const [Firstname, setFirstName] = useState("");
+	// const [email, setEmail] = useState("");
+	// const [mobileNumber, setMobileNumber] = useState("");
 
-	function sendMail(e) {
-        e.preventDefault();
+	function sendMail(event) {
+        event.preventDefault();
 
-        emailjs.sendForm('service_gdf9o6a',
-        'template_j3z5jvd',
-         e.target ,
-         'vhlq2wUUQwHQPOf-f').then(res=>{
-            console.log(res);
-         }).catch(err=>{
-            console.log(err)
-         });
+        // emailjs.sendForm('service_gdf9o6a',
+        // 'template_j3z5jvd',
+        //  e.target ,
+        //  'vhlq2wUUQwHQPOf-f').then(res=>{
+        //     console.log(res);
+        //  }).catch(err=>{
+        //     console.log(err)
+        //  });
+
+		const form = event.target;
+    const formData = new FormData(form);
+
+    const data = {
+      name: formData.get('firstName') + ' ' + formData.get('lastName'),
+      email: formData.get('email'),
+	  phoneNumber : formData.get('contactNumber')
+    };
+
+    axios.post('http://localhost:8080/api/sheets/1p3G4et36vkzSDs3W63cj6qnUFEWljLos2HHXIZd78Gg', data)
+      .then(response => alert('Message sent successfully!'))
+      .catch(error => console.error(error));
+
+
 		}
 
 

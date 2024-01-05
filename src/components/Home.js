@@ -25,8 +25,8 @@ const Home = (props) => {
 
       <section className='hero' id='home'>
         <div className='container'>
-          <div className='row'>
-            <img className="col-sm-12 col-lg-5" src={code} alt=" " />
+          <div className='row justify-content-around'>
+            
             <div className='left col-lg-5'>
 
               <h1>
@@ -42,24 +42,18 @@ const Home = (props) => {
                         "Software Trainers",
                         "Working Professionals",
                         "Experienced Trainers"
-
                       ],
                     }}
                   />
                 </span>
               </h1>
               <button className="custom-btn btn-5"><a className="enroll-link" href="https://docs.google.com/forms/d/e/1FAIpQLSekHsT-hmxJKKgjIe6YXh7Uobf9imokdR1TUB1zANwyAZA0Nw/viewform?usp=sf_link">Enroll Now</a></button>
-
-
-
-
-
-
-
+              
             </div>
-
-
+            
+            <img className="col-sm-12 col-lg-5" src={code} alt=" " />
           </div>
+          
         </div>
 
       </section>
@@ -88,6 +82,8 @@ const Home = (props) => {
                 <p>We have been training and placing students over a decade now in various training institutes,
                   we are the pioneers who introduced different training models which not only focus on theory but on practical implementations.</p>
                 <p>We focus on providing quality training on cutting edge technologies that are used to build softwares in the current world.</p>
+                <p>Our alumni are our pride and joy. They have gone on to achieve remarkable success in the tech industry, holding key positions in renowned companies and contributing to groundbreaking projects.
+                   Their achievements stand as a testament to the quality of education and training we provide.</p>
               </div>
             </div>
           </div>

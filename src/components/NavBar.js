@@ -111,7 +111,8 @@ function NavBar() {
 
           <a href="https://www.facebook.com/xworkzdevelopmentcenter/"><i className="fab fa-facebook-f facebook-bg facebook"></i></a>
           <a href="https://twitter.com/workz_x"><i className="fab fa-twitter twitter twitter-bg"></i></a>
-          <a href="#"><i className="fab fa-instagram  instagram-bg"></i></a>
+          <a href="https://www.instagram.com/xworkzraj"><i className="fab fa-instagram  instagram-bg"></i></a>
+          <a href='https://www.linkedin.com/in/x-workz-odc/'><i className="fab fa-linkedin linkedin-bg linkedin"></i></a>
         </div>
       </nav>
 

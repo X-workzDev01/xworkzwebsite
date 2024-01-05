@@ -17,7 +17,7 @@ function Footer() {
             console.log(res);
          }).catch(err=>{
             alert("Not subscribed , Please Try again");
-            console.log(err)
+            console.log(err);
          });
 
 
@@ -38,7 +38,8 @@ function Footer() {
                                 <span>Follow us</span>
                                 <a href="https://www.facebook.com/xworkzdevelopmentcenter/"><i className="fab fa-facebook-f facebook-bg"></i></a>
                                 <a href="https://twitter.com/workz_x"><i className="fab fa-twitter twitter-bg"></i></a>
-                                <a href="#"><i className="fab fa-instagram instagram-bg"></i></a>
+                                <a href="https://www.instagram.com/xworkzraj"><i className="fab fa-instagram instagram-bg"></i></a>
+                                <a href='https://www.linkedin.com/in/x-workz-odc'><i className="fab fa-linkedin linkedin-bg linkedin"></i></a>
                             </div>
                         </div>
                     </div>

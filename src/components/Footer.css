@@ -84,10 +84,11 @@ ul {
 .twitter-bg:hover{
   background-color: #55ACEE;
   -webkit-transition: background-color 1.2s ease-out;
- 
   
-
-  
+}
+.linkedin-bg:hover{
+  background-color: #0072b1;
+  -webkit-transition: background-color 1.2s ease-out;
 }
 .instagram-bg:hover{
   background:  radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);

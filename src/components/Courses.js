@@ -28,7 +28,7 @@ const Courses = (props) => {
 
 	return (
 		<div>
-			
+
 				<div className='course-page'>
 				<div className='course-heading'>
 				<h1>Upcoming Courses</h1>
