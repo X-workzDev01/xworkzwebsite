@@ -2,12 +2,30 @@
   "Batches": [
     {
       "Upcoming": [
+        
+        {
+          "courseName": "Core Java",
+          "startDate": "22-Jan-2023",
+          "time": "9:00 AM",
+          "type": "WeekDay Offline Upcoming",
+          "facultyName": "Vinoda",
+          "location":"RajajiNagar",
+          "placed": 0
+        }
+       
+      ]
+    },
+    {
+      "Ongoing": [
+
+        
         {
           "courseName": "Core Java",
           "startDate": "12-JUN-2023",
           "time": "08:00 AM",
           "type": "WeekDay Online Upcoming",
           "facultyName": "Sathish",
+          "location":"Online",
           "placed": 0
         },
         {
@@ -16,19 +34,16 @@
           "time": "9:00 AM",
           "type": "WeekDay Offline Upcoming",
           "facultyName": "Abishek",
+          "location":"RajajiNagar",
           "placed": 0
-        }
-       
-      ]
-    },
-    {
-      "Ongoing": [
+        },
         {
           "courseName": "Core Java",
           "startDate": "21-AUG-2023",
           "time": "6:00 PM",
           "type": "WeekDay Offline Ongoing",
           "facultyName": "Vinoda",
+          "location":"RajajiNagar",
           "placed": 0
         },
         {
@@ -37,6 +52,7 @@
           "time": "6:00 PM",
           "type": "WeekDay Offline Ongoing",
           "facultyName": "Sharath",
+          "location":"BTM",
           "placed": 0
         },
         {
@@ -45,6 +61,7 @@
           "time": "9:00 AM",
           "type": "WeekDay Offline Ongoing",
           "facultyName": "Devendra",
+          "location":"RajajiNagar",
           "placed": 0
         },
         {
@@ -53,22 +70,17 @@
           "time": "08:00 AM",
           "type": "WeekDay Offline Ongoing",
           "facultyName": "Omkar",
+          "location":"RajajiNagar",
           "placed": 0
         },
-        {
-          "courseName": "Core Java",
-          "startDate": "12-JUN-2023",
-          "time": "12:00 AM",
-          "type": "WeekDay Offline Ongoing",
-          "facultyName": "Abishek",
-          "placed": 0
-        },
+    
         {
           "courseName": "Core Java",
           "startDate": "07-JUN-2023",
           "time": "12:30 PM",
           "type": "WeekDay Offline Ongoing",
           "facultyName": "Omkar",
+          "location":"BTM",
           "placed": 0
         },
         
@@ -78,6 +90,7 @@
           "time": "11:30 AM",
           "type": "WeekDay Offline Ongoing",
           "facultyName": "Devendra",
+          "location":"RajajiNagar",
           "placed": 0
         },
         {
@@ -86,21 +99,22 @@
           "time": "12:30 PM",
           "type": "WeekDay Offline Ongoing",
           "facultyName": "Vinoda",
+          "location":"RajajiNagar",
           "placed": 0
-        },
+        }        
+      ]
+    },
+    {
+      "Completed": [
         {
           "courseName": "Core Java",
           "startDate": "20-FEB-2023",
           "time": "10:00 AM",
           "type": "WeekDay Offline Ongoing",
           "facultyName": "Abishek",
+          "location":"BTM",
           "placed": 0
-        }
-        
-      ]
-    },
-    {
-      "Completed": [
+        },
         {
           "courseName": "Core Java",
           "startDate": "17-APR-2023",

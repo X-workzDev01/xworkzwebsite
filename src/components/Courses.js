@@ -50,6 +50,9 @@ const Courses = (props) => {
 										<h5>{d.type}</h5>
 										<h6>starts from</h6>
 										<h6>{d.startDate}</h6>
+										<h6>Location: {d.location} </h6>
+
+										 
 
 									</div>
 								</div>
@@ -82,8 +85,9 @@ const Courses = (props) => {
 										<h6>Trainer</h6>
 										<h2>{d.facultyName}</h2>
 										<h5>{d.type}</h5>
-										<h6>starts from</h6>
+										<h6>started on</h6>
 										<h6>{d.startDate}</h6>
+										<h6>Location: {d.location} </h6>
 
 									</div>
 								</div>
