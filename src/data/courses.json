@@ -5,11 +5,20 @@
         
         {
           "courseName": "Core Java",
-          "startDate": "22-Jan-2023",
+          "startDate": "29-Jan-2023",
           "time": "9:00 AM",
           "type": "WeekDay Offline Upcoming",
           "facultyName": "Vinoda",
           "location":"RajajiNagar",
+          "placed": 0
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "05-Feb-2023",
+          "time": "7:00 PM",
+          "type": "WeekDay Online Upcoming",
+          "facultyName": "Sathish",
+          "location":"Online",
           "placed": 0
         }
        
