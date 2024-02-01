@@ -1,57 +1,74 @@
-import React from 'react'
+import React from "react";
 
-import "./Abt.css"
-import { Team } from './Team'
-import Accordion from 'react-bootstrap/Accordion';
-import Messenger from './Widgets/Messenger';
-
-
-
+import "./Abt.css";
+import { Team } from "./Team";
 
 export const About = (props) => {
   return (
-
-   
-      
-    <div className='about-page'>
+    <div className="about-page">
       <section className="about" id="about">
-    <div className="container">
-        <div className="heading text-center">
-            <h2>About
-                <span>Us</span></h2>
-            <p>We are professionals from IT industry, having vast experience in development 
+        <div className="container">
+          <div className="heading text-center">
+            <h2>
+              About
+              <span>Us</span>
+            </h2>
+            <p>
+              We are professionals from IT industry, having vast experience in
+              development
               <br></br>and training of JAVA and various UI related technologies.
             </p>
-        </div>
-        <div className="row">
+          </div>
+          <div className="row">
             <div className="col-lg-6">
-                <img src="https://raw.githubusercontent.com/xworkzodc/Gallery/master/images/56.jpeg" alt="about" className="img-fluid" width="50%" />
+              <img
+                src="https://raw.githubusercontent.com/xworkzodc/Gallery/master/images/56.jpeg"
+                alt="about"
+                className="img-fluid"
+                width="50%"
+              />
             </div>
             <div className="col-lg-6 about-info">
-                <h3>Enterprise Application Expertise Team</h3>
-                <p>We have been training and placing students over a decade now in various training institutes,
-                   we are the pioneers who introduced different training models which not only focus on theory but on practical implementations.</p>
-                   <p>We focus on providing quality training on cutting edge technologies that are used to build softwares in the current world.</p>
-                
+              <h3>Enterprise Application Expertise Team</h3>
+              <p>
+                We have been training and placing students over a decade now in
+                various training institutes, we are the pioneers who introduced
+                different training models which not only focus on theory but on
+                practical implementations.
+              </p>
+              <p>
+                We focus on providing quality training on cutting edge
+                technologies that are used to build softwares in the current
+                world.
+              </p>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
       <div className="row1-container">
         <div className="box box-down cyan">
           <h2>Guidance and Placements</h2>
-          <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="" />
+          <img
+            src="https://assets.codepen.io/2301174/icon-supervisor.svg"
+            alt=""
+          />
         </div>
 
         <div className="box red">
           <h2>Best Trainers</h2>
-          <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="" />
+          <img
+            src="https://assets.codepen.io/2301174/icon-team-builder.svg"
+            alt=""
+          />
         </div>
 
         <div className="box box-down blue">
           <h2>Technical Skills</h2>
-          <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="" />
+          <img
+            src="https://assets.codepen.io/2301174/icon-calculator.svg"
+            alt=""
+          />
         </div>
       </div>
       <div className="row2-container">
@@ -60,20 +77,10 @@ export const About = (props) => {
           <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="" />
         </div>
       </div>
-         
-     
-    
-     
-      <div className='team-component'>
-          
-      
-      <Team />
+
+      <div className="team-component">
+        <Team />
       </div>
-
     </div>
-    
-
-
-
-  )
-}
+  );
+};
