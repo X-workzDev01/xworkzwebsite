@@ -273,7 +273,6 @@ export const Register = () => {
       !registerData.qualification ||
       !registerData.stream ||
       !registerData.yop ||
-      // !registerData.offeredAs  ||
       !registerData.collegeName ||
       save ||
       usnCheck ||
@@ -459,10 +458,10 @@ export const Register = () => {
                           {" "}
                           <div className="mb-3">
                             {emailError}
-                            {verifyHandaleEmail}
+                            {verifyHandaleEmailerror}
                             {emailCheck}
                             <span className="text-success">
-                              {verifyHandaleEmailerror}
+                              {verifyHandaleEmail}
                             </span>
                           </div>
                         </span>
