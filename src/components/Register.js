@@ -314,6 +314,7 @@ export const Register = () => {
       setIsopen(true);
       setTimeout(() => {
         setRegisterData([]);
+        setverifyHandleEmail("");
         setbtn(false);
         setSave(response.data);
         setIsopen(false);
@@ -474,7 +475,7 @@ export const Register = () => {
                     required
                     placeholder="Enter email Id "
                     onChange={handleSetData}
-                    onBlur={handleEmailVeryfy}
+                    onBlur={emailCheck ? "" : handleEmailVeryfy}
                     label="Enter email id"
                     name="email"
                     value={registerData.email ? registerData.email : ""}
