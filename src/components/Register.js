@@ -140,11 +140,13 @@ export const Register = () => {
     } else if (name === "usn") {
       if (!value) {
         setUsnError("USN is Required *");
+        setUsnCheck("")
         setRegisterData.usn("");
       } else if (value.length >= 5 && value.length <= 12) {
         setUsnError("");
       } else {
         setUsnError("Enter Valid USN");
+        setUsnCheck("")
         setRegisterData.usn("");
       }
     }
@@ -188,8 +190,11 @@ export const Register = () => {
             setverifyHandleEmail("");
             setEmailError("");
             setEmailCheck("");
-          } else {
-            setverifyHandleEmailError("");
+          } 
+          
+          else {
+            setverifyHandleEmail("");
+            setverifyHandleEmailError(response.data);            
           }
         } else {
           if (response.status === 500) {
@@ -209,9 +214,11 @@ export const Register = () => {
       setEmailCheck("");
       setverifyHandleEmail("");
     } else if (!/\S+@\S+\.\S+/.test(value)) {
-      setEmailError("Invalid email address");
+      setverifyHandleEmailError("");
       setverifyHandleEmail("");
       setEmailCheck("");
+      setEmailError("Invalid email address");
+     
     } else {
       setEmailError("");
     }
@@ -329,9 +336,18 @@ export const Register = () => {
         style={{ maxWidth: "600px" }}
       >
         <div className="d-grid justify-content-center ">
-          <span className="text-success fs-4  mt-4">
-            {save ? `${save}` : ""}
-          </span>
+          {save ? (
+            <span className="text-success fs-4  mt-4">{save}</span>
+          ) : (
+            ""
+          )}
+          {save ? (
+            <span className="text-danger fs-5 text-capitalize">
+              check email for further details
+            </span>
+          ) : (
+            ""
+          )}
           <div className="container d-flex pt-5 pt-lg-5 pt-md-5 mt-n3 pt-sm-5 justify-content-center">
             <div
               className="mb-4 btn-outline-secondary opacity-80 shadow-5-strong   rounded-8"
@@ -435,8 +451,8 @@ export const Register = () => {
                     }
                     onChange={handleSetData}
                     onBlur={handleNumberChange}
-                    placeholder="Enter wattsapp Number"
-                    label="Enter wattsapp number"
+                    placeholder="Enter WhatsApp Number"
+                    label="Enter wattsApp number"
                     name="wattsAppNumber"
                     id="outlined-size-small"
                     size="small"
@@ -475,7 +491,7 @@ export const Register = () => {
                     required
                     placeholder="Enter email Id "
                     onChange={handleSetData}
-                    onBlur={emailCheck ? "" : handleEmailVeryfy}
+                    onBlur={emailCheck || emailError ? "" : handleEmailVeryfy}
                     label="Enter email id"
                     name="email"
                     value={registerData.email ? registerData.email : ""}
