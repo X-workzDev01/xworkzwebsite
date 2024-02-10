@@ -77,13 +77,13 @@
                 "designation": "Software Developer",
                 "description": "",
                 "imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Hareesh.jpeg"
-            },
-            {
-                "name": "Sunil",
-                "designation": "Trainer",
-                "description": "Java Fullstack developer. 3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
-                "imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Sunil.jpg"
             }
+            // {
+            //     "name": "Sunil",
+            //     "designation": "Trainer",
+            //     "description": "Java Fullstack developer. 3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
+            //     "imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Sunil.jpg"
+            // }
  
 	]
 }
