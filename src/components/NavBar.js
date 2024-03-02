@@ -73,7 +73,7 @@ function NavBar() {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+            <Link to="/x-workz_website/about" className="nav-links" onClick={closeMobileMenu}>
               About
               {/* <i className='fas fa-caret-down' /> */}
             </Link>

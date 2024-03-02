@@ -34,7 +34,7 @@ const App = () => {
       <NavBar />
 
       <Routes>
-        <Route path="/about" element={<About value={data} />} />
+        <Route path="/x-workz_website/about" element={<About value={data} />} />
         <Route path="/x-workz_website" element={<Home value={data} />} />
         <Route path="/softwares" element={<Software />} />
         <Route path="/courses" element={<Courses value={courseData} />} />

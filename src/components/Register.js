@@ -1,20 +1,17 @@
 import {
   Button,
-  Dialog,
   FormControl,
   InputLabel,
   MenuItem,
-  Modal,
   Select,
   TextField,
 } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Checkmark } from "react-checkmark";
+import Popup from "reactjs-popup";
 import "./Home.css";
 import { Urlconstant } from "./constant/Urlconstant";
-import Popup from "reactjs-popup";
-import { red } from "@mui/material/colors";
 
 export const Register = () => {
   const [usnCheck, setUsnCheck] = useState("");
@@ -22,10 +19,8 @@ export const Register = () => {
   const [save, setSave] = useState("");
   const [btn, setbtn] = useState(false);
   const [registerData, setRegisterData] = useState({});
-  const [registred, setRegistred] = useState(["CSR", "Non-CSR"]);
-  const [yearOfPassedOut, setYearOfPassedOut] = useState([
-    2019, 2020, 2021, 2022, 2023, 2024,
-  ]);
+  const [autoSetWhatsAppNumber, setAutoSetWhatsAppNumber] = useState("");
+  const [yearOfPassedOut] = useState([2019, 2020, 2021, 2022, 2023, 2024]);
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [wattsappNumberError, setWattsappNumberError] = useState("");
   const [usnError, setUsnError] = useState("");
@@ -45,13 +40,17 @@ export const Register = () => {
     college: [],
   });
   const handleNumberChange = (event) => {
-    const { name, value } = event.target;
+    const { name } = event.target;
 
     if (name === "contactNumber") {
       numberCheckApi(registerData.contactNumber, name);
     }
-    if (name === "wattsAppNumber") {
-      numberCheckApi(registerData.wattsAppNumber, name);
+    if (name === "wattsAppNumber" || autoSetWhatsAppNumber !== "") {
+      if (name === "") {
+        numberCheckApi(registerData.wattsAppNumber, name);
+      } else {
+        numberCheckApi(autoSetWhatsAppNumber, "wattsAppNumber");
+      }
     }
   };
 
@@ -105,7 +104,7 @@ export const Register = () => {
             response.status === 200 &&
             response.data === "Contact Number Already Exists"
           ) {
-            setWattsappNumberCheck(response.data);
+            setWattsappNumberCheck("whatsApp Number Already Exists");
           } else {
             setWattsappNumberCheck(null);
           }
@@ -123,7 +122,11 @@ export const Register = () => {
     setSave("");
     const { name, value } = e.target;
 
+    if (name === "contactNumber") {
+      setAutoSetWhatsAppNumber(value);
+    }
     setRegisterData({ ...registerData, [name]: value });
+
     if (name === "email") {
       if (!value) {
         setEmailError("Email is required *");
@@ -140,13 +143,13 @@ export const Register = () => {
     } else if (name === "usn") {
       if (!value) {
         setUsnError("USN is Required *");
-        setUsnCheck("")
+        setUsnCheck("");
         setRegisterData.usn("");
       } else if (value.length >= 5 && value.length <= 12) {
         setUsnError("");
       } else {
         setUsnError("Enter Valid USN");
-        setUsnCheck("")
+        setUsnCheck("");
         setRegisterData.usn("");
       }
     }
@@ -155,6 +158,7 @@ export const Register = () => {
         setPhoneNumberError("Contact number is required *");
         setNumberCheck(null);
       } else if (!/^\d+$/.test(value)) {
+        setNumberCheck("");
         setPhoneNumberError("Enter Valid Contact Number");
       } else if (value.length !== 10) {
         setNumberCheck("");
@@ -165,14 +169,19 @@ export const Register = () => {
     }
     if (name === "wattsAppNumber") {
       if (!value || re.test(value)) {
+        setAutoSetWhatsAppNumber("");
         setWattsappNumberError("Wattsapp number is required *");
         setWattsappNumberCheck(null);
       } else if (!/^\d+$/.test(value)) {
+        setAutoSetWhatsAppNumber("");
+        setWattsappNumberCheck("");
         setWattsappNumberError("Enter Valid wattsapp Number");
       } else if (value.length !== 10) {
+        setAutoSetWhatsAppNumber("");
         setWattsappNumberCheck("");
         setWattsappNumberError("Enter Valid wattsapp Number");
       } else {
+        setAutoSetWhatsAppNumber(value);
         setWattsappNumberError("");
       }
     }
@@ -186,15 +195,14 @@ export const Register = () => {
             setverifyHandleEmailError("");
             setverifyHandleEmail(response.data);
           } else if (response.data === "rejected_email") {
+            setverifyHandleEmailError("");
             setverifyHandleEmailError(response.data);
             setverifyHandleEmail("");
             setEmailError("");
             setEmailCheck("");
-          } 
-          
-          else {
+          } else {
             setverifyHandleEmail("");
-            setverifyHandleEmailError(response.data);            
+            setverifyHandleEmailError(response.data);
           }
         } else {
           if (response.status === 500) {
@@ -218,7 +226,6 @@ export const Register = () => {
       setverifyHandleEmail("");
       setEmailCheck("");
       setEmailError("Invalid email address");
-     
     } else {
       setEmailError("");
     }
@@ -273,10 +280,12 @@ export const Register = () => {
       wattsappNumberError ||
       usnError ||
       emailCheck ||
+      numberCheck ||
+      wattsappNumberCheck ||
       verifyHandaleEmailerror ||
       !registerData.contactNumber ||
       !registerData.usn ||
-      !registerData.wattsAppNumber ||
+      !autoSetWhatsAppNumber ||
       !registerData.qualification ||
       !registerData.stream ||
       !registerData.yop ||
@@ -290,11 +299,9 @@ export const Register = () => {
     setbtn(true);
     let offeredAs;
     if (registerData.yop === 2024) {
-      offeredAs = "CSR";
-      console.log("CSR valid");
+      offeredAs = "CSR Offered";
     } else {
-      offeredAs = "NonCSR";
-      console.log("NonCsr Valid");
+      offeredAs = "Non-CSR Offered";
     }
     const registerDto = {
       basicInfo: {
@@ -302,7 +309,7 @@ export const Register = () => {
         email: registerData.email,
         traineeName: registerData.fullName,
       },
-      alternateContactNumber: registerData.wattsAppNumber,
+      alternateContactNumber: autoSetWhatsAppNumber,
       educationInfo: {
         collegeName: registerData.collegeName,
         qualification: registerData.qualification,
@@ -336,11 +343,7 @@ export const Register = () => {
         style={{ maxWidth: "600px" }}
       >
         <div className="d-grid justify-content-center ">
-          {save ? (
-            <span className="text-success fs-4  mt-4">{save}</span>
-          ) : (
-            ""
-          )}
+          {save ? <span className="text-success fs-4  mt-4">{save}</span> : ""}
           {save ? (
             <span className="text-danger fs-5 text-capitalize">
               check email for further details
@@ -445,14 +448,14 @@ export const Register = () => {
                   <TextField
                     required
                     value={
-                      registerData.wattsAppNumber
-                        ? registerData.wattsAppNumber
+                      autoSetWhatsAppNumber || registerData.wattsAppNumber
+                        ? autoSetWhatsAppNumber || registerData.wattsAppNumber
                         : ""
                     }
                     onChange={handleSetData}
                     onBlur={handleNumberChange}
-                    placeholder="Enter WhatsApp Number"
-                    label="Enter wattsApp number"
+                    placeholder="Enter whatsApp Number"
+                    label="Enter whatsApp number"
                     name="wattsAppNumber"
                     id="outlined-size-small"
                     size="small"
@@ -672,7 +675,7 @@ export const Register = () => {
                       registerData.yop
                         ? registerData.yop === 2024
                           ? "CSR"
-                          : "NonCSR"
+                          : "Non CSR"
                         : ""
                     }
                     placeholder="Offeres As"
