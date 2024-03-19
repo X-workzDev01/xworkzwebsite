@@ -19,34 +19,34 @@ import Testimonials from "./components/Testimonials";
 import { Register } from "./components/Register";
 
 const App = () => {
-  const [data, setData] = useState({});
-  const [softwareData, setSoftwareData] = useState({});
-  const [courseData, setCourseData] = useState({});
+	const [data, setData] = useState({});
+	const [softwareData, setSoftwareData] = useState({});
+	const [courseData, setCourseData] = useState({});
 
-  useEffect(() => {
-    setData(JsonData);
-    setSoftwareData(SoftwareData);
-    setCourseData(CourseData);
-  }, []);
+	useEffect(() => {
+		setData(JsonData);
+		setSoftwareData(SoftwareData);
+		setCourseData(CourseData);
+	}, []);
 
-  return (
-    <div className="App">
-      <NavBar />
+	return (
+		<div className="App">
+			<NavBar />
 
-      <Routes>
-        <Route path="/x-workz_website/about" element={<About value={data} />} />
-        <Route path="/x-workz_website" element={<Home value={data} />} />
-        <Route path="/softwares" element={<Software />} />
-        <Route path="/courses" element={<Courses value={courseData} />} />
-        <Route path="/directions" element={<Directions />} />
-        <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/InterviewQuestions" element={<InterviewQuestions />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+			<Routes>
+				<Route path="/about" element={<About value={data} />} />
+				<Route path="/" element={<Home value={data} />} />
+				<Route path="/softwares" element={<Software />} />
+				<Route path="/courses" element={<Courses value={courseData} />} />
+				<Route path="/directions" element={<Directions />} />
+				<Route path="/testimonials" element={<Testimonials />} />
+				<Route path="/InterviewQuestions" element={<InterviewQuestions />} />
+				<Route path="/register" element={<Register />} />
+			</Routes>
 
-      <Footer />
-    </div>
-  );
+			<Footer />
+		</div>
+	);
 };
 
 export default App;

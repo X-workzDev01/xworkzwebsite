@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
-import "./NavBar.css";
-import Dropdown from "./Dropdown";
 import logo from "../img/Logo.png";
-import { Button } from "@mui/material";
-import { Register } from "./Register";
-import axios from "axios";
-import { Urlconstant } from "./constant/Urlconstant";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Dropdown from "./Dropdown";
+import "./NavBar.css";
 
 function NavBar() {
   const [registerOpen, setRegisterOpen] = useState(false);
@@ -39,7 +34,7 @@ function NavBar() {
   return (
     <>
       <nav className="navbar">
-        <Link to="/x-workz_website" className="navbar-logo" onClick={closeMobileMenu}>
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
           <img
             src={logo}
             width="140"
@@ -64,7 +59,7 @@ function NavBar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/x-workz_website" className="nav-links" onClick={closeMobileMenu}>
+            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
               Home
             </Link>
           </li>
@@ -73,7 +68,7 @@ function NavBar() {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <Link to="/x-workz_website/about" className="nav-links" onClick={closeMobileMenu}>
+            <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
               About
               {/* <i className='fas fa-caret-down' /> */}
             </Link>
