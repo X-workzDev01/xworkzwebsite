@@ -17,11 +17,14 @@ import Directions from "./components/Directions";
 import InterviewQuestions from "./components/InterviewQuestions";
 import Testimonials from "./components/Testimonials";
 import { Register } from "./components/Register";
+import { useDispatch } from "react-redux";
+import { fetchDropdown } from "./store/dropdowns/RegistrationDropDownSlice";
 
 const App = () => {
 	const [data, setData] = useState({});
 	const [softwareData, setSoftwareData] = useState({});
 	const [courseData, setCourseData] = useState({});
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		setData(JsonData);

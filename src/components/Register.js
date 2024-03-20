@@ -12,8 +12,10 @@ import { Checkmark } from "react-checkmark";
 import Popup from "reactjs-popup";
 import "./Home.css";
 import { Urlconstant } from "./constant/Urlconstant";
+import { useSelector } from "react-redux";
 
 export const Register = () => {
+	const dropdown = useSelector(state => state.dropdowns.dropdown);
 	const [usnCheck, setUsnCheck] = useState("");
 	const [isopen, setIsopen] = useState(false);
 	const [save, setSave] = useState("");
@@ -32,13 +34,6 @@ export const Register = () => {
 	const [verifyHandaleEmail, setverifyHandleEmail] = useState("");
 	const [verifyHandaleEmailerror, setverifyHandleEmailError] = useState("");
 
-	const [isDropdown, setIsDropDown] = useState({
-		course: [],
-		qualification: [],
-		batch: [],
-		stream: [],
-		college: []
-	});
 	const handleNumberChange = event => {
 		const { name } = event.target;
 
@@ -116,8 +111,6 @@ export const Register = () => {
 	};
 
 	const handleSetData = e => {
-		console.log(e.target.value);
-
 		const re = /^\d{0,9}$/;
 		setSave("");
 		const { name, value } = e.target;
@@ -248,22 +241,9 @@ export const Register = () => {
 	useEffect(
 		() => {
 			setRegisterData({});
-			getDropDown();
 		},
 		[save]
 	);
-	const getDropDown = () => {
-		axios
-			.get(Urlconstant.url + "utils/dropdown", {
-				headers: {
-					spreadsheetId: Urlconstant.spreadsheetId
-				}
-			})
-			.then(response => {
-				setIsDropDown(response.data);
-			})
-			.catch(() => {});
-	};
 	let isDiesabled;
 	if (registerData !== null) {
 		isDiesabled =
@@ -551,11 +531,13 @@ export const Register = () => {
 												width: "200px"
 											}}
 										>
-											{isDropdown.qualification.map((item, index) =>
-												<MenuItem value={item} key={index}>
-													{item}
-												</MenuItem>
-											)}
+											{dropdown && dropdown.qualification
+												? dropdown.qualification.map((item, index) =>
+														<MenuItem value={item} key={index}>
+															{item}
+														</MenuItem>
+													)
+												: ""}
 										</Select>
 									</FormControl>
 								</div>
@@ -583,11 +565,13 @@ export const Register = () => {
 												width: "200px"
 											}}
 										>
-											{isDropdown.stream.map((item, index) =>
-												<MenuItem value={item} key={index}>
-													{item}
-												</MenuItem>
-											)}
+											{dropdown && dropdown.stream
+												? dropdown.stream.map((item, index) =>
+														<MenuItem value={item} key={index}>
+															{item}
+														</MenuItem>
+													)
+												: ""}
 										</Select>
 									</FormControl>
 								</div>
@@ -614,11 +598,13 @@ export const Register = () => {
 												width: "200px"
 											}}
 										>
-											{isDropdown.college.map((item, index) =>
-												<MenuItem value={item} key={index}>
-													{item}
-												</MenuItem>
-											)}
+											{dropdown && dropdown.college
+												? dropdown.college.map((item, index) =>
+														<MenuItem value={item} key={index}>
+															{item}
+														</MenuItem>
+													)
+												: ""}
 										</Select>
 									</FormControl>
 								</div>
