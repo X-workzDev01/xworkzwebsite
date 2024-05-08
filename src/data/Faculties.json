@@ -1,75 +1,59 @@
 {
-    
-    "name" : "Faculties",
-    "content" : [
-        
-            {
-                "name": "Omkar",
-                "designation": "Founder & Trainer",
-                "description": "Founder X-workz Development Center. Ten years of IT development and training experience. Trained more than 10000 students on java and jee technologies.Specialiazed in Hibernate, Spring, Angular and Cloud. Experience in corporate training.Expert in enterprise application development",
-                "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Omkar.png"
-            },
-            {
-                "name": "Akshara P",
-                "designation": "Sr Business Development Associate",
-                "description": "Sr Business Development Associate.5 years of experience into Business Development and client engagement.Expertise in campus and corporate relationship.Identifying and mapping business strengths and customer needs.Developing growth strategies and plans.worked with more than 300+ clients",
-                "imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Akshara%20P.jpg"
-            },
-            {
-                "name": "Devendra Singh",
-                "designation": "Trainer",
-                "description": "Has an experience of 3 years in IT and 2 years in training.Trained over 1000 students.Helping students to practically impelement projects. Expert in advance java technologies",
-                "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Devendra.png"
-            },
-            {
-                "name": "Asha",
-                "designation": "Trainer",
-                "description": "6+ years of experience in IT industry.Extensive knowledge on java and jee technologies.4 years of experience in Java training.Currently working as a full-stack developer.Extensive knowledge on non-relational database.Expert in developing enterprises application",
-                "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Asha.png"
-            },
-            {
-                "name": "Pavan",
-                "designation": "Trainer",
-                "description": "More than Three years of Development and training experience.Trained more than 4000 students on Java and in other Web technologies and frameworks.Full Stack Developer.Expert in backend Technologies",
-                "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Pavan.png"
-            },
-            {
-                "name": "Lokesh",
-                "designation": "Trainer",
-                "description": "Has an experience of 3+ years in IT development.Trained students on java, web technologies, and framework.Experience in backend technologies",
-                "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Lokesh.png"
-            },
-            {
-                "name": "Sharath K",
-                "designation": "Trainer",
-                "description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
-                "imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Sharath.png"
-            },
-            {
-                "name": "Vinodha",
-                "designation": "HR Executive",
-                "description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
-                "imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Vinodha_.jpg"
-            },
-            {
-                "name": "Usha",
-                "designation": "HR Executive",
-                "description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
-                "imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Usha.jpg"
-            },
-            {
-                "name": "Amulya",
-                "designation": "Business Development Executive",
-                "description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
-                "imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Amulya.jpg"
-            },
-            {
-                "name": "Sunil",
-                "designation": "Trainer",
-                "description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
-                "imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Sunil.jpg"
-            }
-        
-    ]
-
+	"name": "Faculties",
+	"content": [
+		{
+			"name": "Omkar",
+			"designation": "Founder & Trainer",
+			"description": "Founder X-workz Development Center. Ten years of IT development and training experience. Trained more than 10000 students on java and jee technologies.Specialiazed in Hibernate, Spring, Angular and Cloud. Experience in corporate training.Expert in enterprise application development",
+			"imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Omkar.png"
+		},
+		{
+			"name": "Akshara P",
+			"designation": "Sr Business Development Associate",
+			"description": "Sr Business Development Associate.5 years of experience into Business Development and client engagement.Expertise in campus and corporate relationship.Identifying and mapping business strengths and customer needs.Developing growth strategies and plans.worked with more than 300+ clients",
+			"imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Akshara%20P.jpg"
+		},
+		{
+			"name": "Devendra Singh",
+			"designation": "Trainer",
+			"description": "Has an experience of 3 years in IT and 2 years in training.Trained over 1000 students.Helping students to practically impelement projects. Expert in advance java technologies",
+			"imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Devendra.png"
+		},
+		{
+			"name": "Pavan",
+			"designation": "Trainer",
+			"description": "More than Three years of Development and training experience.Trained more than 4000 students on Java and in other Web technologies and frameworks.Full Stack Developer.Expert in backend Technologies",
+			"imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Pavan.png"
+		},
+		{
+			"name": "Lokesh",
+			"designation": "Trainer",
+			"description": "Has an experience of 3+ years in IT development.Trained students on java, web technologies, and framework.Experience in backend technologies",
+			"imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Lokesh.png"
+		},
+		{
+			"name": "Sharath K",
+			"designation": "Trainer",
+			"description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
+			"imgSrc": "https://raw.githubusercontent.com/xworkzodc/FacultiesImages/master/Sharath.png"
+		},
+		{
+			"name": "Vinodha",
+			"designation": "HR Executive",
+			"description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
+			"imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Vinodha_.jpg"
+		},
+		{
+			"name": "Amulya",
+			"designation": "Business Development Executive",
+			"description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
+			"imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/Amulya.jpg"
+		},
+		{
+			"name": "Hazi",
+			"designation": "Trainer",
+			"description": "Java Fullstack developer.3years of software development experience.Trained more than 1000s students on different technologies like Java , Hibernate, Spring , Angular and also Automation testing framework like Selenium , Cucumber, testNG.Extensive knowledge in developing Enterprise applications and helped students to practically implement applications on their own",
+			"imgSrc": "https://raw.githubusercontent.com/X-workzDev01/FacultiesImages/master/hazi.jpg"
+		}
+	]
 }

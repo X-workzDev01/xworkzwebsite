@@ -18,7 +18,7 @@ import InterviewQuestions from "./components/InterviewQuestions";
 import Testimonials from "./components/Testimonials";
 import { Register } from "./components/Register";
 import { useDispatch } from "react-redux";
-import { fetchDropdown } from "./store/dropdowns/RegistrationDropDownSlice";
+import Banner from "./components/Banner";
 
 const App = () => {
 	const [data, setData] = useState({});
@@ -35,7 +35,6 @@ const App = () => {
 	return (
 		<div className="App">
 			<NavBar />
-
 			<Routes>
 				<Route path="/about" element={<About value={data} />} />
 				<Route path="/" element={<Home value={data} />} />

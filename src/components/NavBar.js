@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../img/Logo.png";
 import Dropdown from "./Dropdown";
 import "./NavBar.css";
+import { Banner } from "./Banner";
 
 function NavBar() {
   const [registerOpen, setRegisterOpen] = useState(false);
@@ -33,6 +34,8 @@ function NavBar() {
   };
   return (
     <>
+      			
+
       <nav className="navbar">
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
           <img

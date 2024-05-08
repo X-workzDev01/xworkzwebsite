@@ -1,76 +1,76 @@
 {
-    "Softwares": [
-        {
-            "name": "Apache Maven",
-            "description": "Apache Maven - version 3.6.3 is the latest release and recommended version for all users.",
-            "directLink": "https://drive.google.com/u/0/uc?export=download&confirm=nu5E&id=1Nev9UzCaolin0d1NIe5L6BTty8auZgG3",
-            "extranalLink": "https://maven.apache.org/download.cgi"
-        },
-        {
-            "name": "Apache Tomcat",
-            "description": "Apache-Tomcat Version 9.0.38 for windows 64bit is the latest release and recommended version for all users.",
-            "directLink": "https://drive.google.com/u/0/uc?export=download&confirm=54LB&id=10EYHbdRealiFauOjwzp6xDEpzXgt60Bu",
-            "extranalLink": "https://tomcat.apache.org/download-80.cgi"
-        },
-        {
-            "name": "Eclipse IDE",
-            "description": "The Eclipse IDE 2021‑03 Tool for Java developers includin   g creating Java EE and Web applications.",
-            "directLink": "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2022-09/R/eclipse-jee-2022-09-R-win32-x86_64.zip&mirror_id=1287",
-            "extranalLink": "https://www.eclipse.org/downloads/"
-        },
-        {
-            "name": "JDK 8",
-            "description": "Java SE Development Kit 8 Download for windows 64bit.",
-            "directLink": "https://drive.google.com/uc?export=download&confirm=Xzdq&id=1VP6p3ANyAqFJh-7Ae01KBEWL0N_rmsIG",
-            "extranalLink": "https://www.oracle.com/in/java/technologies/javase/javase-jdk8-downloads.html"
-        },
-        {
-            "name": "JAD Decompiler",
-            "description": "Jad 1.5.8g for Windows 9x/NT/2000 on Intel platform.",
-            "directLink": "https://drive.google.com/u/3/uc?id=1gRFmrA2P4z1xaRAK5lPEmak3xz4yAnPU&export=download",
-            "extranalLink": "http://www.javadecompilers.com/jad"
-        },
-        {
-            "name": "JD-GUI Decompiler",
-            "description": "Java Decompiler  for Windows 9x/NT/2000 on Intel platform.",
-            "directLink": "https://drive.google.com/u/3/uc?id=1sFaVgMi_ONkWpnIDC4hDXXj2grs4FkaW&export=download",
-            "extranalLink": "http://java-decompiler.github.io/"
-        },
-        {
-            "name": "Git Bash",
-            "description": "You are downloading the latest (2.28.0) 64-bit version of Git for Windows.",
-            "directLink": "https://github.com/git-for-windows/git/releases/download/v2.38.0.windows.1/Git-2.38.0-64-bit.exe",
-            "extranalLink": "https://git-scm.com/downloads"
-        },
-        {
-            "name": "MySQL Installer",
-            "description": "mysql-installer version 8.0.21.0.msi.",
-            "directLink": "https://drive.google.com/u/0/uc?id=1vIXlqmLqZ6vzuxojAAHiCiOaC-mX-7Jx&export=download",
-            "extranalLink": "https://dev.mysql.com/downloads/installer/"
-        },
-        {
-            "name": "Notepad++",
-            "description": "Notepad++ version 7 for Windows 64 bit.",
-            "directLink": "https://drive.google.com/u/3/uc?id=1fRq27uDbWYouP2HXjRfOP9eD9nqfjtoT&export=download",
-            "extranalLink": "https://notepad-plus-plus.org/downloads/"
-        },
-        {
-            "name": "Visual Studio Code",
-            "description": "Visual Studio Code IDE Version 1.48.2 for windows 64bit Free and built on open source.",
-            "directLink": "https://drive.google.com/u/0/uc?export=download&confirm=23Cs&id=10SIRCUyWB3GuERr74K_I5QlwpnvNDHzz",
-            "extranalLink": "https://code.visualstudio.com/download"
-        },
-        {
-            "name": "Project Lombok",
-            "description": "Automatic Resource Management, automatic generation of getters, setters and more!",
-            "directLink": "https://projectlombok.org/download",
-            "extranalLink": "https://projectlombok.org/all-versions"
-        },
-        {
-            "name": "7-zip",
-            "description": "7-zip for file archiver for compressing and uncompressing files free and open-source",
-            "directLink": "https://www.7-zip.org/",
-            "extranalLink": "https://www.7-zip.org/download.html"
-        }
-    ]
+	"Softwares": [
+		{
+			"name": "Apache Maven",
+			"description": "Apache Maven - version 3.6.3 is the latest release and recommended version for all users.",
+			"directLink": "https://drive.google.com/u/0/uc?export=download&confirm=nu5E&id=1Nev9UzCaolin0d1NIe5L6BTty8auZgG3",
+			"extranalLink": "https://maven.apache.org/download.cgi"
+		},
+		{
+			"name": "Apache Tomcat",
+			"description": "Apache-Tomcat Version 9.0.38 for windows 64bit is the latest release and recommended version for all users.",
+			"directLink": "https://drive.google.com/u/0/uc?export=download&confirm=54LB&id=10EYHbdRealiFauOjwzp6xDEpzXgt60Bu",
+			"extranalLink": "https://tomcat.apache.org/download-80.cgi"
+		},
+		{
+			"name": "Eclipse IDE",
+			"description": "The Eclipse IDE 2021‑03 Tool for Java developers includin   g creating Java EE and Web applications.",
+			"directLink": "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2022-09/R/eclipse-jee-2022-09-R-win32-x86_64.zip&mirror_id=1287",
+			"extranalLink": "https://www.eclipse.org/downloads/"
+		},
+		{
+			"name": "JDK 8",
+			"description": "Java SE Development Kit 8 Download for windows 64bit.",
+			"directLink": "https://drive.google.com/uc?export=download&confirm=Xzdq&id=1VP6p3ANyAqFJh-7Ae01KBEWL0N_rmsIG",
+			"extranalLink": "https://www.oracle.com/in/java/technologies/javase/javase-jdk8-downloads.html"
+		},
+		{
+			"name": "JAD Decompiler",
+			"description": "Jad 1.5.8g for Windows 9x/NT/2000 on Intel platform.",
+			"directLink": "https://drive.google.com/u/3/uc?id=1gRFmrA2P4z1xaRAK5lPEmak3xz4yAnPU&export=download",
+			"extranalLink": "http://www.javadecompilers.com/jad"
+		},
+		{
+			"name": "JD-GUI Decompiler",
+			"description": "Java Decompiler  for Windows 9x/NT/2000 on Intel platform.",
+			"directLink": "https://drive.google.com/u/3/uc?id=1sFaVgMi_ONkWpnIDC4hDXXj2grs4FkaW&export=download",
+			"extranalLink": "http://java-decompiler.github.io/"
+		},
+		{
+			"name": "Git Bash",
+			"description": "You are downloading the latest (2.28.0) 64-bit version of Git for Windows.",
+			"directLink": "https://github.com/git-for-windows/git/releases/download/v2.38.0.windows.1/Git-2.38.0-64-bit.exe",
+			"extranalLink": "https://git-scm.com/downloads"
+		},
+		{
+			"name": "MySQL Installer",
+			"description": "mysql-installer version 8.0.21.0.msi.",
+			"directLink": "https://drive.google.com/u/0/uc?id=1vIXlqmLqZ6vzuxojAAHiCiOaC-mX-7Jx&export=download",
+			"extranalLink": "https://dev.mysql.com/downloads/installer/"
+		},
+		{
+			"name": "Notepad++",
+			"description": "Notepad++ version 7 for Windows 64 bit.",
+			"directLink": "https://drive.google.com/u/3/uc?id=1fRq27uDbWYouP2HXjRfOP9eD9nqfjtoT&export=download",
+			"extranalLink": "https://notepad-plus-plus.org/downloads/"
+		},
+		{
+			"name": "Visual Studio Code",
+			"description": "Visual Studio Code IDE Version 1.48.2 for windows 64bit Free and built on open source.",
+			"directLink": "https://drive.google.com/u/0/uc?export=download&confirm=23Cs&id=10SIRCUyWB3GuERr74K_I5QlwpnvNDHzz",
+			"extranalLink": "https://code.visualstudio.com/download"
+		},
+		{
+			"name": "Project Lombok",
+			"description": "Automatic Resource Management, automatic generation of getters, setters and more!",
+			"directLink": "https://projectlombok.org/download",
+			"extranalLink": "https://projectlombok.org/all-versions"
+		},
+		{
+			"name": "7-zip",
+			"description": "7-zip for file archiver for compressing and uncompressing files free and open-source",
+			"directLink": "https://www.7-zip.org/",
+			"extranalLink": "https://www.7-zip.org/download.html"
+		}
+	]
 }
