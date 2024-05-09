@@ -48,6 +48,7 @@ const Courses = (props) => {
                       <h6>starts from</h6>
                       <h6>{d.startDate}</h6>
                       <h6>Location: {d.location} </h6>
+                      <h6>Timing: {d.time} </h6>
 
                     </div>
                   </div>
@@ -76,6 +77,7 @@ const Courses = (props) => {
                       <h6>started on</h6>
                       <h6>{d.startDate}</h6>
                       <h6>Location: {d.location} </h6>
+                      <h6>Timings: {d.time} </h6>
                     </div>
                   </div>
                 ))
