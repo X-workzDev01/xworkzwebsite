@@ -4,13 +4,23 @@
       "Upcoming": [
         {
           "courseName": "Core Java",
-          "startDate": "03-JUNE-2024",
-          "time": "08:00 AM",
+          "startDate": "17-JUNE-2024 ",
+          "time": "8:00 AM",
           "type": "WeekDay Offline Upcoming",
           "facultyName": "Omkar",
           "location":"RajajiNagar",
           "placed": 0
-        },{
+        },
+        {
+          "courseName": "Core Java",
+          "startDate": "10-JUNE-2024 ",
+          "time": "2:30 PM",
+          "type": "WeekDay Offline Upcoming",
+          "facultyName": "Devendra",
+          "location":"RajajiNagar",
+          "placed": 0
+        },
+        {
           "courseName": "Core Java",
           "startDate": "10-JUNE-2024 ",
           "time": "10:00 AM",
@@ -18,21 +28,21 @@
           "facultyName": "Vinoda",
           "location":"BTM",
           "placed": 0
-        },
-        {
-          "courseName": "Core Java",
-          "startDate": "17-JUNE-2024",
-          "time": "11:00 AM",
-          "type": "WeekDay Offline Upcoming",
-          "facultyName": "Omkar",
-          "location":"RajajiNagar",
-          "placed": 0
         }
        
       ]
     },
     {
       "Ongoing": [
+        {
+          "courseName": "Core Java",
+          "startDate": "03-JUNE-2024",
+          "time": "11:30 AM",
+          "type": "WeekDay Offline Ongoing",
+          "facultyName": "Devendra",
+          "location":"RajajiNagar",
+          "placed": 0
+        },
         {
           "courseName": "Core Java",
           "startDate": "26-MAR-2024",
