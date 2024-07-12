@@ -1,30 +1,29 @@
-import "./App.css";
-import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { About } from "./components/About";
+import CourseData from "./data/courses.json";
 import JsonData from "./data/data.json";
 import SoftwareData from "./data/softwareLink.json";
-import CourseData from "./data/courses.json";
-import { About } from "./components/About";
 
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-import Home from "./components/Home";
-import Software from "./components/Software";
 import Courses from "./components/Courses";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
 import Directions from "./components/Directions";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
 import InterviewQuestions from "./components/InterviewQuestions";
-import Testimonials from "./components/Testimonials";
+import NavBar from "./components/NavBar";
 import { Register } from "./components/Register";
-import { useDispatch } from "react-redux";
-import Banner from "./components/Banner";
+import Software from "./components/Software";
+import Testimonials from "./components/Testimonials";
+import { Feedback } from "./components/Feedback";
+import { Button } from "@mui/material";
 
 const App = () => {
 	const [data, setData] = useState({});
 	const [softwareData, setSoftwareData] = useState({});
 	const [courseData, setCourseData] = useState({});
-	const dispatch = useDispatch();
 
 	useEffect(() => {
 		setData(JsonData);
@@ -35,6 +34,9 @@ const App = () => {
 	return (
 		<div className="App">
 			<NavBar />
+			{/* <div>
+				<Button variant="contained">Contained</Button>
+			</div> */}
 			<Routes>
 				<Route path="/about" element={<About value={data} />} />
 				<Route path="/" element={<Home value={data} />} />
@@ -44,6 +46,7 @@ const App = () => {
 				<Route path="/testimonials" element={<Testimonials />} />
 				<Route path="/InterviewQuestions" element={<InterviewQuestions />} />
 				<Route path="/register" element={<Register />} />
+				<Route path="/feedback" element={<Feedback />} />
 			</Routes>
 
 			<Footer />

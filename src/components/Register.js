@@ -312,12 +312,12 @@ export const Register = () => {
 	};
 
 	return (
-		<div>
+		<div className="">
 			<div
-				className="container mt-5 w-md-25 mb-11 mx-auto shadow-5-strong bg-light bg-md-secondary rounded-5"
+				className="container-sm mt-sm-5 w-sm-25 mb-11 mx-auto shadow-5-strong bg-light bg-md-secondary rounded-5 "
 				style={{ maxWidth: "600px" }}
 			>
-				<div className="d-grid justify-content-center ">
+				<div className=" d-grid justify-content-center ">
 					{save
 						? <span className="text-success fs-4  mt-4">
 								{save}
@@ -328,24 +328,26 @@ export const Register = () => {
 								check email for further details
 							</span>
 						: ""}
-					<div className="container d-flex pt-5 pt-lg-5 pt-md-5 mt-n3 pt-sm-5 justify-content-center">
-						<div
-							className="mb-4 btn-outline-secondary opacity-80 shadow-5-strong   rounded-8"
-							style={{ backgroundColor: "#d94404" }}
-						>
-							<h5>
-								<span className="fa-square-font-awesome-stroke bold text-white ">
-									REGISTER HERE
-								</span>
-							</h5>
+					<div className="d-flex justify-content-center">
+						<div className=" pt-5 pt-lg-5 pt-md-5 mt-n3 pt-sm-5 ">
+							<div
+								className="mb-4 btn-outline-secondary opacity-80 shadow-5-strong  rounded-8"
+								style={{ backgroundColor: "#d94404" }}
+							>
+								<h5>
+									<span className="fa-square-font-awesome-stroke bold text-white ">
+										REGISTER HERE
+									</span>
+								</h5>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div className="container ms-4 mb-8 ">
-					<div className="w-100  d-flex justify-content-md-around">
+				<div className="ms-sm-n4  mb-8 ">
+					<div className="  w-100 d-flex  justify-content-center">
 						<div>
-							<div className="row g-3">
+							<div className="row g-2  ">
 								<div className="col-md-6 mb-4">
 									<TextField
 										required
@@ -658,7 +660,7 @@ export const Register = () => {
 									/>
 								</div>
 
-								<div className="d-flex mt-5 pt-4 me-5  pe-3 mb-3 justify-content-center">
+								<div className="d-flex mt-3 pt-4 me-5  pe-3 mb-3 justify-content-center">
 									<Button
 										onClick={handleSubmit}
 										disabled={isDiesabled}
@@ -682,22 +684,24 @@ export const Register = () => {
 											</div>
 										: ""}
 								</div>
-								<div className="border border-2 shadow-5-strong rounded-5 pt-2 border-warning me-5">
-									<ol className="text-danger">
-										<li>CSR is applicable only for 2024 YOP students.</li>
-										<li>
-											{" "}Enquiries are requested to enter your full Name and
-											Reachable contact Number.
-										</li>
-										<li>
-											Candidates are requested to select “Others” if your
-											college name is not mentioned in the list
-										</li>
-										<p className="mb-4 mt-2 text-success">
-											Feel free to contact 9886971480 or 9845958884 for any
-											queries
-										</p>
-									</ol>
+								<div className="d-flex justify-content-center">
+									<div className="border border-2 shadow-5-strong rounded-5 pt-2 border-warning">
+										<ol className="text-danger">
+											<li>CSR is applicable only for 2024 YOP students.</li>
+											<li>
+												{" "}Enquiries are requested to enter your full Name and
+												Reachable contact Number.
+											</li>
+											<li>
+												Candidates are requested to select “Others” if your
+												college name is not mentioned in the list
+											</li>
+											<p className="mb-4 mt-2 text-success">
+												Feel free to contact 9886971480 or 9845958884 for any
+												queries
+											</p>
+										</ol>
+									</div>
 								</div>
 							</div>
 						</div>

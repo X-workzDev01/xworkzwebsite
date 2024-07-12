@@ -118,6 +118,15 @@ function NavBar() {
               Interview Questions
             </Link>
           </li>
+          <li className="nav-item">
+            <Link
+              to="/feedback"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Feedback
+            </Link>
+          </li>
         </ul>
 
         <div className="header-social-icon">

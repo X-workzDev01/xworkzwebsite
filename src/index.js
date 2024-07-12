@@ -8,8 +8,12 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
-import { fetchDropdown } from "./store/dropdowns/RegistrationDropDownSlice";
+import {
+	fetchBatchName,
+	fetchDropdown
+} from "./store/dropdowns/RegistrationDropDownSlice";
 store.dispatch(fetchDropdown());
+store.dispatch(fetchBatchName());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

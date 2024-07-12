@@ -43,8 +43,8 @@ const Home = props => {
 					</div>
 					<div className="d-flex justify-content-center ">
 						<p className="text-black fw-bolder fs-2">
-							<span className="fw-bolder text-danger">FREE</span> 2 months class
-							for 2024 Graduates {" "}
+							<span className="fw-bolder text-danger">FREE</span> 1 months class
+							for any Graduates {" "}
 						</p>
 					</div>
 					<div className="d-flex justify-content-center ">
@@ -61,7 +61,9 @@ const Home = props => {
 						<p className="text-black fs-2">9886971480 / 9886971483</p>
 					</div>
 					<div className="d-flex justify-content-center m-3 ">
-						<p className="text-danger fs-2 fw-bold">Starting from June</p>
+						<p className="text-danger fs-2 fw-bold">
+							Upcoming batch on july 15
+						</p>
 					</div>
 					<div className="d-flex justify-content-center ">
 						<p className="fs-2 text-black fw-bold ">
@@ -108,7 +110,6 @@ const Home = props => {
 					</div>
 				</div>
 			</section>
-
 			<Tech />
 
 			<WhatsAppWidget

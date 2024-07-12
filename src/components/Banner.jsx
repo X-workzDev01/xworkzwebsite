@@ -11,8 +11,14 @@ const Banner = () => {
         gradient="true"
         gradientWidth={'100px'}
       >
-        <span style={{color: 'red', fontSize: '20px', fontWeight: 'bold'}}>
-          Free Java & Testing Class for 2 Month only for 2024 Graduates from any Stream ! Registration for both Offline and Online Classes HURRY UP!
+        <span
+          style={{
+            color: 'red',
+            fontSize: '20px',
+            fontWeight: 'bold',
+          }}
+        >
+          Free Java  Class for 1 Month only for any Graduates from any Stream ! Registration for both Offline and Online Classes HURRY UP!
         </span>
       </Marquee>
     </div>
