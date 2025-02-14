@@ -50,8 +50,8 @@ export const Feedback = () => {
     !feedback.assignmentProvided ||
     !feedback.technicalDoubts ||
     !feedback.hrResponse ||
-    !feedback.careerGuidence ||
-    !feedback.menterClarifyingDoubt ||
+    !feedback.careerGuidance ||
+    !feedback.mentorClarifyingDoubt ||
     !feedback.assignmentChecked ||
     !feedback.xworkzEnvironment ||
     !feedback.mockScore ||

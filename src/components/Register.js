@@ -15,14 +15,16 @@ import { Urlconstant } from "./constant/Urlconstant";
 import { useSelector } from "react-redux";
 
 export const Register = () => {
-	const dropdown = useSelector(state => state.dropdowns.dropdown);
+	const dropdown = useSelector((state) => state.dropdowns.dropdown);
 	const [usnCheck, setUsnCheck] = useState("");
 	const [isopen, setIsopen] = useState(false);
 	const [save, setSave] = useState("");
 	const [btn, setbtn] = useState(false);
 	const [registerData, setRegisterData] = useState({});
 	const [autoSetWhatsAppNumber, setAutoSetWhatsAppNumber] = useState("");
-	const [yearOfPassedOut] = useState([2019, 2020, 2021, 2022, 2023, 2024]);
+	const [yearOfPassedOut] = useState([
+		2019, 2020, 2021, 2022, 2023, 2024, 2025
+	]);
 	const [phoneNumberError, setPhoneNumberError] = useState("");
 	const [wattsappNumberError, setWattsappNumberError] = useState("");
 	const [usnError, setUsnError] = useState("");
@@ -34,7 +36,7 @@ export const Register = () => {
 	const [verifyHandaleEmail, setverifyHandleEmail] = useState("");
 	const [verifyHandaleEmailerror, setverifyHandleEmailError] = useState("");
 
-	const handleNumberChange = event => {
+	const handleNumberChange = (event) => {
 		const { name } = event.target;
 
 		if (name === "contactNumber") {
@@ -49,7 +51,7 @@ export const Register = () => {
 		}
 	};
 
-	const handleUsnCheck = event => {
+	const handleUsnCheck = (event) => {
 		if (event.target.value.length >= 10 && event.target.value.length <= 12) {
 			axios
 				.get(
@@ -60,7 +62,7 @@ export const Register = () => {
 						}
 					}
 				)
-				.then(response => {
+				.then((response) => {
 					if (
 						response.status === 200 &&
 						response.data === "Usn Number Already Exists"
@@ -83,7 +85,7 @@ export const Register = () => {
 					}
 				}
 			)
-			.then(response => {
+			.then((response) => {
 				if (name === "contactNumber" && number.length === 10) {
 					if (
 						response.status === 200 &&
@@ -105,12 +107,12 @@ export const Register = () => {
 					}
 				}
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 			});
 	};
 
-	const handleSetData = e => {
+	const handleSetData = (e) => {
 		const re = /^\d{0,9}$/;
 		setSave("");
 		const { name, value } = e.target;
@@ -182,10 +184,10 @@ export const Register = () => {
 			}
 		}
 	};
-	const verifyEmail = email => {
+	const verifyEmail = (email) => {
 		axios
 			.get(`${Urlconstant.url}api/verify-email?email=${email}`)
-			.then(response => {
+			.then((response) => {
 				if (response.status === 200) {
 					if (response.data === "accepted_email") {
 						setverifyHandleEmailError("");
@@ -208,24 +210,24 @@ export const Register = () => {
 					}
 				}
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log("check emailable credentils");
 			});
 	};
-	const handleEmailVeryfy = e => {
+	const handleEmailVeryfy = (e) => {
 		if (emailCheck === "" && emailError === "") {
 			verifyEmail(e.target.value);
 		}
 	};
 
-	const handleEmail = email => {
+	const handleEmail = (email) => {
 		axios
 			.get(Urlconstant.url + `api/emailCheck?email=${email}`, {
 				headers: {
 					spreadsheetId: Urlconstant.spreadsheetId
 				}
 			})
-			.then(response => {
+			.then((response) => {
 				if (response.status === 201) {
 					setEmailCheck(response.data);
 				} else {
@@ -235,15 +237,12 @@ export const Register = () => {
 			.catch();
 	};
 
-	const validEmail = email => {
+	const validEmail = (email) => {
 		handleEmail(email);
 	};
-	useEffect(
-		() => {
-			setRegisterData({});
-		},
-		[save]
-	);
+	useEffect(() => {
+		setRegisterData({});
+	}, [save]);
 	let isDiesabled;
 	if (registerData !== null) {
 		isDiesabled =
@@ -272,8 +271,10 @@ export const Register = () => {
 	const handleSubmit = () => {
 		setbtn(true);
 		let offeredAs;
-		if (registerData.yop === 2024) {
-			offeredAs = "CSR Offered";
+		if (registerData.yop === 2025) {
+			// offeredAs = "CSR Offered";
+			// offeredAs = "INTERNSHIP";
+			offeredAs = "Non-CSR Offered";
 		} else {
 			offeredAs = "Non-CSR Offered";
 		}
@@ -298,7 +299,7 @@ export const Register = () => {
 			Urlconstant.url + "api/csr/register",
 			registerDto
 		);
-		response.then(response => {
+		response.then((response) => {
 			setIsopen(true);
 			setTimeout(() => {
 				setRegisterData([]);
@@ -314,20 +315,18 @@ export const Register = () => {
 	return (
 		<div className="">
 			<div
-				className="container-sm mt-sm-5 w-sm-25 mb-11 mx-auto shadow-5-strong bg-light bg-md-secondary rounded-5 "
+				className="container mt-5 w-75 mb-11 mx-auto shadow-5-strong bg-light bg-md-secondary rounded-5 "
 				style={{ maxWidth: "600px" }}
 			>
 				<div className=" d-grid justify-content-center ">
-					{save
-						? <span className="text-success fs-4  mt-4">
-								{save}
-							</span>
-						: ""}
-					{save
-						? <span className="text-danger fs-5 text-capitalize">
-								check email for further details
-							</span>
-						: ""}
+					{save ? <span className="text-success fs-4  mt-4">{save}</span> : ""}
+					{save ? (
+						<span className="text-danger fs-5 text-capitalize">
+							check email for further details
+						</span>
+					) : (
+						""
+					)}
 					<div className="d-flex justify-content-center">
 						<div className=" pt-5 pt-lg-5 pt-md-5 mt-n3 pt-sm-5 ">
 							<div
@@ -365,21 +364,23 @@ export const Register = () => {
 								</div>
 
 								<div className="col-md-6 mb-4">
-									{phoneNumberError || numberCheck
-										? <div className="mt-2 ">
-												<div className="mt-n5">
-													<span
-														style={{ fontSize: "0.9rem" }}
-														className="text-danger text-justify text-capitalize"
-													>
-														<div className="mb-3">
-															{numberCheck}
-															{phoneNumberError}
-														</div>
-													</span>
-												</div>
+									{phoneNumberError || numberCheck ? (
+										<div className="mt-2 ">
+											<div className="mt-n5">
+												<span
+													style={{ fontSize: "0.9rem" }}
+													className="text-danger text-justify text-capitalize"
+												>
+													<div className="mb-3">
+														{numberCheck}
+														{phoneNumberError}
+													</div>
+												</span>
 											</div>
-										: " "}
+										</div>
+									) : (
+										" "
+									)}
 
 									<TextField
 										required
@@ -403,21 +404,24 @@ export const Register = () => {
 
 							<div className="row g-3">
 								<div className="col-md-6 mb-4 ">
-									{wattsappNumberError || wattsappNumberCheck
-										? <div className="mt-2 ">
-												<div className="mt-n5">
-													<span
-														style={{ fontSize: "0.9rem" }}
-														className="text-danger text-justify text-capitalize "
-													>
-														{" "}<div className="mb-3">
-															{wattsappNumberError}
-															{wattsappNumberCheck}
-														</div>
-													</span>
-												</div>
+									{wattsappNumberError || wattsappNumberCheck ? (
+										<div className="mt-2 ">
+											<div className="mt-n5">
+												<span
+													style={{ fontSize: "0.9rem" }}
+													className="text-danger text-justify text-capitalize "
+												>
+													{" "}
+													<div className="mb-3">
+														{wattsappNumberError}
+														{wattsappNumberCheck}
+													</div>
+												</span>
 											</div>
-										: " "}
+										</div>
+									) : (
+										" "
+									)}
 
 									<TextField
 										required
@@ -442,25 +446,28 @@ export const Register = () => {
 									{emailError ||
 									verifyHandaleEmail ||
 									emailCheck ||
-									verifyHandaleEmailerror
-										? <div className="mt-2 ">
-												<div className="mt-n5">
-													<span
-														style={{ fontSize: "0.9rem" }}
-														className="text-danger text-justify text-capitalize "
-													>
-														{" "}<div className="mb-3">
-															{emailError}
-															{verifyHandaleEmailerror}
-															{emailCheck}
-															<span className="text-success">
-																{verifyHandaleEmail}
-															</span>
-														</div>
-													</span>
-												</div>
+									verifyHandaleEmailerror ? (
+										<div className="mt-2 ">
+											<div className="mt-n5">
+												<span
+													style={{ fontSize: "0.9rem" }}
+													className="text-danger text-justify text-capitalize "
+												>
+													{" "}
+													<div className="mb-3">
+														{emailError}
+														{verifyHandaleEmailerror}
+														{emailCheck}
+														<span className="text-success">
+															{verifyHandaleEmail}
+														</span>
+													</div>
+												</span>
 											</div>
-										: " "}
+										</div>
+									) : (
+										" "
+									)}
 									<TextField
 										required
 										placeholder="Enter email Id "
@@ -479,21 +486,23 @@ export const Register = () => {
 
 							<div className="row g-3">
 								<div className="col-md-6 mb-4">
-									{usnError || usnCheck
-										? <div className="mt-2 ">
-												<div className="mt-n5">
-													<span
-														style={{ fontSize: "0.9rem" }}
-														className="text-danger text-justify text-capitalize "
-													>
-														<div className="mb-3">
-															{usnError}
-															{usnCheck}
-														</div>
-													</span>
-												</div>
+									{usnError || usnCheck ? (
+										<div className="mt-2 ">
+											<div className="mt-n5">
+												<span
+													style={{ fontSize: "0.9rem" }}
+													className="text-danger text-justify text-capitalize "
+												>
+													<div className="mb-3">
+														{usnError}
+														{usnCheck}
+													</div>
+												</span>
 											</div>
-										: " "}
+										</div>
+									) : (
+										" "
+									)}
 									<TextField
 										required
 										placeholder="Enter USN "
@@ -534,11 +543,11 @@ export const Register = () => {
 											}}
 										>
 											{dropdown && dropdown.qualification
-												? dropdown.qualification.map((item, index) =>
+												? dropdown.qualification.map((item, index) => (
 														<MenuItem value={item} key={index}>
 															{item}
 														</MenuItem>
-													)
+												  ))
 												: ""}
 										</Select>
 									</FormControl>
@@ -568,11 +577,11 @@ export const Register = () => {
 											}}
 										>
 											{dropdown && dropdown.stream
-												? dropdown.stream.map((item, index) =>
+												? dropdown.stream.map((item, index) => (
 														<MenuItem value={item} key={index}>
 															{item}
 														</MenuItem>
-													)
+												  ))
 												: ""}
 										</Select>
 									</FormControl>
@@ -601,11 +610,11 @@ export const Register = () => {
 											}}
 										>
 											{dropdown && dropdown.college
-												? dropdown.college.map((item, index) =>
+												? dropdown.college.map((item, index) => (
 														<MenuItem value={item} key={index}>
 															{item}
 														</MenuItem>
-													)
+												  ))
 												: ""}
 										</Select>
 									</FormControl>
@@ -634,11 +643,11 @@ export const Register = () => {
 												width: "200px"
 											}}
 										>
-											{yearOfPassedOut.map((item, index) =>
+											{yearOfPassedOut.map((item, index) => (
 												<MenuItem value={item} key={index}>
 													{item}
 												</MenuItem>
-											)}
+											))}
 										</Select>
 									</FormControl>
 								</div>
@@ -648,7 +657,9 @@ export const Register = () => {
 										required
 										value={
 											registerData.yop
-												? registerData.yop === 2024 ? "CSR" : "Non CSR"
+												? registerData.yop === 2025
+													? "Non CSR"
+													: "Non CSR"
 												: ""
 										}
 										placeholder="Offeres As"
@@ -675,21 +686,24 @@ export const Register = () => {
 									</Button>
 								</div>
 								<div className="d-flex justify-content-center me-5 pe-2 mt-n5 p-n2">
-									{btn
-										? <div className="mt-n1 pe-1">
-												<div
-													className="spinner-border w-5 text-primary"
-													role="status"
-												/>
-											</div>
-										: ""}
+									{btn ? (
+										<div className="mt-n1 pe-1">
+											<div
+												className="spinner-border w-5 text-primary"
+												role="status"
+											/>
+										</div>
+									) : (
+										""
+									)}
 								</div>
 								<div className="d-flex justify-content-center">
 									<div className="border border-2 shadow-5-strong rounded-5 pt-2 border-warning">
 										<ol className="text-danger">
-											<li>CSR is applicable only for 2024 YOP students.</li>
+											<li>CSR is applicable only for 2025 YOP students.</li>
 											<li>
-												{" "}Enquiries are requested to enter your full Name and
+												{" "}
+												Enquiries are requested to enter your full Name and
 												Reachable contact Number.
 											</li>
 											<li>

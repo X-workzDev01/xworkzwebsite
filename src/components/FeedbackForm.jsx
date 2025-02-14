@@ -4,6 +4,7 @@ import {FeedbackRadioButton} from './FeedbackRadioButton';
 import {FormControlRadio} from './FormControlRadio';
 
 export const FeedbackComment = ({
+  feedback,
   handleChange,
   name,
   placeholder,
@@ -20,12 +21,14 @@ export const FeedbackComment = ({
         className="form-control"
         id="exampleFormControlTextarea1"
         minLength={20}
-        erortext="Please enter more then 20 charactor"
+        value={feedback && feedback !== 'No' ? feedback : ''}
+        errorText="Please enter more than 20 characters"
         rows={row}
       />
     </div>
   );
 };
+
 export const FeedbackForm = ({
   handleChange,
   handleSubmit,
@@ -33,44 +36,36 @@ export const FeedbackForm = ({
   isDisabled,
 }) => {
   return (
-    <div className="d-flex justify-content-center mb-11 ">
+    <div className="d-flex justify-content-center mb-11">
       <div
-        style={{overflowY: 'scroll', height: '30rem'}}
+        style={{overflowY: 'scroll', height: '75rem'}}
         className="d-flex justify-content-center bg-light shadow-3-strong rounded-4 w-50 p-4 ps-5"
       >
         <form onSubmit={handleSubmit}>
-
           <div>
             <div className="text-center">
               <span className="fs-4 text-black fw-bolder">
-                Please fill  feedback
+                Please provide your feedback
               </span>
             </div>
 
             <div className="shadow-5 bg-white rounded-4 mt-4">
-
-              <div className="text-danger pe-2 ps-2 ">
+              <div className="text-danger pe-2 ps-2">
                 <span style={{fontSize: '15px'}}>
-                  How would you rate the trainer Quality ?
-                  5 Being the Highest  1 the lowest
-                  practical Execution  *
+                  How would you rate the trainer's quality? (5 being the highest, 1 being the lowest) *
                 </span>
               </div>
-              <div>
-
-                <div className="mt-2 text-center ">
-                  <FormControlRadio
-                    handleChange={handleChange}
-                    name="trainer"
-                    value={
-                      feedback ? (feedback.trainer ? feedback.trainer : '') : ''
-                    }
-                  />
-                </div>
-
+              <div className="mt-2 text-center">
+                <FormControlRadio
+                  handleChange={handleChange}
+                  name="trainer"
+                  value={
+                    feedback ? (feedback.trainer ? feedback.trainer : '') : ''
+                  }
+                />
               </div>
-
             </div>
+
             <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
               <FeedbackRadioButton
                 handleChange={handleChange}
@@ -78,161 +73,166 @@ export const FeedbackForm = ({
                 name="practicalExecution"
               />
               {feedback && feedback.practicalExecution
-                ? feedback.practicalExecution !== 'Yes'
-                    ? <div className="p-3">
-                        <FeedbackComment
-                          placeholder="Please Enter comment type here....."
-                          row="3"
-                          name="practicalExecution"
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    : <div />
-                : <div />}
-            </div>
-            <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
-              <FeedbackRadioButton
-                handleChange={handleChange}
-                content="Classes stating on time"
-                name="startingOnTime"
-              />
-              {feedback && feedback.startingOnTime
-                ? feedback.startingOnTime !== 'Yes'
-                    ? <div className="p-3">
-                        <FeedbackComment
-                          placeholder="Please Enter comment type here....."
-                          row="3"
-                          name="startingOnTime"
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    : <div />
-                : <div />}
-            </div>
-            <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
-              <FeedbackRadioButton
-                handleChange={handleChange}
-                content="Assignment Provided"
-                name="assignmentProvided"
-              />
-              {feedback && feedback.assignmentProvided
-                ? feedback.assignmentProvided !== 'Yes'
-                    ? <div className="p-3">
-                        <FeedbackComment
-                          placeholder="Please Enter comment type here....."
-                          row="3"
-                          name="assignmentProvided"
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    : <div />
+                ? feedback.practicalExecution !== 'Yes' &&
+                    <div className="p-3">
+                      <FeedbackComment
+                        feedback={feedback.practicalExecution}
+                        placeholder="Please enter comments here..."
+                        row="3"
+                        name="practicalExecution"
+                        handleChange={handleChange}
+                      />
+                    </div>
                 : <div />}
             </div>
 
-            <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3 ">
+            <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
               <FeedbackRadioButton
-                content="Whether your technical doubts are getting resolved ? if No-Please mention your comments"
-                name="technicalDoubts"
                 handleChange={handleChange}
+                content="Classes starting on time"
+                name="startingOnTime"
+              />
+              {feedback && feedback.startingOnTime
+                ? feedback.startingOnTime !== 'Yes' &&
+                    <div className="p-3">
+                      <FeedbackComment
+                        feedback={feedback.startingOnTime}
+                        placeholder="Please enter comments here..."
+                        row="3"
+                        name="startingOnTime"
+                        handleChange={handleChange}
+                      />
+                    </div>
+                : <div />}
+            </div>
+
+            <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
+              <FeedbackRadioButton
+                handleChange={handleChange}
+                content="Assignment provided"
+                name="assignmentProvided"
+              />
+              {feedback && feedback.assignmentProvided
+                ? feedback.assignmentProvided !== 'Yes' &&
+                    <div className="p-3">
+                      <FeedbackComment
+                        feedback={feedback.assignmentProvided}
+                        placeholder="Please enter comments here..."
+                        row="3"
+                        name="assignmentProvided"
+                        handleChange={handleChange}
+                      />
+                    </div>
+                : <div />}
+            </div>
+
+            <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
+              <FeedbackRadioButton
+                handleChange={handleChange}
+                content="Are your technical doubts being resolved? If No, please mention your comments."
+                name="technicalDoubts"
               />
               {feedback && feedback.technicalDoubts
-                ? feedback.technicalDoubts !== 'Yes'
-                    ? <div className="p-3">
-                        <FeedbackComment
-                          placeholder="Please Enter comment type here....."
-                          row="3"
-                          name="technicalDoubts"
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    : <div />
+                ? feedback.technicalDoubts !== 'Yes' &&
+                    <div className="p-3">
+                      <FeedbackComment
+                        feedback={feedback.technicalDoubts}
+                        placeholder="Please enter comments here..."
+                        row="3"
+                        name="technicalDoubts"
+                        handleChange={handleChange}
+                      />
+                    </div>
                 : <div />}
             </div>
+
             <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
               <FeedbackRadioButton
-                content="Whether HR Team is responding for clearification ? if No-Please mention comments"
-                name="hrResponse"
                 handleChange={handleChange}
+                content="Is the HR team responding to your queries? If No, please mention your comments."
+                name="hrResponse"
               />
               {feedback && feedback.hrResponse
-                ? feedback.hrResponse !== 'Yes'
-                    ? <div className="p-3">
-                        <FeedbackComment
-                          placeholder="Please Enter comment type here....."
-                          row="3"
-                          name="hrResponse"
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    : <div />
+                ? feedback.hrResponse !== 'Yes' &&
+                    <div className="p-3">
+                      <FeedbackComment
+                        feedback={feedback.hrResponse}
+                        placeholder="Please enter comments here..."
+                        row="3"
+                        name="hrResponse"
+                        handleChange={handleChange}
+                      />
+                    </div>
                 : <div />}
             </div>
+
             <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
               <FeedbackRadioButton
-                content="Are you been provided career Guidence along with placements and classes ? if No-Please mention your comments"
-                name="careerGuidence"
                 handleChange={handleChange}
+                content="Are you provided career guidance along with placements and classes? If No, please mention your comments."
+                name="careerGuidance"
               />
-              {feedback && feedback.careerGuidence
-                ? feedback.careerGuidence !== 'Yes'
-                    ? <div className="p-3">
-                        <FeedbackComment
-                          placeholder="Please Enter comment type here....."
-                          row="3"
-                          name="careerGuidence"
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    : <div />
+              {feedback && feedback.careerGuidance
+                ? feedback.careerGuidance !== 'Yes' &&
+                    <div className="p-3">
+                      <FeedbackComment
+                        feedback={feedback.careerGuidance}
+                        placeholder="Please enter comments here..."
+                        row="3"
+                        name="careerGuidance"
+                        handleChange={handleChange}
+                      />
+                    </div>
                 : <div />}
             </div>
+
             <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
               <FeedbackRadioButton
-                content=" Is your Menter clarifying your doubts ? if No-Please mention your comments"
-                name="menterClarifyingDoubt"
                 handleChange={handleChange}
+                content="Is your mentor clarifying your doubts? If No, please mention your comments."
+                name="mentorClarifyingDoubt"
               />
-              {feedback && feedback.menterClarifyingDoubt
-                ? feedback.menterClarifyingDoubt !== 'Yes'
-                    ? <div className="p-3">
-                        <FeedbackComment
-                          placeholder="Please Enter comment type here....."
-                          row="3"
-                          name="menterClarifyingDoubt"
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    : <div />
+              {feedback && feedback.mentorClarifyingDoubt
+                ? feedback.mentorClarifyingDoubt !== 'Yes' &&
+                    <div className="p-3">
+                      <FeedbackComment
+                        feedback={feedback.mentorClarifyingDoubt}
+                        placeholder="Please enter comments here..."
+                        row="3"
+                        name="mentorClarifyingDoubt"
+                        handleChange={handleChange}
+                      />
+                    </div>
                 : <div />}
             </div>
+
             <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
               <FeedbackRadioButton
-                content=" Is beeing assignment checked daily ? if No-Please mention your comments"
+                handleChange={handleChange}
+                content="Is the assignment being checked daily? If No, please mention your comments."
                 name="assignmentChecked"
-                handleChange={handleChange}
               />
-              {' '}
               {feedback && feedback.assignmentChecked
-                ? feedback.assignmentChecked !== 'Yes'
-                    ? <div className="p-3">
-                        <FeedbackComment
-                          placeholder="Please Enter comment type here....."
-                          row="3"
-                          name="assignmentChecked"
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    : <div />
+                ? feedback.assignmentChecked !== 'Yes' &&
+                    <div className="p-3">
+                      <FeedbackComment
+                        feedback={feedback.assignmentChecked}
+                        placeholder="Please enter comments here..."
+                        row="3"
+                        name="assignmentChecked"
+                        handleChange={handleChange}
+                      />
+                    </div>
                 : <div />}
             </div>
 
             <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
               <div>
                 <p className="text-danger">
-                  How would you rate the X-workz environment ? 5 beeing the highest and 1 the lowest  *
+                  How would you rate the X-workz environment? (5 being the highest, 1 being the lowest) *
                 </p>
               </div>
-              <div className="mt-2 text-center ">
+              <div className="mt-2 text-center">
                 <FormControlRadio
                   handleChange={handleChange}
                   name="xworkzEnvironment"
@@ -245,52 +245,48 @@ export const FeedbackForm = ({
                   }
                 />
               </div>
-
             </div>
 
             <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
               <FeedbackRadioButton
-                content=" Are you reciving/updates about your mock score and test score"
-                name="mockScore"
                 handleChange={handleChange}
+                content="Are you receiving updates about your mock scores and test scores?"
+                name="mockScore"
               />
               {feedback && feedback.mockScore
-                ? feedback.mockScore !== 'Yes'
-                    ? <div className="p-3">
-                        <FeedbackComment
-                          placeholder="Please Enter comment type here....."
-                          row="3"
-                          name="mockScore"
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    : <div />
+                ? feedback.mockScore !== 'Yes' &&
+                    <div className="p-3">
+                      <FeedbackComment
+                        feedback={feedback.mockScore}
+                        placeholder="Please enter comments here..."
+                        row="3"
+                        name="mockScore"
+                        handleChange={handleChange}
+                      />
+                    </div>
                 : <div />}
             </div>
 
             <div className="shadow-5 rounded-4 bg-white mt-2 ps-4 pt-3 pe-4 pb-2">
               <span className="text-danger">Suggestion/Feedback *</span>
               <FeedbackComment
+                feedback={feedback.feedbackSuggestion}
                 required={'required'}
-                placeholder="Feedback type here ....."
+                placeholder="Please enter your feedback here..."
                 row="5"
                 name="feedbackSuggestion"
                 handleChange={handleChange}
               />
             </div>
-
           </div>
-          <div className="mt-5 text-center pb-5">
 
+          <div className="mt-5 text-center pb-5">
             <Button type="submit" disabled={isDisabled} variant="contained">
               Submit
             </Button>
-
           </div>
         </form>
-
       </div>
-
     </div>
   );
 };

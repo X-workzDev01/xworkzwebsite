@@ -43,12 +43,14 @@ const App = () => {
 				<Route path="/softwares" element={<Software />} />
 				<Route path="/courses" element={<Courses value={courseData} />} />
 				<Route path="/directions" element={<Directions />} />
-				<Route path="/testimonials" element={<Testimonials />} />
+				<Route path="/reviews" element={<Testimonials />} />
 				<Route path="/InterviewQuestions" element={<InterviewQuestions />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="/feedback" element={<Feedback />} />
 			</Routes>
-
+			{/* <div className="d-flex justify-content-end align-content-center position-relative">
+				<Button variant="contained">Feedback</Button>
+			</div> */}
 			<Footer />
 		</div>
 	);

@@ -1,80 +1,23 @@
-import React, { useState } from "react";
-import "./Home.css";
-import { TfiClose } from "react-icons/tfi";
-import Typewriter from "typewriter-effect";
-import { Tech } from "./Tech";
-import code from "../img/coding_img.png";
+import React from "react";
 import Accordion from "react-bootstrap/Accordion";
-import { Team } from "./Team";
+import { Link } from "react-router-dom";
 import { WhatsAppWidget } from "react-whatsapp-widget";
 import "react-whatsapp-widget/dist/index.css";
-import { Link } from "react-router-dom";
+import Typewriter from "typewriter-effect";
+import code from "../img/coding_img.png";
 import Banner from "./Banner";
-import { Modal } from "semantic-ui-react";
+import "./Home.css";
+import HomeModel from "./HomeModel";
+import { Team } from "./Team";
+import { Tech } from "./Tech";
+import MSMEBanner from "./MSMEBanner";
 
-const Home = props => {
-	const [isOpen, setIsOpen] = useState(true);
+const Home = (props) => {
 	return (
 		<div>
 			<Banner />
-			<Modal
-				className="h-auto w-auto rounded-5 position-relative  "
-				style={{
-					backgroundColor: "#bdb7b2"
-				}}
-				open={isOpen}
-			>
-				<div className="m-3">
-					<div className="d-flex  justify-content-end mt-3 me-4 ">
-						<TfiClose
-							color="black"
-							onClick={() => setIsOpen(false)}
-							size={20}
-						/>
-					</div>
-
-					<div className="d-flex justify-content-center mt-n3">
-						<img
-							src="https://www.x-workz.in/Logo.png"
-							height={100}
-							width={250}
-							alt="png"
-						/>
-					</div>
-					<div className="d-flex justify-content-center ">
-						<p className="text-black fw-bolder fs-2">
-							<span className="fw-bolder text-danger">FREE</span> 1 months class
-							for any Graduates {" "}
-						</p>
-					</div>
-					<div className="d-flex justify-content-center ">
-						<p
-							className="fs-2 fw-bolder "
-							style={{
-								color: "purple"
-							}}
-						>
-							Contact :
-						</p>
-					</div>
-					<div className="d-flex justify-content-center ">
-						<p className="text-black fs-2">9886971480 / 9886971483</p>
-					</div>
-					<div className="d-flex justify-content-center m-3 ">
-						<p className="text-danger fs-2 fw-bold">
-							Upcoming batch on july 15
-						</p>
-					</div>
-					<div className="d-flex justify-content-center ">
-						<p className="fs-2 text-black fw-bold ">
-							<Link to={"/register"}>
-								<i class="me-3 text-decoration-none ">Register now</i>
-							</Link>
-							Limited seats available
-						</p>
-					</div>
-				</div>
-			</Modal>
+			<HomeModel />
+			<MSMEBanner />
 			<section className="hero" id="home">
 				<div className="container">
 					<div className="row justify-content-around">
@@ -98,8 +41,11 @@ const Home = props => {
 								</span>
 							</h1>
 							<div className="mt-4">
-								<span className=" text-secondary fs-4 fw-bolder">
-									Click here to enroll for CSR-2024
+								<span
+									style={{ fontFamily: "sans-serif" }}
+									className=" text-secondary fs-4 fw-bolder fw-bold"
+								>
+									Click here for registration
 								</span>
 							</div>
 							<Link to="/register">
@@ -128,7 +74,8 @@ const Home = props => {
 							<p>
 								We are professionals from IT industry, having vast experience in
 								development
-								<br />and training of JAVA and various UI related technologies.
+								<br />
+								and training of JAVA and various UI related technologies.
 							</p>
 						</div>
 						<div className="row">

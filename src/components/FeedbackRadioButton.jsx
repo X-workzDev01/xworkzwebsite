@@ -1,17 +1,29 @@
-import {FormControl, FormControlLabel, Radio, RadioGroup} from '@mui/material';
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+} from '@mui/material';
 import React from 'react';
 
-export const FeedbackRadioButton = ({content, name, handleChange}) => {
+export const FeedbackRadioButton = ({
+  content,
+  name,
+  handleChange,
+  feedback,
+}) => {
   return (
     <div>
       <span className="text-danger">
         {content} *
       </span>
       <div>
-        <FormControl required>
-          <RadioGroup onChange={handleChange} name={name}>
-            <FormControlLabel control={<Radio value="Yes" />} label="Yes" />
-            <FormControlLabel control={<Radio value="No" />} label="No" />
+
+        <FormControl required component="fieldset">
+          <RadioGroup name={name} value={feedback} onChange={handleChange}>
+            <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+            <FormControlLabel value="No" control={<Radio />} label="No" />
           </RadioGroup>
         </FormControl>
       </div>
