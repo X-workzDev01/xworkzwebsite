@@ -272,9 +272,9 @@ export const Register = () => {
 		setbtn(true);
 		let offeredAs;
 		if (registerData.yop === 2025) {
-			// offeredAs = "CSR Offered";
+			 offeredAs = "CSR Offered";
 			// offeredAs = "INTERNSHIP";
-			offeredAs = "Non-CSR Offered";
+			//offeredAs = "Non-CSR Offered";
 		} else {
 			offeredAs = "Non-CSR Offered";
 		}
@@ -658,7 +658,7 @@ export const Register = () => {
 										value={
 											registerData.yop
 												? registerData.yop === 2025
-													? "Non CSR"
+													? "CSR"
 													: "Non CSR"
 												: ""
 										}
