@@ -51,8 +51,8 @@ const App = () => {
         <Route path="/verifycertificate" element={<VerifyCertificate />} />
       </Routes>
       {/* <div className="d-flex justify-content-end align-content-center position-relative">
-				<Button variant="contained">Feedback</Button>
-			</div> */}
+        <Button variant="contained">Feedback</Button>
+      </div> */}
       <Footer />
     </div>
   );

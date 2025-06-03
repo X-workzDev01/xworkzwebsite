@@ -74,7 +74,7 @@ export const Feedback = () => {
       },
     });
     const response = axios.post (
-      Urlconstant.url + 'api/feedback/saveFeedback',
+      Urlconstant.FEEDBACK_URL + 'api/feedback/saveFeedback',
       feedbackFinalDto
     );
     response.then (result => {

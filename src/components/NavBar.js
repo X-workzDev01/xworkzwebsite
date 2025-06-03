@@ -112,14 +112,14 @@ function NavBar() {
             </Link>
           </li>
           {/* <li className="nav-item">
-						<Link
-							to="/feedback"
-							className="nav-links"
-							onClick={closeMobileMenu}
-						>
-							Feedback
-						</Link>
-					</li> */}
+            <Link
+              to="/feedback"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Feedback
+            </Link>
+          </li> */}
         </ul>
 
         <div className="header-social-icon">
