@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../img/Logo.png";
 import Dropdown from "./Dropdown";
 import "./NavBar.css";
@@ -111,7 +110,7 @@ function NavBar() {
               Interview Questions
             </Link>
           </li>
-          {/* <li className="nav-item">
+          <li className="nav-item">
             <Link
               to="/feedback"
               className="nav-links"
@@ -119,10 +118,10 @@ function NavBar() {
             >
               Feedback
             </Link>
-          </li> */}
+          </li> 
         </ul>
 
-        <div className="header-social-icon">
+        {/* <div className="header-social-icon">
           <a href="https://www.facebook.com/xworkzdevelopmentcenter/">
             <i className="fab fa-facebook-f facebook-bg facebook"></i>
           </a>
@@ -135,7 +134,7 @@ function NavBar() {
           <a href="https://www.linkedin.com/in/x-workz-odc/">
             <i className="fab fa-linkedin linkedin-bg linkedin"></i>
           </a>
-        </div>
+        </div> */}
       </nav>
     </>
   );

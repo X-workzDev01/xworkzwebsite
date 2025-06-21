@@ -1,7 +1,6 @@
 import {
   FormControl,
   FormControlLabel,
-  FormLabel,
   Radio,
   RadioGroup,
 } from '@mui/material';
@@ -11,17 +10,14 @@ export const FeedbackRadioButton = ({
   content,
   name,
   handleChange,
-  feedback,
+  feedback
 }) => {
   return (
     <div>
-      <span className="text-danger">
-        {content} *
-      </span>
+      <span className="text-danger">{content} *</span>
       <div>
-
         <FormControl required component="fieldset">
-          <RadioGroup name={name} value={feedback} onChange={handleChange}>
+          <RadioGroup name={name} value={feedback?.[name] || ''} onChange={handleChange}>
             <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
             <FormControlLabel value="No" control={<Radio />} label="No" />
           </RadioGroup>

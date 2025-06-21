@@ -4,205 +4,299 @@ import {
   MenuItem,
   Select,
   TextField,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+  Button,
+  CircularProgress,
+  Box,
+  useTheme,
+  useMediaQuery
 } from '@mui/material';
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  getBatchNameByCourseDetails,
+  fetchBatchName,
+  getBatchNameByCourseDetails
 } from '../store/dropdowns/RegistrationDropDownSlice';
-import {FeedbackForm} from './FeedbackForm';
+import { FeedbackForm } from './FeedbackForm';
 import axios from 'axios';
-import {Urlconstant} from './constant/Urlconstant';
+import { Urlconstant } from './constant/Urlconstant';
 import Swal from 'sweetalert2';
 
 export const Feedback = () => {
-  const dispatch = useDispatch ();
-  const dropdown = useSelector (state => state.dropdowns);
-  const [feedback, setFeedback] = useState ({});
-  const [succcess, setSucccess] = useState ('');
+  const dispatch = useDispatch();
+  const { batchName, courseName } = useSelector(state => state.dropdowns);
+  const [feedback, setFeedback] = useState({ isRegistered: null });
+  const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [emailVerified, setEmailVerified] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const handleChange = event => {
-    const {name, value} = event.target;
+  useEffect(() => {
+    dispatch(fetchBatchName());
+  }, [dispatch]);
 
-    setFeedback ({...feedback, [name]: value});
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
     if (name === 'course') {
-      const courseId = dropdown.courseName
-        .filter (element => element.subCourseName === value)
-        .map (element => element.id)[0];
-      setFeedback ({...feedback, courseId: courseId});
+      const selectedCourse = courseName.find(c => c.subCourseName === value);
+      setFeedback(prev => ({
+        ...prev,
+        [name]: value,
+        trainerName: selectedCourse?.trainerName || ''
+      }));
+    } else {
+      setFeedback(prev => ({ ...prev, [name]: value }));
     }
   };
-  useEffect (
-    () => {
-      if (feedback.course !== 'undefined')
-        dispatch (getBatchNameByCourseDetails (feedback.batch));
-    },
-    [feedback.batch, feedback.course, dispatch]
-  );
 
-  const isDisabled =
-    !feedback.batch ||
-    !feedback.courseId ||
-    !feedback.trainer ||
-    !feedback.practicalExecution ||
-    !feedback.startingOnTime ||
-    !feedback.assignmentProvided ||
-    !feedback.technicalDoubts ||
-    !feedback.hrResponse ||
-    !feedback.careerGuidance ||
-    !feedback.mentorClarifyingDoubt ||
-    !feedback.assignmentChecked ||
-    !feedback.xworkzEnvironment ||
-    !feedback.mockScore ||
-    !feedback.feedbackSuggestion;
+  const handleEmailCheck = async () => {
+    if (!feedback.email) {
+      setEmailError("Email is required");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(feedback.email)) {
+      setEmailError("Invalid email format");
+      return;
+    }
 
-  const handleSubmit = event => {
-    event.preventDefault ();
-    const batchId = dropdown.courseName
-      .filter (element => element.id === feedback.courseId)
-      .map (element => element.batchId)[0];
-    console.log (batchId);
-    const feedbackFinalDto = {...feedback, batchId: batchId};
-    Swal.fire ({
-      timer: 4000,
-      title: 'Submitted successfully!',
-      icon: 'success',
-      showConfirmButton: false,
-      customClass: {
-        popup: 'my-popup-class',
-      },
-    });
-    const response = axios.post (
-      Urlconstant.FEEDBACK_URL + 'api/feedback/saveFeedback',
-      feedbackFinalDto
-    );
-    response.then (result => {
-      setSucccess (result.data);
-      setFeedback ({});
-    });
+    setLoading(true);
+    setEmailError("");
+
+    try {
+      const response = await axios.get(`${Urlconstant.url}api/readByEmail`, {
+        params: { email: feedback.email },
+        headers: { spreadsheetId: Urlconstant.spreadsheetId },
+      });
+
+      if (response.data) {
+        const { course: batch } = response.data.courseInfo;
+        setFeedback(prev => ({
+          ...prev,
+          batch,
+          course: "",
+          trainerName: ""
+        }));
+        dispatch(getBatchNameByCourseDetails(batch));
+        setEmailVerified(true);
+      } else {
+        setEmailVerified(false);
+        setEmailError("Email not registered");
+      }
+    } catch (error) {
+      setEmailError(error.response?.data?.message || "Verification failed");
+      setEmailVerified(false);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleIsRegisteredChange = (value) => {
+    setFeedback({ isRegistered: value, email: '' });
+    setEmailVerified(false);
+    setEmailError('');
+  };
+
+  const isDisabled = () => {
+    // For non-registered users, only check feedback form fields
+    if (feedback.isRegistered === 'no') {
+      const requiredFields = [
+        'trainer',
+        'practicalExecution',
+        'startingOnTime',
+        'assignmentProvided',
+        'technicalDoubts',
+        'hrResponse',
+        'careerGuidance',
+        'mentorClarifyingDoubt',
+        'assignmentChecked',
+        'xworkzEnvironment',
+        'mockScore',
+        'feedbackSuggestion'
+      ];
+      return requiredFields.some(field => !feedback[field]);
+    }
+    
+    // For registered users, check all fields including course
+    const requiredFields = [
+      'course',
+      'trainer',
+      'practicalExecution',
+      'startingOnTime',
+      'assignmentProvided',
+      'technicalDoubts',
+      'hrResponse',
+      'careerGuidance',
+      'mentorClarifyingDoubt',
+      'assignmentChecked',
+      'xworkzEnvironment',
+      'mockScore',
+      'feedbackSuggestion'
+    ];
+    return requiredFields.some(field => !feedback[field]);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    
+    try {
+      const selectedCourse = courseName.find(c => c.subCourseName === feedback.course);
+      const feedbackData = {
+        ...feedback,
+        batchId: selectedCourse?.batchId || "NA",
+        courseId: selectedCourse?.id || "NA",
+        email: feedback.isRegistered === 'yes' ? feedback.email : (feedback.email || 'anonymous'),
+        isRegistered: feedback.isRegistered === 'yes'
+      };
+
+      await axios.post(
+        `${Urlconstant.FEEDBACK_URL}api/feedback/saveFeedback`,
+        feedbackData
+      );
+
+      Swal.fire({
+        title: 'Success!',
+        text: 'Feedback submitted successfully',
+        icon: 'success',
+      });
+      setFeedback({ isRegistered: null });
+      setEmailVerified(false);
+    } catch (error) {
+      Swal.fire({
+        title: 'Error!',
+        text: error.response?.data?.message || 'Submission failed',
+        icon: 'error',
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="  ">
-      <div className="d-flex justify-content-center mt-md-4 mb-md-4">
-        <div className="w-25">
-          <hr className="bg-danger my-1" style={{paddingTop: '0.1rem'}} />
-          <div className="text-success fs-5 text-center fw-bold text-capitalize">
-            <span>Feedback </span>
-          </div>
-          <hr className="bg-danger my-1" style={{paddingBottom: '0.1rem'}} />
-        </div>
-      </div>
-      <div className="d-flex justify-content-center">
-        <div className="mt-3 mb-4 w-50">
-          <div className="shadow-5 rounded-4 p-2 pe-4 ps-n3">
-            <div className="text-center mb-4">
-              <span className="fs-5">Select batch details</span>
-            </div>
-            <div className="row ps-4 g-2">
-              <div className="col-md-4 mb-3">
-                <FormControl fullWidth>
-                  <InputLabel id="batch-select-label">
-                    <span>Select Batch *</span>
-                  </InputLabel>
-                  <Select
-                    name="batch"
-                    onChange={handleChange}
-                    value={
-                      feedback ? (feedback.batch ? feedback.batch : '') : ''
-                    }
-                    color="primary"
-                    labelId="batch-select-label"
-                    id="batch-select"
-                    label="Select Batch"
-                    variant="outlined"
-                    size="small"
-                  >
-                    {dropdown && dropdown.batchName
-                      ? dropdown.batchName.map ((item, index) => (
-                          <MenuItem value={item} key={index}>
-                            {item}
-                          </MenuItem>
-                        ))
-                      : ''}
-                  </Select>
-                </FormControl>
-              </div>
-              <div className="col-md-4 mb-3">
-                <FormControl fullWidth>
-                  <InputLabel id="course-select-label">
-                    <span>Select Course *</span>
-                  </InputLabel>
-                  <Select
-                    onChange={handleChange}
-                    name="course"
-                    value={
-                      dropdown
-                        ? dropdown.courseName
-                            ? dropdown.courseName
-                                .filter (
-                                  element => element.id === feedback.courseId
-                                )
-                                .map (element => element.subCourseName)
-                            : ''
-                        : ''
-                    }
-                    color="primary"
-                    labelId="course-select-label"
-                    id="course-select"
-                    label="Select Course"
-                    variant="outlined"
-                    size="small"
-                  >
-                    {dropdown && dropdown.courseName
-                      ? dropdown.courseName.map ((item, index) => (
-                          <MenuItem value={item.subCourseName} key={index}>
-                            {item.subCourseName}
-                          </MenuItem>
-                        ))
-                      : ''}
-                  </Select>
-                </FormControl>
-              </div>
-              <div className="col-md-4 mb-3">
+    <Box className="container" sx={{ padding: isMobile ? 2 : 3 }}>
+      {/* Registration Status Selection */}
+      {feedback.isRegistered === null && (
+        <Box display="flex" justifyContent="center" mb={4}>
+          <Box width={isMobile ? '100%' : 500} p={3} boxShadow={3} borderRadius={2}>
+            <h5 className="text-center mb-4">Are you a registered trainee?</h5>
+            <RadioGroup
+              row
+              name="isRegistered"
+              onChange={(e) => handleIsRegisteredChange(e.target.value)}
+              sx={{ justifyContent: 'center' }}
+            >
+              <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="no" control={<Radio />} label="No" />
+            </RadioGroup>
+          </Box>
+        </Box>
+      )}
 
-                <TextField
-                  InputProps={{
-                    readOnly: true,
-                  }}
-                  name="trainerName"
-                  onLoad={handleChange}
-                  value={
-                    dropdown
-                      ? dropdown.courseName
-                          ? dropdown.courseName
-                              .filter (
-                                element => element.id === feedback.courseId
-                              )
-                              .map (element => element.trainerName)
-                          : ''
-                      : ''
-                  }
-                  color="primary"
-                  focused
-                  label="Trainer Name"
-                  variant="outlined"
+      {/* Email Verification for Registered Users */}
+      {feedback.isRegistered === 'yes' && !emailVerified && (
+        <Box display="flex" justifyContent="center">
+          <Box width={isMobile ? '100%' : 500} p={3} boxShadow={3} borderRadius={2}>
+            <h5 className="text-center mb-4">Verify your registration</h5>
+            <TextField
+              fullWidth
+              label="Registered Email"
+              name="email"
+              value={feedback.email}
+              onChange={handleChange}
+              error={!!emailError}
+              helperText={emailError}
+              disabled={loading}
+              sx={{ mb: 2 }}
+            />
+            <Box textAlign="center">
+              <Button
+                variant="contained"
+                onClick={handleEmailCheck}
+                disabled={loading || !feedback.email}
+                startIcon={loading ? <CircularProgress size={20} /> : null}
+              >
+                {loading ? 'Verifying...' : 'Verify Email'}
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+      )}
+
+      {/* Optional Email for Non-Registered Users */}
+      {feedback.isRegistered === 'no' && (
+        <Box display="flex" justifyContent="center" mb={4}>
+          <Box width={isMobile ? '100%' : '60%'} p={3} boxShadow={3} borderRadius={2}>
+            <h5 className="text-center mb-4">Optional Contact Email</h5>
+            <TextField
+              fullWidth
+              label="Email (optional)"
+              name="email"
+              value={feedback.email}
+              onChange={handleChange}
+              sx={{ mb: 2 }}
+            />
+          </Box>
+        </Box>
+      )}
+
+      {/* Batch and Course Selection for Registered Users */}
+      {feedback.isRegistered === 'yes' && emailVerified && (
+        <Box display="flex" justifyContent="center" my={4}>
+          <Box width={isMobile ? '100%' : '60%'} p={2} boxShadow={3} borderRadius={2}>
+            <h5 className="text-center mb-4">Your Details</h5>
+            <Box display="flex" gap={2} flexWrap="wrap">
+              <TextField
+                fullWidth
+                label="Your Batch"
+                value={feedback.batch || "Not found"}
+                InputProps={{ readOnly: true }}
+                size="small"
+                sx={{ flex: 1, minWidth: 200 }}
+              />
+              <FormControl fullWidth sx={{ flex: 1, minWidth: 200 }}>
+                <InputLabel>Select Course *</InputLabel>
+                <Select
+                  name="course"
+                  value={feedback.course || ''}
+                  onChange={handleChange}
+                  required
                   size="small"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
+                >
+                  {courseName.map((item) => (
+                    <MenuItem key={item.id} value={item.subCourseName}>
+                      {item.subCourseName}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <TextField
+                fullWidth
+                label="Trainer Name"
+                value={feedback.trainerName || ''}
+                InputProps={{ readOnly: true }}
+                size="small"
+                sx={{ flex: 1, minWidth: 200 }}
+              />
+            </Box>
+          </Box>
+        </Box>
+      )}
+
+      {/* Feedback Form */}
+      {(feedback.isRegistered === 'no' || emailVerified) && (
         <FeedbackForm
-          isDisabled={isDisabled}
+          isDisabled={isDisabled()}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           feedback={feedback}
+          loading={loading}
+          isRegistered={feedback.isRegistered}
         />
-      </div>
-    </div>
+      )}
+    </Box>
   );
 };
