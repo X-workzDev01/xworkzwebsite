@@ -3,9 +3,9 @@
 		{
 			"Upcoming": [
 				{
-					"courseName": "Core Java",
-					"startDate": "17-JUNE-2024 ",
-					"time": "8:00 AM",
+					"courseName": "JAVA FULL STACK ",
+					"startDate": "16-JULY-2025 ",
+					"time": "9:00 AM",
 					"type": "WeekDay Offline Upcoming",
 					"facultyName": "Omkar",
 					"location": "RajajiNagar",
@@ -15,6 +15,73 @@
 		},
 		{
 			"Ongoing": [
+				{
+					"courseName": "JAVA FULL STACK ",
+					"startDate": "09-JUN-2025 ",
+					"time": "10:30 PM",
+					"type": "WeekDay Offline Ongoing",
+					"facultyName": "Devendra",
+					"location": "RajajiNagar",
+					"placed": 0
+				},
+				{
+					"courseName": "ADVANCE JAVA",
+					"startDate": "17-FEB-2025 ",
+					"time": "12:00 PM",
+					"type": "WeekDay Offline Ongoing",
+					"facultyName": "Devendra",
+					"location": "RajajiNagar",
+					"placed": 0
+				},
+				{
+					"courseName": "ADVANCE JAVA",
+					"startDate": "18-FEB-2025 ",
+					"time": "1:30 PM",
+					"type": "WeekDay Offline Ongoing",
+					"facultyName": "Omkar",
+					"location": "BTM",
+					"placed": 0
+				},
+				{
+					"courseName": "ADVANCE JAVA",
+					"startDate": "19-FEB-2025",
+					"time": "8:30 AM",
+					"type": "WeekDay Offline Ongoing",
+					"facultyName": "Omkar",
+					"location": "RajajiNagar",
+					"placed": 0
+				},
+				{
+					"courseName": "ENTERPRISE PROJECT",
+					"startDate": "05-FEB-2025",
+					"time": "2:30 PM",
+					"type": "WeekDay Offline Ongoing",
+					"facultyName": "Aishwarya",
+					"location": "BTM",
+					"placed": 0
+				},
+				{
+					"courseName": "JDBC",
+					"startDate": "29-JAN-2025",
+					"time": "10:30 AM",
+					"type": "WeekDay Offline Ongoing",
+					"facultyName": "Deekshith",
+					"location": "BTM",
+					"placed": 0
+				},
+				{
+					"courseName": "ENTERPRISE PROJECT",
+					"startDate": "17-DEC-2024",
+					"time": "06:00 PM",
+					"type": "WeekDay Online Ongoing",
+					"facultyName": "Prasad M",
+					"location": "Online",
+					"placed": 0
+				}
+			]
+		},
+		{
+			"Completed": [
 				{
 					"courseName": "Core Java",
 					"startDate": "10-JUNE-2024 ",
@@ -68,11 +135,7 @@
 					"facultyName": "Devendra",
 					"location": "RajajiNagar",
 					"placed": 0
-				}
-			]
-		},
-		{
-			"Completed": [
+				},
 				{
 					"courseName": "Core Java",
 					"startDate": "27-NOV-2023",
