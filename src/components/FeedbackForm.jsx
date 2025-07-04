@@ -5,7 +5,6 @@ import {
 import React from 'react';
 import { FeedbackRadioButton } from './FeedbackRadioButton';
 import { FormControlRadio } from './FormControlRadio';
-import { FeedbackComment } from './FeedbackComment';
 
 export const FeedbackForm = ({
   handleChange,
@@ -15,17 +14,31 @@ export const FeedbackForm = ({
   loading,
   isRegistered
 }) => {
-  const renderConditionalComment = (fieldName, placeholder) => {
+  const handleRadioChange = (event) => {
+    const { name, value } = event.target;
+    if (value === 'Yes') {
+      handleChange({ target: { name, value: 'Yes' } });
+    } else {
+      handleChange({ target: { name, value: 'No - ' } });
+    }
+  };
+
+  const handleCommentChange = (name, comment) => {
+    handleChange({ target: { name, value: `No - ${comment}` } });
+  };
+
+  const renderConditionalComment = (fieldName) => {
     const value = feedback?.[fieldName];
-    if (value && value !== 'Yes') {
+    if (value && value.startsWith('No - ')) {
       return (
         <div className="p-3">
-          <FeedbackComment
-            feedback={value}
-            placeholder={placeholder}
-            row="3"
-            name={fieldName}
-            handleChange={handleChange}
+          <TextField
+            fullWidth
+            multiline
+            rows={3}
+            value={value.substring(5)}
+            onChange={(e) => handleCommentChange(fieldName, e.target.value)}
+            placeholder="Please enter your comments..."
           />
         </div>
       );
@@ -33,6 +46,26 @@ export const FeedbackForm = ({
     return null;
   };
 
+  const questionsForRegistered = [
+    { name: 'practicalExecution', label: 'Practical execution' },
+    { name: 'startingOnTime', label: 'Classes starting on time' },
+    { name: 'assignmentProvided', label: 'Assignment provided' },
+    { name: 'technicalDoubts', label: 'Are your technical doubts being resolved?' },
+    { name: 'hrResponse', label: 'Is the HR team responding to your queries?' },
+    { name: 'careerGuidance', label: 'Are you provided career guidance along with placements and classes?' },
+    { name: 'mentorClarifyingDoubt', label: 'Is your mentor clarifying your doubts?' },
+    { name: 'assignmentChecked', label: 'Is the assignment being checked daily?' }
+  ];
+
+  const questionsForNonRegistered = [
+    { name: 'practicalExecution', label: 'Practical execution' },
+    { name: 'startingOnTime', label: 'Classes starting on time' },
+    { name: 'assignmentProvided', label: 'Assignment provided' },
+    { name: 'technicalDoubts', label: 'Are your technical doubts being resolved?' },
+    { name: 'assignmentChecked', label: 'Is the assignment being checked daily?' }
+  ];
+
+  const questions = isRegistered === 'yes' ? questionsForRegistered : questionsForNonRegistered;
 
   return (
     <div className="d-flex justify-content-center mb-5">
@@ -56,59 +89,56 @@ export const FeedbackForm = ({
             </div>
           </div>
 
-          {[
-            { name: 'practicalExecution', label: 'Practical execution' },
-            { name: 'startingOnTime', label: 'Classes starting on time' },
-            { name: 'assignmentProvided', label: 'Assignment provided' },
-            { name: 'technicalDoubts', label: 'Are your technical doubts being resolved? If No, please mention your comments.' },
-            { name: 'hrResponse', label: 'Is the HR team responding to your queries? If No, please mention your comments.' },
-            { name: 'careerGuidance', label: 'Are you provided career guidance along with placements and classes? If No, please mention your comments.' },
-            { name: 'mentorClarifyingDoubt', label: 'Is your mentor clarifying your doubts? If No, please mention your comments.' },
-            { name: 'assignmentChecked', label: 'Is the assignment being checked daily? If No, please mention your comments.' }
-          ].map(({ name, label }) => (
+          {questions.map(({ name, label }) => (
             <div key={name} className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
               <FeedbackRadioButton
-                handleChange={handleChange}
-                content={label}
+                handleChange={handleRadioChange}
+                content={`${label} *`}
                 name={name}
-                feedback={feedback}
+                feedback={{ [name]: feedback[name]?.startsWith('No - ') ? 'No' : feedback[name] }}
               />
-              {renderConditionalComment(name, 'Please enter comments here...')}
+              {renderConditionalComment(name)}
             </div>
           ))}
 
-          <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
-            <p className="text-danger">
-              How would you rate the X-workz environment? (5 being the highest, 1 being the lowest) *
-            </p>
-            <div className="mt-2 text-center">
-              <FormControlRadio
-                handleChange={handleChange}
-                name="xworkzEnvironment"
-                value={feedback?.xworkzEnvironment || 0}
-              />
-            </div>
-          </div>
+          {isRegistered === 'yes' && (
+            <>
+              <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
+                <p className="text-danger">
+                  How would you rate the X-workz environment? (5 being the highest, 1 being the lowest) *
+                </p>
+                <div className="mt-2 text-center">
+                  <FormControlRadio
+                    handleChange={handleChange}
+                    name="xworkzEnvironment"
+                    value={feedback?.xworkzEnvironment || ''}
+                  />
+                </div>
+              </div>
 
-          <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
-            <FeedbackRadioButton
-              handleChange={handleChange}
-              content="Are you receiving updates about your mock scores and test scores?"
-              name="mockScore"
-              feedback={feedback}
-            />
-            {renderConditionalComment('mockScore', 'Please enter comments here...')}
-          </div>
+              <div className="shadow-5 rounded-4 bg-white mt-2 ps-3 pt-3">
+                <FeedbackRadioButton
+                  handleChange={handleRadioChange}
+                  content="Are you receiving updates about your mock scores and test scores? *"
+                  name="mockScore"
+                  feedback={{ mockScore: feedback.mockScore?.startsWith('No - ') ? 'No' : feedback.mockScore }}
+                />
+                {renderConditionalComment('mockScore')}
+              </div>
+            </>
+          )}
 
           <div className="shadow-5 rounded-4 bg-white mt-2 ps-4 pt-3 pe-4 pb-2">
             <span className="text-danger">Suggestion/Feedback *</span>
-            <FeedbackComment
-              feedback={feedback.feedbackSuggestion}
-              required="required"
-              placeholder="Please enter your feedback here..."
-              row="5"
+            <TextField
+              fullWidth
+              multiline
+              rows={5}
               name="feedbackSuggestion"
-              handleChange={handleChange}
+              value={feedback.feedbackSuggestion || ''}
+              onChange={handleChange}
+              placeholder="Please enter your feedback here..."
+              required
             />
           </div>
 

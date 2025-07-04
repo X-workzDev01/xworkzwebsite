@@ -35,7 +35,7 @@ const HomeModel = () => {
           </div>
           <div className="d-flex justify-content-center ">
             <p className="text-black fw-bolder fs-2">
-              <span className="fw-bolder text-danger">FREE</span> 2 months class
+              <span className="fw-bolder text-danger">FREE</span> 3 months class
               for 2025 Graduates Starting from June month{" "}
             </p>
           </div>

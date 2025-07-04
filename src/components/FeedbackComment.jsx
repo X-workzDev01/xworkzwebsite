@@ -1,5 +1,5 @@
-import React from 'react';
 import { TextField } from '@mui/material';
+import React from 'react';
 
 export const FeedbackComment = ({
   feedback,
@@ -21,6 +21,7 @@ export const FeedbackComment = ({
       placeholder={placeholder}
       required={required}
       minRows={row}
+      sx={{ mt: 1 }}
     />
   );
 };

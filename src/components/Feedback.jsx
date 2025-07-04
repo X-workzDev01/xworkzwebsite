@@ -101,42 +101,30 @@ export const Feedback = () => {
   };
 
   const isDisabled = () => {
-    // For non-registered users, only check feedback form fields
-    if (feedback.isRegistered === 'no') {
-      const requiredFields = [
-        'trainer',
-        'practicalExecution',
-        'startingOnTime',
-        'assignmentProvided',
-        'technicalDoubts',
-        'hrResponse',
-        'careerGuidance',
-        'mentorClarifyingDoubt',
-        'assignmentChecked',
-        'xworkzEnvironment',
-        'mockScore',
-        'feedbackSuggestion'
-      ];
-      return requiredFields.some(field => !feedback[field]);
-    }
-    
-    // For registered users, check all fields including course
-    const requiredFields = [
-      'course',
+    const commonRequiredFields = [
       'trainer',
       'practicalExecution',
       'startingOnTime',
       'assignmentProvided',
       'technicalDoubts',
+      'assignmentChecked',
+      'feedbackSuggestion'
+    ];
+
+    if (feedback.isRegistered === 'no') {
+      return commonRequiredFields.some(field => !feedback[field]);
+    }
+    
+    const registeredOnlyFields = [
+      'course',
       'hrResponse',
       'careerGuidance',
       'mentorClarifyingDoubt',
-      'assignmentChecked',
       'xworkzEnvironment',
-      'mockScore',
-      'feedbackSuggestion'
+      'mockScore'
     ];
-    return requiredFields.some(field => !feedback[field]);
+    
+    return [...commonRequiredFields, ...registeredOnlyFields].some(field => !feedback[field]);
   };
 
   const handleSubmit = async (event) => {
@@ -147,10 +135,19 @@ export const Feedback = () => {
       const selectedCourse = courseName.find(c => c.subCourseName === feedback.course);
       const feedbackData = {
         ...feedback,
-        batchId: selectedCourse?.batchId || "NA",
-        courseId: selectedCourse?.id || "NA",
+        batchId: feedback.isRegistered === 'yes' ? selectedCourse?.batchId : "NA",
+        courseId: feedback.isRegistered === 'yes' ? selectedCourse?.id : "NA",
         email: feedback.isRegistered === 'yes' ? feedback.email : (feedback.email || 'anonymous'),
-        isRegistered: feedback.isRegistered === 'yes'
+        isRegistered: feedback.isRegistered === 'yes',
+        trainerName: feedback.isRegistered === 'yes' ? feedback.trainerName : "anonymous",
+        // Set NA values for non-registered users
+        ...(feedback.isRegistered === 'no' && {
+          hrResponse: "NA",
+          careerGuidance: "NA",
+          mentorClarifyingDoubt: "NA",
+          xworkzEnvironment: "NA",
+          mockScore: "NA"
+        })
       };
 
       await axios.post(
@@ -178,7 +175,6 @@ export const Feedback = () => {
 
   return (
     <Box className="container" sx={{ padding: isMobile ? 2 : 3 }}>
-      {/* Registration Status Selection */}
       {feedback.isRegistered === null && (
         <Box display="flex" justifyContent="center" mb={4}>
           <Box width={isMobile ? '100%' : 500} p={3} boxShadow={3} borderRadius={2}>
@@ -196,7 +192,6 @@ export const Feedback = () => {
         </Box>
       )}
 
-      {/* Email Verification for Registered Users */}
       {feedback.isRegistered === 'yes' && !emailVerified && (
         <Box display="flex" justifyContent="center">
           <Box width={isMobile ? '100%' : 500} p={3} boxShadow={3} borderRadius={2}>
@@ -226,7 +221,6 @@ export const Feedback = () => {
         </Box>
       )}
 
-      {/* Optional Email for Non-Registered Users */}
       {feedback.isRegistered === 'no' && (
         <Box display="flex" justifyContent="center" mb={4}>
           <Box width={isMobile ? '100%' : '60%'} p={3} boxShadow={3} borderRadius={2}>
@@ -243,7 +237,6 @@ export const Feedback = () => {
         </Box>
       )}
 
-      {/* Batch and Course Selection for Registered Users */}
       {feedback.isRegistered === 'yes' && emailVerified && (
         <Box display="flex" justifyContent="center" my={4}>
           <Box width={isMobile ? '100%' : '60%'} p={2} boxShadow={3} borderRadius={2}>
@@ -286,7 +279,6 @@ export const Feedback = () => {
         </Box>
       )}
 
-      {/* Feedback Form */}
       {(feedback.isRegistered === 'no' || emailVerified) && (
         <FeedbackForm
           isDisabled={isDisabled()}

@@ -14,10 +14,15 @@ export const FeedbackRadioButton = ({
 }) => {
   return (
     <div>
-      <span className="text-danger">{content} *</span>
+      <span className="text-danger">{content}</span>
       <div>
         <FormControl required component="fieldset">
-          <RadioGroup name={name} value={feedback?.[name] || ''} onChange={handleChange}>
+          <RadioGroup 
+            name={name} 
+            value={feedback?.[name] || ''} 
+            onChange={handleChange}
+            row
+          >
             <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
             <FormControlLabel value="No" control={<Radio />} label="No" />
           </RadioGroup>

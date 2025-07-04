@@ -120,8 +120,7 @@ function NavBar() {
             </Link>
           </li> 
         </ul>
-
-        {/* <div className="header-social-icon">
+        <div className="header-social-icon">
           <a href="https://www.facebook.com/xworkzdevelopmentcenter/">
             <i className="fab fa-facebook-f facebook-bg facebook"></i>
           </a>
@@ -134,7 +133,7 @@ function NavBar() {
           <a href="https://www.linkedin.com/in/x-workz-odc/">
             <i className="fab fa-linkedin linkedin-bg linkedin"></i>
           </a>
-        </div> */}
+        </div>
       </nav>
     </>
   );

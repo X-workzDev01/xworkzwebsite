@@ -23,7 +23,7 @@ export const Register = () => {
   const [registerData, setRegisterData] = useState({});
   const [autoSetWhatsAppNumber, setAutoSetWhatsAppNumber] = useState("");
   const [yearOfPassedOut] = useState([
-    2019, 2020, 2021, 2022, 2023, 2024, 2025,
+    2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027,
   ]);
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [wattsappNumberError, setWattsappNumberError] = useState("");
@@ -287,6 +287,8 @@ export const Register = () => {
       offeredAs = "CSR Offered";
       // offeredAs = "INTERNSHIP";
       //offeredAs = "Non-CSR Offered";
+    } else if (registerData.yop === 2026) {
+      offeredAs = "INTERNSHIP";
     } else {
       offeredAs = "Non-CSR Offered";
     }
@@ -675,6 +677,8 @@ export const Register = () => {
                       registerData.yop
                         ? registerData.yop === 2025
                           ? "CSR"
+                          : registerData.yop === 2026
+                          ? "INTERNSHIP"
                           : "Non CSR"
                         : ""
                     }
