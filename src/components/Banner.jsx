@@ -21,7 +21,7 @@ const Banner = () => {
         >
           {/* Free Java Class for 1 Month only for any Graduates from any Stream !
           Registration for both Offline and Online Classes HURRY UP! */}
-          New CSR 2025 Batch Starting from June month Free for 3 Month only for 2025 Graduates from any Stream !
+          New CSR 2025 Batch Starting from July month Free for 3 Month only for 2025 Graduates from any Stream !
           Registration for Offline Classes HURRY UP!
         </span>
       </Marquee>

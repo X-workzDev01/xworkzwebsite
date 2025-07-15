@@ -47,7 +47,7 @@ const App = () => {
         <Route path="/reviews" element={<Testimonials />} />
         <Route path="/InterviewQuestions" element={<InterviewQuestions />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/feedback" element={<Feedback />} />
+        {/* <Route path="/feedback" element={<Feedback />} /> */}
         <Route path="/verifycertificate" element={<VerifyCertificate />} />
       </Routes>
       {/* <div className="d-flex justify-content-end align-content-center position-relative">

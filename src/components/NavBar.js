@@ -110,7 +110,7 @@ function NavBar() {
               Interview Questions
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link
               to="/feedback"
               className="nav-links"
@@ -118,7 +118,7 @@ function NavBar() {
             >
               Feedback
             </Link>
-          </li> 
+          </li> */}
         </ul>
         <div className="header-social-icon">
           <a href="https://www.facebook.com/xworkzdevelopmentcenter/">

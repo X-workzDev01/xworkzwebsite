@@ -2,6 +2,7 @@ import React from "react";
 import "./Courses.css";
 
 const Courses = (props) => {
+
 	const batches = props?.value?.Batches;
 
 	// Handle loading or missing data
@@ -84,6 +85,7 @@ const Courses = (props) => {
 			</div>
 		</div>
 	);
+
 };
 
 export default Courses;
