@@ -1,107 +1,176 @@
-
-
-
 .skill-inner {
-    padding-top: 20px;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  overflow: hidden;
+  position: relative;
 }
 
-.skill-header {
-    text-align: center;
-    color: #fff;
-    padding: 1rem;
-    position: relative;
+.heading {
+  margin-bottom: 50px;
 }
 
-.skill-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-    height: 4px;
-    width: 100px;
-    background-color: #ff014f;
-
+.heading h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.skill-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-flow: wrap;
-    align-items: center;
-    text-align: center;
-    grid-gap: 1rem;
-    padding: 1rem ;
-    font-size: 1.2rem;
-    
+.heading h2 span {
+  color: #ff014f;
 }
-.heading  h1{
-    font-size: 30px;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    color: #fff;
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
 }
-.heading span{
-    color: #F24259;
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
 }
 
 .skill-box {
-    padding: 0.5rem;
-    color: #ddd;
-    cursor: pointer;
+  flex: 0 0 auto;
+  padding: 1rem;
+  margin: 0 15px;
+  color: #ddd;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  text-align: center;
+}
+
+.skill-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .skill-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
 }
 
 .skill-img {
-    width: 90px;
-    height: 90px;
-    position: relative;
-    border-radius: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  width: 90px;
+  height: 90px;
+  position: relative;
+  border-radius: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  margin-bottom: 15px;
 }
 
-
-
 .skill-title h3 {
-    color: #fff;
-    margin: 0.5rem;
+  color: #1e2125;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .skill-icon {
-    width: 62px;
-    z-index: 2;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
-@media screen and (max-width:990px) {
-
-    .skill-container{
-        display: grid;
-        grid-template-columns: repeat(5,1fr);
-        padding: 2rem 50px;
-    }
-    
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-@media screen and (max-width:650px) {
+/* Gradient fade effects on the edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  z-index: 2;
+  pointer-events: none;
+}
 
-    .skill-container{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        padding: 2rem 50px;
-        column-gap: 0;
-    }
-    
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(90deg, #e9ecef 0%, transparent 100%);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(270deg, #e9ecef 0%, transparent 100%);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 990px) {
+  .skill-inner {
+    padding: 60px 0;
+  }
+  
+  .heading h2 {
+    font-size: 2.2rem;
+  }
+  
+  .skill-box {
+    min-width: 130px;
+    margin: 0 10px;
+  }
+  
+  .skill-img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .skill-icon {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .heading h2 {
+    font-size: 1.8rem;
+  }
+  
+  .skill-box {
+    min-width: 110px;
+    margin: 0 8px;
+    padding: 0.8rem;
+  }
+  
+  .skill-img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .skill-title h3 {
+    font-size: 0.8rem;
+  }
+  
+  .marquee-content {
+    animation-duration: 30s;
+  }
 }

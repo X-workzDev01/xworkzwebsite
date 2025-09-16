@@ -1,97 +1,125 @@
-import React , { useState , useEffect }  from 'react'
-import { Accordion, Button} from 'semantic-ui-react'
+import React, { useState, useEffect } from 'react'
+import { Accordion, Button } from 'semantic-ui-react'
 import "./InterviewQuestions.css"
-import axios from 'axios'
-import SubjectAccordion from './SubjectAccordion'
-import coreJava from '../data/Core-Java.json';
-import mysql from '../data/mysql.json';
-import Spring from '../data/Spring.json';
-import adavancedJava from '../data/Advanced-Java';
-import InterviewQuestionTree from '../data/InterviewQuestionsTree.json'
 
 const InterviewQuestions = () => {
-    const [QuestionTree , setQuestionTree] = useState(null);
+    const [QuestionTree, setQuestionTree] = useState(null);
     const [Data, setData] = useState(null);
-    const [active , setActive] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [selectedModule, setSelectedModule] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(-1);
+
+    // GitHub raw content base URL
+    const GITHUB_BASE_URL = "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/main/interview-questions/";
 
     useEffect(() => {
-      axios.get("https://ombn.in/xworkz_api/getInterviewQuestionsTree")
-      .then(res => {
-        setQuestionTree(res.data);
-        HandleClick(res.data.Module[0].url);
-      })
-      .catch(err => {
-        console.log(err)
+        setLoading(true);
+        
+        // Fetch the question tree from GitHub
+        fetch(`${GITHUB_BASE_URL}InterviewQuestionsTree.json`)
+            .then(response => response.json())
+            .then(data => {
+                setQuestionTree(data);
+                if (data.Module && data.Module.length > 0) {
+                    handleModuleClick(data.Module[0], 0);
+                }
+                setLoading(false);
+            })
+            .catch(error => {
+                console.log("Failed to fetch from GitHub", error);
+                setLoading(false);
+            });
+    }, []);
 
-        axios.get("https://raw.githubusercontent.com/xworkzodc/JSON/master/Interview-Questions-Updated/SecondaryInterviewQuestionsTree")
-      .then(res => {
-        setQuestionTree(res.data);
-        console.log("getting data from secondary source")
-        HandleClick(res.data.Module[0].url);
-
-      })
-      .catch(err => {
-        setQuestionTree(InterviewQuestionTree);
-        console.log("getting data from Third source")
-        HandleClick(InterviewQuestionTree.Module[0].url);
-        console.log(err)
-      });
-      });
-    },[]); 
-
-
-    const HandleClick = (props) => {
-
-        axios.get(props)
-        .then(res =>{
-          setData(res.data);
-        })
-        .catch(err =>{
-          setData(coreJava)
-        })
-        setActive(false)
-       
+    const handleModuleClick = (module, index) => {
+        setLoading(true);
+        setSelectedModule(module.name);
+        
+        // Construct the full URL for the module data
+        const url = `${GITHUB_BASE_URL}${module.url}`;
+        
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                setData(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.log(`Failed to load ${module.name} questions`, error);
+                setLoading(false);
+                setData(null);
+            });
     }
-    
-  return (
-    <div className='question-page'>
-        
-        <div className="subject">
-         { QuestionTree && <Button.Group>
-          
-          {QuestionTree.Module.map((value, index)=>{
-            
-            return <Button key={index} onClick={(e) => HandleClick(value.url, e)}>{value.name}</Button>
-          })}
-    
-    </Button.Group>}
-    </div>
-    <div className="topics">
-    { Data && <Accordion panels={Data.Topic.map((topic , index )=>{
-      
-        return{
-          key: index,
-          title : topic.name,
-          content : {
-            content :(
-              <div><ul>{topic.Questions.map(ques=>{
-                return <li>{ques.question}</li>
-              })}
-                </ul>
-              </div>
-            ),
-          }
-            
-           
-        }
-      })}>
-        
 
-      </Accordion>}
-    </div>
-    </div>
-    
-  )
+    const handleAccordionClick = (e, titleProps) => {
+        const { index } = titleProps;
+        const newIndex = activeIndex === index ? -1 : index;
+        setActiveIndex(newIndex);
+    }
+
+    // Create accordion panels from data
+    const getAccordionPanels = () => {
+        if (!Data || !Data.Topic) return [];
+        
+        return Data.Topic.map((topic, index) => ({
+            key: `topic-${index}`,
+            title: topic.name,
+            content: {
+                content: (
+                    <div>
+                        <ul>
+                            {topic.Questions.map((ques, qIndex) => (
+                                <li key={qIndex}>{ques.question}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ),
+            },
+        }));
+    }
+
+    return (
+        <div className='question-page'>
+            <div className="subject">
+                {QuestionTree && (
+                    <Button.Group>
+                        {QuestionTree.Module.map((value, index) => (
+                            <Button 
+                                key={index} 
+                                onClick={() => handleModuleClick(value, index)}
+                            >
+                                {value.name}
+                            </Button>
+                        ))}
+                    </Button.Group>
+                )}
+            </div>
+
+            {loading && (
+                <div className="loading-message">
+                    <p>Loading questions...</p>
+                </div>
+            )}
+
+            <div className="topics">
+                {Data && !loading && (
+                    <Accordion 
+                        styled 
+                        fluid 
+                        panels={getAccordionPanels()}
+                        activeIndex={activeIndex}
+                        onTitleClick={handleAccordionClick}
+                    />
+                )}
+                
+                {!Data && !loading && QuestionTree && (
+                    <div className="no-data-message">
+                        <p>Select a technology to view interview questions</p>
+                    </div>
+                )}
+            </div>
+        </div>
+    )
 }
 
 export default InterviewQuestions

@@ -1,0 +1,113 @@
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+  background: linear-gradient(135deg, #f0f4f8 0%, #cfd8de 100%);
+  padding: 2rem 0;
+  box-shadow: 0 6px 24px -8px rgba(44, 60, 71, 0.08);
+  display: flex;
+  align-items: center;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee-scroll 32s linear infinite;
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.marquee-item:hover {
+  transform: scale(1.04);
+  z-index: 2;
+}
+
+.marquee-item img {
+  height: 290px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.4s;
+}
+
+.marquee-item:hover img {
+  transform: scale(1.09);
+}
+
+/* Animation Keyframes */
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Loading Spinner */
+.marquee-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+  background: #f1f5f9;
+}
+
+.marquee-loading .spinner {
+  border: 5px solid #e2e8f0;
+  border-top: 5px solid #f0094a;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+/* Gradient fade effects on the edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(90deg, #f0f4f8 0%, transparent 100%);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(270deg, #f0f4f8 0%, transparent 100%);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .marquee-item img { 
+    height: 220px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-item img { 
+    height: 150px; 
+  }
+  .marquee-track { 
+    gap: 1rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-item img { 
+    height: 100px; 
+  }
+}

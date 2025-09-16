@@ -1,179 +1,52 @@
-
-.row{
-  padding-left: 100px;
-  margin-top: 20px;
-  justify-content: space-between;
-
-}
+/* Home.css */
 .hero {
-    position: relative;
-    background-color: #FFF;
-  }
-  .hero h3 {
-    font-weight: 100;
-    letter-spacing: 2px;
-  }
-  .hero h1 {
-    font-size: 50px;
-    font-weight: 600;
-    animation-name: moveRight;
-    animation-duration: 1.1s;
-    padding-top: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    height: 200px;
-
-  }
-  .hero img{
-    animation-name: moveLeft;
-    animation-duration: 1.1s;
-    
-  }
-  
-  .hero h1 span {
-    animation-name: moveRight;
-    animation-duration: 1.1s;
-    color: #ff014f;
-  }
-  .hero h2 {
-    animation-name: moveLeft;
-    animation-duration: 1s;
-    font-size: 50px;
-    font-weight: bold;
-  }
-  .hero h2 span {
-    animation-name: moveLeft;
-    animation-duration: 1s;
-    color: #ff014f;
-  }
-  .hero p {
-    color: #878e99;
-    font-size: 18px;
-    line-height: 30px;
-    margin-top: 30px;
-  }
-  .hero_btn {
-    margin-top: 20%;
-  }
-  .hero_btn h4 {
-    font-weight: 500;
-    letter-spacing: 2px;
-    color: #43474b;
-    font-size: 15px;
-    margin: 30px 0 30px 0;
-  }
-  .hero_btn button {
-    margin-right: 30px;
-  }
-  .hero_btn i {
-    font-size: 20px;
-  }
-  
-  .hero_btn button img {
-    width: 20px;
-    height: 20px;
-  }
-  .hero .left {
-   
-    margin-top: 6%;
-    padding-left: 70px;
-
-  }
-  .hero .right {
-    width: 40%;
-    position: relative;
-  }
-  .hero .right_img {
-    background: linear-gradient(145deg, #e2e8ec, #ffffff);
-    box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
-    border-radius: 10px;
-    height: 580px;
-    width: 510px;
-    margin-top: 20%;
-  }
-  .hero .right_img img {
-    position: absolute;
-    top: 0;
-    right: 10%;
-    width: 510px;
-  }
-  .enroll-link{
-    text-decoration: none;
-    color: initial;
-
-  }
-  @media (max-width: 768px) {
-
-    .about-info{
-      display: none;
-    }
-    .hero h1, 
-    .hero h2{
-      font-size: 40px;
-      height: 150px;
-      letter-spacing: 0px;
-      margin-bottom: 30px;
-    }
-
-    .hero .right,
-    .hero .left {
-      width: 100%;
-      padding-left: 0;
-      
-    }
-  
-    .hero .f_flex {
-      flex-direction: column;
-      flex-direction: column-reverse;
-    }
-    .hero .right_img {
-      width: 100%;
-      height: 54vh;
-    }
-    .row{
-      margin: 0px;
-      padding-left: 0;
-    }
-    
-  }
-
-  @keyframes moveRight {
-    0%{
-        opacity: 0;
-        transform: translateX(100px);
-    }    
-    100%{
-        opacity: 1;
-        transform: translate(0);
-    }
-
-
-}
-@keyframes moveLeft {
-    0%{
-        opacity: 0;
-        transform: translateX(-150px);
-    }    
-    100%{
-        opacity: 1;
-        transform: translate(0);
-    }
-
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 80px 0;
 }
 
-.frame {
-  width: 90%;
-  margin: 40px auto;
-  text-align: center;
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  animation-name: moveRight;
+  animation-duration: 1.1s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-button {
-  margin-top: 20px;
+
+.hero h1 span {
+  color: #ff014f;
+  display: block;
+  margin-top: 10px;
+  min-height: 80px;
 }
+
+.hero img {
+  animation-name: moveLeft;
+  animation-duration: 1.1s;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero p {
+  color: #878e99;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 30px;
+}
+
+.hero .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .custom-btn {
-  width: 100px;
-  height: 40px;
+  width: 160px;
+  height: 50px;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 25px;
   padding: 10px 25px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
@@ -182,25 +55,24 @@ button {
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
   outline: none;
+  border: none;
+  font-size: 1.1rem;
 }
 
 .btn-5 {
-  width: 120px;
-  height: 40px;
-  line-height: 42px;
-  padding: 0;
-  border: none;
   background: rgb(246, 127, 8);
 }
+
 .btn-5:hover {
   color: #f0094a;
   background: transparent;
-   box-shadow:none;
+  box-shadow: none;
 }
+
 .btn-5:before,
 .btn-5:after{
   content:'';
@@ -210,33 +82,497 @@ button {
   height:2px;
   width:0;
   background: #f0094a;
-  box-shadow:
-   -1px -1px 5px 0px #fff,
-   7px 7px 20px 0px #0003,
-   4px 4px 5px 0px #0002;
+  box-shadow: -1px -1px 5px 0px #fff,
+  7px 7px 20px 0px #0003,
+  4px 4px 5px 0px #0002;
   transition:400ms ease all;
 }
+
 .btn-5:after{
   right:inherit;
   top:inherit;
   left:0;
   bottom:0;
 }
+
 .btn-5:hover:before,
 .btn-5:hover:after{
   width:100%;
   transition:800ms ease all;
 }
-._1qse9 {
- 
+
+.about {
+  padding: 80px 0;
+}
+
+.heading {
+  margin-bottom: 50px;
+}
+
+.heading h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.heading h2 span {
+  color: #ff014f;
+}
+
+.heading p {
+  font-size: 1.1rem;
+  color: #878e99;
+  line-height: 1.6;
+}
+
+.about-info h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1e2125;
+}
+
+.about-info p {
+  font-size: 1rem;
+  color: #878e99;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+._1qse9, ._2qp0Z {
   z-index: 10;
 }
 
-._2qp0Z {
-  z-index: 10;
+/* We Teach section - Remove backgrounds */
+.tech-section {
+  background: none !important;
+  padding: 80px 0;
 }
 
+.tech-item {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  transition: transform 0.3s ease;
+}
 
+.tech-item:hover {
+  transform: translateY(-5px);
+}
 
+.tech-icon {
+  font-size: 3rem;
+  color: #ff014f;
+  margin-bottom: 15px;
+}
 
+/* Marquee styles for Recruitment Partners and Gallery */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 40px 0;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef, #f8f9fa);
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 25s linear infinite;
+  padding: 20px 0;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  margin: 0 30px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marquee-item:hover {
+  transform: scale(1.1);
+}
+
+/* For Our Journey In Moments gallery */
+.gallery-marquee {
+  height: 280px;
+}
+
+.gallery-item {
+  height: 240px;
+  width: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+.gallery-item:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* For Recruitment Partners */
+.partners-marquee {
+  height: 160px;
+}
+
+.partner-item {
+  height: 120px;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.partner-item:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.partner-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(50%);
+  transition: filter 0.3s ease;
+}
+
+.partner-item:hover img {
+  filter: grayscale(0%);
+}
+
+/* Academic Partners - Remove frames and add marquee */
+.academic-partners {
+  background: none !important;
+  padding: 80px 0;
+}
+
+.academic-marquee {
+  height: 180px;
+}
+
+.academic-item {
+  height: 140px;
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.academic-item:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+.academic-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.academic-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* About new section */
+.about-new {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+.about-intro {
+  font-size: 1.2rem;
+  color: #495057;
+  margin-bottom: 30px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.about-detail p {
+  color: #6c757d;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.marquee-section {
+  margin-top: 50px;
+}
+
+.marquee-section h4 {
+  color: #343a40;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.marquee-section h4::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #ff014f;
+  border-radius: 2px;
+}
+
+/* Animations */
+@keyframes moveRight {
+  0%{
+      opacity: 0;
+      transform: translateX(100px);
+  }    
+  100%{
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes moveLeft {
+  0%{
+      opacity: 0;
+      transform: translateX(-150px);
+  }    
+  100%{
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* Section titles */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e2125;
+  margin-bottom: 15px;
+}
+
+.section-title h2 span {
+  color: #ff014f;
+}
+
+.section-title p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #ff014f, #ff774d);
+  border-radius: 2px;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
   
+  .marquee-item {
+    margin: 0 20px;
+  }
+  
+  .section-title h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+    height: auto;
+    min-height: auto;
+  }
+  
+  .hero h1 span {
+    min-height: 60px;
+    margin-top: 5px;
+  }
+  
+  .heading h2 {
+    font-size: 2rem;
+  }
+  
+  .about, .about-new, .tech-section, .academic-partners {
+    padding: 60px 0;
+  }
+  
+  .about-info {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .marquee-content {
+    animation-duration: 35s;
+  }
+  
+  .gallery-item {
+    width: 280px;
+    height: 200px;
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .heading h2 {
+    font-size: 1.8rem;
+  }
+  
+  .heading p {
+    font-size: 1rem;
+  }
+  
+  .custom-btn {
+    width: 140px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  
+  .marquee-content {
+    animation-duration: 45s;
+  }
+  
+  .gallery-marquee {
+    height: 220px;
+  }
+  
+  .gallery-item {
+    width: 220px;
+    height: 180px;
+  }
+  
+  .partners-marquee {
+    height: 130px;
+  }
+  
+  .partner-item {
+    height: 90px;
+    width: 160px;
+  }
+  
+  .academic-marquee {
+    height: 150px;
+  }
+  
+  .academic-item {
+    height: 110px;
+    width: 180px;
+  }
+  
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+}

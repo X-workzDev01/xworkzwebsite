@@ -1,0 +1,173 @@
+/* Callback Section */
+.callback-section {
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.form-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.form-selector button {
+  padding: 10px 15px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.form-selector button.general-btn {
+  color: #ff014f;
+}
+
+.form-selector button.corporate-btn {
+  color: #ff6b35;
+}
+
+.form-selector button.hire-btn {
+  color: #f7931e;
+}
+
+.form-selector button.active,
+.form-selector button:hover {
+  color: white;
+}
+
+.form-selector button.general-btn.active,
+.form-selector button.general-btn:hover {
+  background: #ff014f;
+}
+
+.form-selector button.corporate-btn.active,
+.form-selector button.corporate-btn:hover {
+  background: #ff6b35;
+}
+
+.form-selector button.hire-btn.active,
+.form-selector button.hire-btn:hover {
+  background: #f7931e;
+}
+
+/* 2x2 Form Layout */
+.callback-form.form-2x2 {
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-cell {
+  width: 100%;
+}
+
+.form-cell.full-width {
+  grid-column: span 2;
+}
+
+.callback-form input[type="text"], 
+.callback-form input[type="email"],
+.callback-form input[type="tel"],
+.callback-form textarea {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  margin: 0;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.callback-form input:focus,
+.callback-form textarea:focus {
+  border-color: #2A265F;
+  outline: none;
+}
+
+.form-message {
+  margin-bottom: 20px;
+}
+
+.callback-form textarea {
+  color: #666;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-submit {
+  text-align: center;
+}
+
+.callback-form input[type="submit"] {
+  padding: 12px 40px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 7px 0;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+input.general-submit {
+  background: #ff014f;
+}
+
+input.general-submit:hover {
+  background: #e00145;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 1, 79, 0.3);
+}
+
+input.corporate-submit {
+  background: #ff6b35;
+}
+
+input.corporate-submit:hover {
+  background: #e65a2a;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+input.hire-submit {
+  background: #f7931e;
+}
+
+input.hire-submit:hover {
+  background: #df8419;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(247, 147, 30, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-cell.full-width {
+    grid-column: span 1;
+  }
+  
+  .form-selector {
+    flex-direction: column;
+  }
+  
+  .form-selector button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

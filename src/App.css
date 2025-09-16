@@ -1,54 +1,237 @@
-/* Please ❤ this if you like it! */
-
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext");
-
-.my-popup-class {
-	border-radius: 30px;
-	padding: 20px;
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
 }
 
-.App-logo {
-	height: 40vmin;
-	pointer-events: none;
+.main-content {
+  flex: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
+/* Callback Button Styles */
+.callback-top-btn {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
 }
 
-.App-header {
-	background-color: #fff;
-	min-height: 100vh;
-
-	justify-content: center;
-
-	color: rgb(48, 46, 46);
+.callback-btn-top {
+  background-color: #ff5e14;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
 }
 
-.App-link {
-	color: #61dafb;
+.callback-btn-top:hover {
+  width: auto;
+  padding: 12px 20px;
 }
 
-@keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+.callback-text {
+  white-space: nowrap;
+  display: none;
 }
 
-.nav-container {
-	background-color: #fbfbfb;
+.callback-btn-top:hover .callback-text {
+  display: inline;
 }
 
-.about-container {
-	width: 70vw;
-	height: 40vh;
+/* Footer Styles */
+.footer-section {
+  background: #000;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: auto;
 }
 
-.about-content {
-	font-size: 20px;
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.footer-logo img {
+  width: 200px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.05);
+}
+
+.omkar-title h3 {
+  color: #ff5e14;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ff5e14;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.contact-info {
+  margin-top: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.contact-item i {
+  color: #ff5e14;
+  margin-right: 12px;
+  font-size: 18px;
+  min-width: 20px;
+}
+
+.contact-item p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.subscribe-form {
+  margin-bottom: 20px;
+}
+
+.subscribe-form form {
+  display: flex;
+}
+
+.rounded-input {
+  flex: 1;
+  padding: 12px 15px;
+  background: #2E2E2E;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+}
+
+.rounded-button {
+  background: #ff5e14;
+  border: 1px solid #ff5e14;
+  border-radius: 0 30px 30px 0;
+  padding: 0 18px;
+  cursor: pointer;
+}
+
+.rounded-button i {
+  color: #fff;
+  font-size: 18px;
+}
+
+.subscription-success {
+  margin-top: 8px;
+  color: #4CAF50;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-social-icon {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.facebook-bg:hover {
+  background-color: #3B5998;
+}
+
+.twitter-bg:hover {
+  background-color: #55ACEE;
+}
+
+.instagram-bg:hover {
+  background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+}
+
+.linkedin-bg:hover {
+  background-color: #0072b1;
+}
+
+.copyright-area {
+  background: #000;
+  padding: 15px 0;
+  border-top: 1px solid #333;
+  text-align: center;
+}
+
+.copyright-area p {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .callback-top-btn {
+    top: 70px;
+    right: 10px;
+  }
+  
+  .callback-btn-top {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .subscribe-form form {
+    flex-direction: column;
+  }
+  
+  .rounded-input {
+    border-radius: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .rounded-button {
+    border-radius: 30px;
+    width: 100%;
+  }
 }

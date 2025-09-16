@@ -1,39 +1,39 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import logo from "../img/Logo.png";
-import Dropdown from "./Dropdown";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 
+// ScrollToTop component for route changes
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function NavBar() {
-  const [registerOpen, setRegisterOpen] = useState(false);
   const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
+  const location = useLocation();
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
+  // Function to handle navigation with scroll to top
+  const handleNavClick = (path) => {
+    // If we're already on the same page, scroll to top
+    if (location.pathname === path) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
+    closeMobileMenu();
   };
 
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
-  const handleRegister = () => {
-    setRegisterOpen(true);
-  };
   return (
     <>
+      <ScrollToTop />
       <nav className="navbar">
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+        <Link to="/" className="navbar-logo" onClick={() => handleNavClick("/")}>
           <img
             src="https://www.x-workz.in/Logo.png"
             width="140"
@@ -50,54 +50,71 @@ function NavBar() {
             <Link
               to="/register"
               className="nav-links"
-              onClick={closeMobileMenu}
+              onClick={() => handleNavClick("/register")}
             >
-              <span className="bg-gradient bg-danger rounded-5 p-md-2">
-                Register
-              </span>
+              <span className="register-btn">Register</span>
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+            <Link 
+              to="/" 
+              className="nav-links" 
+              onClick={() => handleNavClick("/")}
+            >
               Home
             </Link>
           </li>
-          <li
-            className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
-            <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+          <li className="nav-item">
+            <Link 
+              to="/about" 
+              className="nav-links" 
+              onClick={() => handleNavClick("/about")}
+            >
               About
-              {/* <i className='fas fa-caret-down' /> */}
             </Link>
-            {dropdown && <Dropdown />}
           </li>
           <li className="nav-item">
             <Link
               to="/softwares"
               className="nav-links"
-              onClick={closeMobileMenu}
+              onClick={() => handleNavClick("/softwares")}
             >
               Softwares
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/courses" className="nav-links" onClick={closeMobileMenu}>
+            <Link 
+              to="/courses" 
+              className="nav-links" 
+              onClick={() => handleNavClick("/courses")}
+            >
               Courses
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link 
+              to="/batches" 
+              className="nav-links" 
+              onClick={() => handleNavClick("/batches")}
+            >
+              Batches
             </Link>
           </li>
           <li className="nav-item">
             <Link
               to="/directions"
               className="nav-links"
-              onClick={closeMobileMenu}
+              onClick={() => handleNavClick("/directions")}
             >
               Directions
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/reviews" className="nav-links" onClick={closeMobileMenu}>
+            <Link 
+              to="/reviews" 
+              className="nav-links" 
+              onClick={() => handleNavClick("/reviews")}
+            >
               Reviews
             </Link>
           </li>
@@ -105,20 +122,20 @@ function NavBar() {
             <Link
               to="/interviewQuestions"
               className="nav-links"
-              onClick={closeMobileMenu}
+              onClick={() => handleNavClick("/interviewQuestions")}
             >
               Interview Questions
             </Link>
           </li>
-          {/* <li className="nav-item">
+          <li className="nav-item">
             <Link
               to="/feedback"
               className="nav-links"
-              onClick={closeMobileMenu}
+              onClick={() => handleNavClick("/feedback")}
             >
               Feedback
             </Link>
-          </li> */}
+          </li>
         </ul>
         <div className="header-social-icon">
           <a href="https://www.facebook.com/xworkzdevelopmentcenter/">
