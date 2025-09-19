@@ -7,6 +7,21 @@
   text-align: center;
   margin-bottom: 40px;
   padding: 0 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.button-scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.button-scroll-group {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .subject .ui.button {
@@ -19,6 +34,7 @@
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
 }
 
 .subject .ui.button:hover {
@@ -29,7 +45,8 @@
 }
 
 .subject .ui.button:active,
-.subject .ui.button:focus {
+.subject .ui.button:focus,
+.subject .ui.button.active {
   background: linear-gradient(135deg, #ff014f 0%, #d80043 100%);
   color: white;
 }
@@ -132,6 +149,7 @@
   
   .subject {
     margin-bottom: 30px;
+    padding: 0 15px;
   }
   
   .subject .ui.button {
@@ -165,10 +183,18 @@
     padding: 40px 0;
   }
   
+  .subject {
+    padding: 0 10px;
+  }
+  
   .subject .ui.button {
-    display: block;
-    width: 100%;
-    margin: 5px 0;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    margin: 2px;
+  }
+  
+  .button-scroll-container {
+    padding-bottom: 15px; /* More space for scroll indication */
   }
   
   .ui.styled.accordion .title {
@@ -201,21 +227,21 @@
   }
 }
 
-/* Custom scrollbar for accordion content */
-.ui.styled.accordion .content::-webkit-scrollbar {
-  width: 6px;
+/* Custom scrollbar for subject buttons */
+.button-scroll-container::-webkit-scrollbar {
+  height: 6px;
 }
 
-.ui.styled.accordion .content::-webkit-scrollbar-track {
+.button-scroll-container::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 3px;
 }
 
-.ui.styled.accordion .content::-webkit-scrollbar-thumb {
+.button-scroll-container::-webkit-scrollbar-thumb {
   background: #ff014f;
   border-radius: 3px;
 }
 
-.ui.styled.accordion .content::-webkit-scrollbar-thumb:hover {
+.button-scroll-container::-webkit-scrollbar-thumb:hover {
   background: #d80043;
 }

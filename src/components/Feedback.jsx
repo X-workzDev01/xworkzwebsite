@@ -11,7 +11,8 @@ import {
   CircularProgress,
   Box,
   useTheme,
-  useMediaQuery
+  useMediaQuery,
+  Rating
 } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,6 +21,7 @@ import {
   getBatchNameByCourseDetails
 } from '../store/dropdowns/RegistrationDropDownSlice';
 import { FeedbackForm } from './FeedbackForm';
+import { NonRegisteredFeedbackForm } from './NonRegisteredFeedbackForm'; // New component
 import axios from 'axios';
 import { Urlconstant } from './constant/Urlconstant';
 import Swal from 'sweetalert2';
@@ -101,30 +103,40 @@ export const Feedback = () => {
   };
 
   const isDisabled = () => {
-    const commonRequiredFields = [
-      'trainer',
-      'practicalExecution',
-      'startingOnTime',
-      'assignmentProvided',
-      'technicalDoubts',
-      'assignmentChecked',
-      'feedbackSuggestion'
-    ];
-
-    if (feedback.isRegistered === 'no') {
-      return commonRequiredFields.some(field => !feedback[field]);
+    if (feedback.isRegistered === 'yes') {
+      const registeredFields = [
+        'trainer',
+        'practicalExecution',
+        'startingOnTime',
+        'assignmentProvided',
+        'technicalDoubts',
+        'assignmentChecked',
+        'feedbackSuggestion',
+        'hrResponse',
+        'careerGuidance',
+        'mentorClarifyingDoubt',
+        'xworkzEnvironment',
+        'mockScore'
+      ];
+      return registeredFields.some(field => !feedback[field]);
+    } else if (feedback.isRegistered === 'no') {
+      const nonRegisteredFields = [
+        'source',
+        'purpose',
+        'findInfoEase',
+        'websiteSatisfaction',
+        'workshopRating',
+        'workshopUsefulness',
+        'trainerRating',
+        'supportSatisfaction',
+        'queryAddressed',
+        'likes',
+        'improvements',
+        'recommendation'
+      ];
+      return nonRegisteredFields.some(field => !feedback[field]);
     }
-    
-    const registeredOnlyFields = [
-      'course',
-      'hrResponse',
-      'careerGuidance',
-      'mentorClarifyingDoubt',
-      'xworkzEnvironment',
-      'mockScore'
-    ];
-    
-    return [...commonRequiredFields, ...registeredOnlyFields].some(field => !feedback[field]);
+    return true;
   };
 
   const handleSubmit = async (event) => {
@@ -132,23 +144,27 @@ export const Feedback = () => {
     setLoading(true);
     
     try {
-      const selectedCourse = courseName.find(c => c.subCourseName === feedback.course);
-      const feedbackData = {
-        ...feedback,
-        batchId: feedback.isRegistered === 'yes' ? selectedCourse?.batchId : "NA",
-        courseId: feedback.isRegistered === 'yes' ? selectedCourse?.id : "NA",
-        email: feedback.isRegistered === 'yes' ? feedback.email : (feedback.email || 'anonymous'),
-        isRegistered: feedback.isRegistered === 'yes',
-        trainerName: feedback.isRegistered === 'yes' ? feedback.trainerName : "anonymous",
-        // Set NA values for non-registered users
-        ...(feedback.isRegistered === 'no' && {
-          hrResponse: "NA",
-          careerGuidance: "NA",
-          mentorClarifyingDoubt: "NA",
-          xworkzEnvironment: "NA",
-          mockScore: "NA"
-        })
-      };
+      let feedbackData;
+      
+      if (feedback.isRegistered === 'yes') {
+        const selectedCourse = courseName.find(c => c.subCourseName === feedback.course);
+        feedbackData = {
+          ...feedback,
+          batchId: selectedCourse?.batchId || "NA",
+          courseId: selectedCourse?.id || "NA",
+          email: feedback.email,
+          isRegistered: true,
+          trainerName: feedback.trainerName,
+          type: 'registered'
+        };
+      } else {
+        feedbackData = {
+          ...feedback,
+          email: feedback.email || 'anonymous',
+          isRegistered: false,
+          type: 'non-registered'
+        };
+      }
 
       await axios.post(
         `${Urlconstant.FEEDBACK_URL}api/feedback/saveFeedback`,
@@ -279,14 +295,23 @@ export const Feedback = () => {
         </Box>
       )}
 
-      {(feedback.isRegistered === 'no' || emailVerified) && (
+      {feedback.isRegistered === 'yes' && emailVerified && (
         <FeedbackForm
           isDisabled={isDisabled()}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           feedback={feedback}
           loading={loading}
-          isRegistered={feedback.isRegistered}
+        />
+      )}
+
+      {feedback.isRegistered === 'no' && (
+        <NonRegisteredFeedbackForm
+          isDisabled={isDisabled()}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          feedback={feedback}
+          loading={loading}
         />
       )}
     </Box>

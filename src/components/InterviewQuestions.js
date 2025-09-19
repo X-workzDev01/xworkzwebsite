@@ -82,16 +82,19 @@ const InterviewQuestions = () => {
         <div className='question-page'>
             <div className="subject">
                 {QuestionTree && (
-                    <Button.Group>
-                        {QuestionTree.Module.map((value, index) => (
-                            <Button 
-                                key={index} 
-                                onClick={() => handleModuleClick(value, index)}
-                            >
-                                {value.name}
-                            </Button>
-                        ))}
-                    </Button.Group>
+                    <div className="button-scroll-container">
+                        <Button.Group className="button-scroll-group">
+                            {QuestionTree.Module.map((value, index) => (
+                                <Button 
+                                    key={index} 
+                                    onClick={() => handleModuleClick(value, index)}
+                                    className={selectedModule === value.name ? 'active' : ''}
+                                >
+                                    {value.name}
+                                </Button>
+                            ))}
+                        </Button.Group>
+                    </div>
                 )}
             </div>
 

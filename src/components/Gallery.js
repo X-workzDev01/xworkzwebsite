@@ -10,25 +10,27 @@ export const Gallery = () => {
     const fetchGalleryData = async () => {
       try {
         setLoading(true);
+        
+        // Fetch from the JSON file on GitHub
         const response = await axios.get(
-          "https://raw.githubusercontent.com/xworkzodc/Xworkz-images/master/Gallery.json"
+          "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/main/Gallery.json"
         );
-        const images = (response.data.images || response.data).slice(0, 10);
+        
+        // Create image URLs from the JSON data
+        const images = response.data.images.map(item => ({
+          id: item.id,
+          imgSrc: `https://raw.githubusercontent.com/x-workzdev/Xworkz-images/main/Gallery/${item.filename}`
+        }));
+        
         setGalleryData(images);
       } catch (err) {
         console.error("Error fetching gallery data:", err);
-        setGalleryData([
-          { id: 1, imgSrc: "https://raw.githubusercontent.com/xworkzodc/Gallery/master/images/image2.jpg" },
-          { id: 2, imgSrc: "https://raw.githubusercontent.com/xworkzodc/Gallery/master/images/image8.jpg" },
-          { id: 3, imgSrc: "https://raw.githubusercontent.com/xworkzodc/Gallery/master/images/image5.jpg" },
-          { id: 4, imgSrc: "https://raw.githubusercontent.com/xworkzodc/Gallery/master/images/image7.jpg" },
-          { id: 5, imgSrc: "https://raw.githubusercontent.com/xworkzodc/Gallery/master/images/image6.jpg" },
-          { id: 6, imgSrc: "https://raw.githubusercontent.com/xworkzodc/Gallery/master/images/image5.jpg" },
-        ]);
+        setGalleryData([]);
       } finally {
         setLoading(false);
       }
     };
+    
     fetchGalleryData();
   }, []);
 
@@ -40,6 +42,14 @@ export const Gallery = () => {
     );
   }
 
+  if (galleryData.length === 0) {
+    return (
+      <div className="marquee-loading">
+        <p>No images available</p>
+      </div>
+    );
+  }
+
   // Duplicate for smooth looping
   const duplicatedImages = [...galleryData, ...galleryData];
 
@@ -47,11 +57,17 @@ export const Gallery = () => {
     <div className="marquee-container">
       <div className="marquee-track">
         {duplicatedImages.map((item, index) => (
-          <div key={`${item.id}-${index}`} className="marquee-item">
+          <div 
+            key={`${item.id}-${index}`} 
+            className={`marquee-item ${index % 2 === 0 ? 'item-up' : 'item-down'}`}
+          >
             <img 
               src={item.imgSrc} 
               alt={`Xworkz Memory ${item.id}`}
               loading="lazy" 
+              onError={(e) => {
+                e.target.src = "https://via.placeholder.com/300x200/ffffff/007bff?text=Image+Loading";
+              }}
             />
           </div>
         ))}
@@ -59,3 +75,5 @@ export const Gallery = () => {
     </div>
   );
 };
+
+export default Gallery;

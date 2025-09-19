@@ -13,6 +13,8 @@ import Course from "./Course";
 import AcademicPartners from "./AcademicPartners";
 import Companies from "./Companies";
 import { Gallery } from "./Gallery";
+import RecognizedBy from "./RecognizedBy";
+
 
 const Home = (props) => {
   return (
@@ -94,6 +96,7 @@ const Home = (props) => {
               <h4 className="text-center mb-4">Our Journey In Moments</h4>
               <div className="gallery-container">
                 <Gallery />
+                <RecognizedBy />
               </div>
             </div>
           </div>

@@ -69,6 +69,7 @@
 
 .form-cell {
   width: 100%;
+  position: relative;
 }
 
 .form-cell.full-width {
@@ -96,8 +97,21 @@
   outline: none;
 }
 
+.callback-form input.error,
+.callback-form textarea.error {
+  border-color: #ff3860;
+}
+
+.error-text {
+  color: #ff3860;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
 .form-message {
   margin-bottom: 20px;
+  position: relative;
 }
 
 .callback-form textarea {
@@ -152,6 +166,78 @@ input.hire-submit:hover {
   box-shadow: 0 5px 15px rgba(247, 147, 30, 0.3);
 }
 
+/* Success Animation Styles */
+.success-animation {
+  padding: 30px 20px;
+}
+
+.success-icon {
+  margin-bottom: 20px;
+}
+
+.success-icon i {
+  font-size: 60px;
+  color: #28a745;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-title {
+  color: #28a745;
+  margin-bottom: 15px;
+  font-weight: 600;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.success-message {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 25px;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-close-btn {
+  background: linear-gradient(45deg, #ff6b35, #f7931e);
+  border: none;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  animation: fadeIn 1.2s ease-out;
+  color: white;
+}
+
+.success-close-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+  background: linear-gradient(45deg, #f7931e, #ff6b35);
+  color: white;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .form-grid {
@@ -169,5 +255,17 @@ input.hire-submit:hover {
   .form-selector button {
     width: 100%;
     margin: 5px 0;
+  }
+  
+  .success-icon i {
+    font-size: 50px;
+  }
+  
+  .success-title {
+    font-size: 22px;
+  }
+  
+  .success-message {
+    font-size: 15px;
   }
 }

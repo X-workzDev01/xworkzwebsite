@@ -13,8 +13,8 @@
 /* Callback Button Styles */
 .callback-top-btn {
   position: fixed;
-  top: 80px;
-  right: 20px;
+  bottom: 27px;
+  right: 100px;
   z-index: 1000;
 }
 

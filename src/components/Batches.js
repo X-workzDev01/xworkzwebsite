@@ -1,102 +1,120 @@
-import React from "react";
-import "./Batches.css";
+import React, { useState, useEffect } from 'react'
+import { Button } from 'semantic-ui-react'
+import "./Batches.css"
 
-const Batches = (props) => {
-    const batches = props?.value?.Batches;
+const Batches = () => {
+    const [batchesData, setBatchesData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [selectedCategory, setSelectedCategory] = useState("Upcoming");
 
-    // Handle loading or missing data
-    if (!batches || batches.length < 3) {
-        return (
-            <div className="batches-page">
-                <div className="batches-loading">
-                    <h2>Loading batches...</h2>
-                </div>
-            </div>
-        );
+    // GitHub raw content URL for batches data
+    const GITHUB_BATCHES_URL = "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/main/batches.json";
+
+    useEffect(() => {
+        setLoading(true);
+        
+        // Fetch the batches data from GitHub
+        fetch(GITHUB_BATCHES_URL)
+            .then(response => response.json())
+            .then(data => {
+                setBatchesData(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.log("Failed to fetch batches from GitHub", error);
+                setLoading(false);
+            });
+    }, []);
+
+    const handleCategoryClick = (category) => {
+        setSelectedCategory(category);
+    }
+
+    // Get batches for the selected category
+    const getBatchesForCategory = () => {
+        if (!batchesData || !batchesData.Batches) return [];
+        
+        const categoryData = batchesData.Batches.find(batch => batch[selectedCategory]);
+        return categoryData ? categoryData[selectedCategory] : [];
     }
 
     return (
-        <div className="batches-page">
-            {/* Upcoming Courses */}
-            <div className="batches-heading">
+        <div className='batches-page'>
+            <div className="batches-header">
                 <h1>
-                    Upcoming
+                    Course
                     <span> Batches</span>
                 </h1>
-                <div className="courses-container">
-                    {batches[0]?.Upcoming?.map((d, i) => (
-                        <div className="course" key={i}>
-                            <div className="course-preview">
-                                <h6>Course</h6>
-                                <h2>{d.courseName}</h2>
-                            </div>
-                            <div className="course-info">
-                                <h6>Trainer</h6>
-                                <h2>{d.facultyName}</h2>
-                                <h5>{d.type}</h5>
-                                <h6>Starts from</h6>
-                                <h6>{d.startDate}</h6>
-                                <h6>Location: {d.location}</h6>
-                                <h6>Timing: {d.time}</h6>
-                            </div>
-                        </div>
-                    ))}
+                <p>Explore our upcoming, ongoing, and completed course batches</p>
+            </div>
+
+            <div className="categories">
+                <div className="button-scroll-container">
+                    <Button.Group className="button-scroll-group">
+                        <Button 
+                            onClick={() => handleCategoryClick("Upcoming")}
+                            className={selectedCategory === "Upcoming" ? 'active' : ''}
+                        >
+                            Upcoming
+                        </Button>
+                        <Button 
+                            onClick={() => handleCategoryClick("Ongoing")}
+                            className={selectedCategory === "Ongoing" ? 'active' : ''}
+                        >
+                            Ongoing
+                        </Button>
+                        <Button 
+                            onClick={() => handleCategoryClick("Completed")}
+                            className={selectedCategory === "Completed" ? 'active' : ''}
+                        >
+                            Completed
+                        </Button>
+                    </Button.Group>
                 </div>
             </div>
 
-            {/* Ongoing Courses */}
-            <div className="batches-heading">
-                <h1>
-                    Ongoing
-                    <span> Batches</span>
-                </h1>
-                <div className="courses-container">
-                    {batches[1]?.Ongoing?.map((d, i) => (
-                        <div className="course" key={i}>
-                            <div className="course-preview">
-                                <h6>Course</h6>
-                                <h2>{d.courseName}</h2>
-                            </div>
-                            <div className="course-info">
-                                <h6>Trainer</h6>
-                                <h2>{d.facultyName}</h2>
-                                <h5>{d.type}</h5>
-                                <h6>Started on</h6>
-                                <h6>{d.startDate}</h6>
-                                <h6>Location: {d.location}</h6>
-                                <h6>Timings: {d.time}</h6>
-                            </div>
-                        </div>
-                    ))}
+            {loading && (
+                <div className="loading-message">
+                    <p>Loading batches...</p>
                 </div>
-            </div>
+            )}
 
-            {/* Completed Courses */}
-            <div className="batches-heading">
-                <h1>
-                    Completed
-                    <span> Batches</span>
-                </h1>
-                <div className="courses-container">
-                    {batches[2]?.Completed?.map((d, i) => (
-                        <div className="course" key={i}>
-                            <div className="course-preview">
-                                <h6>Course</h6>
-                                <h2>{d.courseName}</h2>
+            <div className="batches-content">
+                {batchesData && !loading && (
+                    <div className="batches-grid">
+                        {getBatchesForCategory().map((batch, index) => (
+                            <div className="course" key={index}>
+                                <div className="course-preview">
+                                    <h6>Course</h6>
+                                    <h2>{batch.courseName}</h2>
+                                </div>
+                                <div className="course-info">
+                                    <h6>Trainer</h6>
+                                    <h2>{batch.facultyName}</h2>
+                                    <h5>{batch.type}</h5>
+                                    <h6>{selectedCategory === 'Upcoming' ? 'Starts from' : 
+                                         selectedCategory === 'Ongoing' ? 'Started on' : 'Completed on'}</h6>
+                                    <h6>{batch.startDate}</h6>
+                                    {(selectedCategory === 'Upcoming' || selectedCategory === 'Ongoing') && (
+                                        <>
+                                            <h6>Location: {batch.location}</h6>
+                                            <h6>Timing: {batch.time}</h6>
+                                        </>
+                                    )}
+                                </div>
                             </div>
-                            <div className="course-info">
-                                <h6>Trainer</h6>
-                                <h2>{d.facultyName}</h2>
-                                <h5>{d.type}</h5>
-                                <h6>Completed on</h6>
-                                <h6>{d.startDate}</h6>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
+                
+                {!batchesData && !loading && (
+                    <div className="no-data-message">
+                        <p>Unable to load batches data at this time</p>
+                    </div>
+                )}
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Batches;
+export default Batches

@@ -1,91 +1,168 @@
-import React from "react";
-import "./Courses.css";
+import React, { useState, useEffect } from "react";
+import "./Course.css";
+import axios from "axios";
+import RegisterPopup from "./RegisterPopup"; 
 
-const Courses = (props) => {
-
-	const batches = props?.value?.Batches;
-
-	// Handle loading or missing data
-	if (!batches || batches.length < 3) {
-		return <div className="course-page"><h2>Loading courses...</h2></div>;
-	}
-
-	return (
-		<div>
-			<div className="course-page">
-				{/* Upcoming Courses */}
-				<div className="course-heading">
-					<h1>Upcoming Courses</h1>
-					<div className="courses-container">
-						{batches[0]?.Upcoming?.map((d, i) => (
-							<div className="course" key={i}>
-								<div className="course-preview">
-									<h6>Course</h6>
-									<h2>{d.courseName}</h2>
-								</div>
-								<div className="course-info">
-									<h6>Trainer</h6>
-									<h2>{d.facultyName}</h2>
-									<h5>{d.type}</h5>
-									<h6>Starts from</h6>
-									<h6>{d.startDate}</h6>
-									<h6>Location: {d.location}</h6>
-									<h6>Timing: {d.time}</h6>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-
-				{/* Ongoing Courses */}
-				<div className="course-heading">
-					<h1>Ongoing Courses</h1>
-					<div className="courses-container">
-						{batches[1]?.Ongoing?.map((d, i) => (
-							<div className="course" key={i}>
-								<div className="course-preview">
-									<h6>Course</h6>
-									<h2>{d.courseName}</h2>
-								</div>
-								<div className="course-info">
-									<h6>Trainer</h6>
-									<h2>{d.facultyName}</h2>
-									<h5>{d.type}</h5>
-									<h6>Started on</h6>
-									<h6>{d.startDate}</h6>
-									<h6>Location: {d.location}</h6>
-									<h6>Timings: {d.time}</h6>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-
-				{/* Completed Courses */}
-				<div className="course-heading">
-					<h1>Completed Courses</h1>
-					<div className="courses-container">
-						{batches[2]?.Completed?.map((d, i) => (
-							<div className="course" key={i}>
-								<div className="course-preview">
-									<h6>Course</h6>
-									<h2>{d.courseName}</h2>
-								</div>
-								<div className="course-info">
-									<h6>Trainer</h6>
-									<h2>{d.facultyName}</h2>
-									<h5>{d.type}</h5>
-									<h6>Completed on</h6>
-									<h6>{d.startDate}</h6>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</div>
-		</div>
-	);
-
+const importAll = (r) => {
+  let images = {};
+  r.keys().forEach((item) => {
+    images[item.replace('./', '')] = r(item);
+  });
+  return images;
 };
 
-export default Courses;
+const images = importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/));
+
+const Course = ({ id }) => {
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [isRegisterOpen, setRegisterOpen] = useState(false);
+  const [registerAction, setRegisterAction] = useState("enroll");
+  const [selectedCourse, setSelectedCourse] = useState(null);
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await axios.get(
+          "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/main/Courses.json"
+        );
+        setCourses(response.data.Courses);
+      } catch (error) {
+        console.log("Failed to load courses from GitHub:", error);
+        setError("Failed to load courses. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
+  const handleSyllabusClick = (course) => {
+    setSelectedCourse(course);
+    setRegisterAction("syllabus");
+    setRegisterOpen(true);
+  };
+
+  const handleEnrollClick = (course) => {
+    setSelectedCourse(course);
+    setRegisterAction("enroll");
+    setRegisterOpen(true);
+  };
+
+  if (loading) {
+    return (
+      <section className="courses" id={id}>
+        <div className="container">
+          <div className="heading text-center">
+            <h2>Our <span>Courses</span></h2>
+            <div className="loading-spinner">Loading courses...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="courses" id={id}>
+        <div className="container">
+          <div className="heading text-center">
+            <h2>Our <span>Courses</span></h2>
+            <div className="error-message">
+              <p>{error}</p>
+              <button onClick={() => window.location.reload()} className="retry-btn">
+                Try Again
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="courses" id={id}>
+      <div className="container">
+        <div className="heading text-center">
+          <h2>
+            Our
+            <span> Courses</span>
+          </h2>
+          <p>
+            Comprehensive training programs designed by industry experts to launch your career in software development
+          </p>
+        </div>
+
+        {courses && courses.length > 0 ? (
+          <div className="course-container">
+            {courses.map((course) => (
+              <div className="course-card" key={course.id}>
+                <div className="course-header">
+                  <div className="course-icon">
+                    <img 
+                      src={images[course.icon] || course.icon} 
+                      alt={course.title}
+                      onError={(e) => {
+                        e.target.src = images['default-course.png'] || '/default-course.png';
+                      }}
+                    />
+                  </div>
+                  <div className="course-meta">
+                    <span className="duration">{course.duration}</span>
+                    <span className="level">{course.level}</span>
+                  </div>
+                </div>
+
+                <div className="course-content">
+                  <h3>{course.title}</h3>
+                  <p>{course.description}</p>
+                  
+                  {course.features && course.features.length > 0 && (
+                    <div className="course-features">
+                      <h4>What You'll Learn:</h4>
+                      <ul>
+                        {course.features.map((feature, index) => (
+                          <li key={index}>{feature}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                <div className="course-footer">
+                  <button 
+                    className="syllabus-btn"
+                    onClick={() => handleSyllabusClick(course)}
+                  >
+                    Download Syllabus
+                  </button>
+                  <button 
+                    className="enroll-btn"
+                    onClick={() => handleEnrollClick(course)}
+                  >
+                    Enroll Now
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="no-courses text-center">
+            <p>No courses available at the moment. Please check back later.</p>
+          </div>
+        )}
+
+        <RegisterPopup 
+          isOpen={isRegisterOpen} 
+          onClose={() => setRegisterOpen(false)}
+          actionType={registerAction}
+          course={selectedCourse}
+        />
+      </div>
+    </section>
+  );
+};
+
+export default Course;

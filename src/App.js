@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { About } from "./components/About";
-import CourseData from "./components/batches.json";
 import JsonData from "./data/data.json";
 import SoftwareData from "./data/softwareLink.json";
 
@@ -32,7 +31,6 @@ const App = () => {
   useEffect(() => {
     setData(JsonData);
     setSoftwareData(SoftwareData);
-    setCourseData(CourseData);
   }, []);
 
   return (
@@ -55,7 +53,7 @@ const App = () => {
           <Route path="/about" element={<About value={data} />} />
           <Route path="/" element={<Home value={data} />} />
           <Route path="/softwares" element={<Software />} />
-          <Route path="/batches" element={<Batches value={courseData} />} />
+          <Route path="/batches" element={<Batches />} />
           <Route path="/directions" element={<Directions />} />
           <Route path="/reviews" element={<Testimonials />} />
           <Route path="/InterviewQuestions" element={<InterviewQuestions />} />

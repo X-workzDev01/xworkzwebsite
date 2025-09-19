@@ -25,9 +25,28 @@ function NavBar() {
     // If we're already on the same page, scroll to top
     if (location.pathname === path) {
       window.scrollTo({ top: 0, behavior: "smooth" });
+      
+      // If it's the feedback page, force a refresh
+      if (path === "/feedback") {
+        window.location.reload();
+      }
     }
     closeMobileMenu();
   };
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (click && !event.target.closest('.nav-menu') && !event.target.closest('.menu-icon')) {
+        setClick(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [click]);
 
   return (
     <>
@@ -56,18 +75,18 @@ function NavBar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link 
-              to="/" 
-              className="nav-links" 
+            <Link
+              to="/"
+              className="nav-links"
               onClick={() => handleNavClick("/")}
             >
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link 
-              to="/about" 
-              className="nav-links" 
+            <Link
+              to="/about"
+              className="nav-links"
               onClick={() => handleNavClick("/about")}
             >
               About
@@ -83,18 +102,18 @@ function NavBar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link 
-              to="/courses" 
-              className="nav-links" 
+            <Link
+              to="/courses"
+              className="nav-links"
               onClick={() => handleNavClick("/courses")}
             >
               Courses
             </Link>
           </li>
           <li className="nav-item">
-            <Link 
-              to="/batches" 
-              className="nav-links" 
+            <Link
+              to="/batches"
+              className="nav-links"
               onClick={() => handleNavClick("/batches")}
             >
               Batches
@@ -110,9 +129,9 @@ function NavBar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link 
-              to="/reviews" 
-              className="nav-links" 
+            <Link
+              to="/reviews"
+              className="nav-links"
               onClick={() => handleNavClick("/reviews")}
             >
               Reviews

@@ -21,7 +21,7 @@ function Footer() {
         {/* One Row with Flexbox */}
         <div className="footer-content d-flex justify-content-around flex-wrap py-5">
 
-          {/* Left Column - Logo */}
+          {/* Left Column - Logo & Social Media */}
           <div className="footer-widget text-center text-lg-start mb-4">
             <div className="footer-logo">
               <a href="/">
@@ -32,12 +32,30 @@ function Footer() {
                 />
               </a>
             </div>
-            {/* <div className="omkar-title">
-              <h3>Omkar Development Centre</h3>
-            </div> */}
+            
+            {/* Follow Us Section - Moved from right column */}
+            <div className="follow-us-section mt-4">
+              <div className="footer-widget-heading">
+                <h3>Follow Us</h3>
+              </div>
+              <div className="footer-social-icon">
+                <a href="https://www.facebook.com/xworkzdevelopmentcenter/" aria-label="Facebook">
+                  <i className="fab fa-facebook-f facebook-bg"></i>
+                </a>
+                <a href="https://twitter.com/workz_x" aria-label="Twitter">
+                  <i className="fab fa-twitter twitter-bg"></i>
+                </a>
+                <a href="https://www.instagram.com/xworkzraj" aria-label="Instagram">
+                  <i className="fab fa-instagram instagram-bg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/x-workz-odc" aria-label="LinkedIn">
+                  <i className="fab fa-linkedin-in linkedin-bg"></i>
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Middle Column - Contact Info */}
+          {/* Middle Column - Contact Info (No Changes) */}
           <div className="footer-widget mb-4">
             <div className="footer-widget-heading">
               <h3>Contact Us</h3>
@@ -74,7 +92,7 @@ function Footer() {
             </div>
           </div>
 
-          {/* Right Column - Subscribe & Follow */}
+          {/* Right Column - Subscribe Only */}
           <div className="footer-widget mb-4">
             <div className="footer-widget-heading">
               <h3>Subscribe</h3>
@@ -99,24 +117,6 @@ function Footer() {
                   Thank you for subscribing!
                 </div>
               )}
-            </div>
-
-            <div className="footer-widget-heading follow-us">
-              <h3>Follow Us</h3>
-            </div>
-            <div className="footer-social-icon">
-              <a href="https://www.facebook.com/xworkzdevelopmentcenter/" aria-label="Facebook">
-                <i className="fab fa-facebook-f facebook-bg"></i>
-              </a>
-              <a href="https://twitter.com/workz_x" aria-label="Twitter">
-                <i className="fab fa-twitter twitter-bg"></i>
-              </a>
-              <a href="https://www.instagram.com/xworkzraj" aria-label="Instagram">
-                <i className="fab fa-instagram instagram-bg"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/x-workz-odc" aria-label="LinkedIn">
-                <i className="fab fa-linkedin-in linkedin-bg"></i>
-              </a>
             </div>
           </div>
         </div>
