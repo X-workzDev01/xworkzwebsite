@@ -12,12 +12,13 @@ import {
 	fetchBatchName,
 	fetchDropdown
 } from "./store/dropdowns/RegistrationDropDownSlice";
+
 store.dispatch(fetchDropdown());
 store.dispatch(fetchBatchName());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<BrowserRouter>
+	<BrowserRouter basename="/x-workz-web">
 		<Provider store={store}>
 			<App />
 		</Provider>

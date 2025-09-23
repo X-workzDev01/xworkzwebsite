@@ -20,7 +20,7 @@ export const Team = () => {
         console.log(err);
         axios
           .get(
-            "https://raw.githubusercontent.com/xworkzodc/JSON/master/Faculties.json"
+            "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/main/Faculties.json"
           )
           .then((res) => {
             console.log("getting data from secondary source");

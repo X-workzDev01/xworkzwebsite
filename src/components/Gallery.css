@@ -167,12 +167,12 @@
 @media (max-width: 480px) {
   .marquee-item img { 
     height: 140px; 
-    width: 140px;
+    width: 200px;
   }
   
   .marquee-track { 
     gap: 0.6rem; 
-    animation-duration: 30s;
+    animation-duration: 195s;
   }
   
   .marquee-item.item-up {

@@ -2,6 +2,7 @@
 	"name": "xworkz-website",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "http://103.174.102.136:8080/x-workz-web",
 	"dependencies": {
 		"@emotion/react": "^11.10.4",
 		"@emotion/styled": "^11.10.4",
