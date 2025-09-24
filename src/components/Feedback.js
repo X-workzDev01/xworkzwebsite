@@ -130,22 +130,88 @@ export const Feedback = () => {
     setStudentData(null);
   };
 
+  // Function to get client IP address
+  const getClientIP = async () => {
+    try {
+      const response = await axios.get('https://api.ipify.org?format=json');
+      return response.data.ip;
+    } catch (error) {
+      console.error('Error fetching IP:', error);
+      return 'NA';
+    }
+  };
+
   const handleSubmit = async (formData) => {
     setLoading(true);
     
     try {
-      const submitData = {
-        ...feedback,
-        ...formData,
-        submissionDate: new Date().toISOString(),
-        studentData: feedbackType === 'regular' ? studentData : null
+      const clientIP = await getClientIP();
+      const currentDate = new Date().toISOString();
+
+      // 🎯 FIX: Get the selected course object to extract IDs
+      let selectedCourse = null;
+      if (feedbackType === 'regular' && feedback.course) {
+        selectedCourse = courseName.find(c => c.subCourseName === feedback.course);
+      }
+
+      // Prepare base data for both feedback types
+      let submitData = {
+        feedbackType: feedbackType === 'regular' ? 'RegularClassFeedback' : 'WorkshopFeedback',
+        systemIpAddress: clientIP,
+        feedbackSubmitDate: currentDate,
+        
+        // Common fields
+        email: feedback.email || 'NA',
+        
+        // 🎯 FIXED: Correct ID mapping for Regular Class
+        batchId: feedbackType === 'regular' ? (selectedCourse?.batchId || 'NA') : 'NA',
+        courseId: feedbackType === 'regular' ? (selectedCourse?.id || 'NA') : 'NA',
+        trainerName: feedbackType === 'regular' ? feedback.trainerName : 'NA',
+        
+        // Workshop specific fields
+        fullName: feedbackType === 'workshop' ? `${feedback.firstName} ${feedback.lastName}`.trim() : 'NA',
+        phoneNumber: feedbackType === 'workshop' ? feedback.phone : 'NA',
+        collegeName: feedbackType === 'workshop' ? feedback.college : 'NA',
       };
 
-      const endpoint = feedbackType === 'regular' 
-        ? `${Urlconstant.FEEDBACK_URL}api/feedback/saveRegularFeedback`
-        : `${Urlconstant.FEEDBACK_URL}api/feedback/saveWorkshopFeedback`;
+      // Question mapping
+      if (feedbackType === 'regular') {
+        // Regular Class - 10 questions mapped to question1-question10
+        submitData = {
+          ...submitData,
+          question1: formData.overallExperience?.toString() || 'NA',
+          question2: formData.contentRelevance || 'NA',
+          question3: formData.trainerDelivery || 'NA',
+          question4: formData.practicalExamples || 'NA',
+          question5: formData.workshopPace || 'NA',
+          question6: formData.doubtSupport || 'NA',
+          question7: formData.projectGuidance || 'NA',
+          question8: formData.workshopRecommendation || 'NA',
+          question9: formData.keyLearning || 'NA',
+          question10: formData.improvements || 'NA'
+        };
+      } else {
+        // Workshop - 9 questions mapped to question1-question9, question10 as 'NA'
+        submitData = {
+          ...submitData,
+          question1: formData.overallExperience?.toString() || 'NA',
+          question2: formData.contentRelevance || 'NA',
+          question3: formData.trainerDelivery || 'NA',
+          question4: formData.practicalExamples || 'NA',
+          question5: formData.workshopPace || 'NA',
+          question6: formData.confidenceApplying || 'NA',
+          question7: formData.workshopRecommendation || 'NA',
+          question8: formData.keyLearning || 'NA',
+          question9: formData.improvements || 'NA',
+          question10: 'NA'
+        };
+      }
 
-      await axios.post(endpoint, submitData);
+      console.log('Submitting data:', submitData);
+
+      const endpoint = `${Urlconstant.FEEDBACK_URL}api/feedback/saveFeedback`;
+
+      const response = await axios.post(endpoint, submitData);
 
       Swal.fire({
         title: 'Success!',
@@ -172,6 +238,7 @@ export const Feedback = () => {
       setEmailVerified(false);
       setStudentData(null);
     } catch (error) {
+      console.error('Submission error:', error);
       Swal.fire({
         title: 'Error!',
         text: error.response?.data?.message || 'Submission failed',
@@ -309,6 +376,7 @@ export const Feedback = () => {
                     onChange={handleChange}
                     size="medium"
                     variant="outlined"
+                    required
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -320,6 +388,7 @@ export const Feedback = () => {
                     onChange={handleChange}
                     size="medium"
                     variant="outlined"
+                    required
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -332,6 +401,7 @@ export const Feedback = () => {
                     onChange={handleChange}
                     size="medium"
                     variant="outlined"
+                    required
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -343,6 +413,7 @@ export const Feedback = () => {
                     onChange={handleChange}
                     size="medium"
                     variant="outlined"
+                    required
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -354,6 +425,7 @@ export const Feedback = () => {
                     onChange={handleChange}
                     size="medium"
                     variant="outlined"
+                    required
                   />
                 </Grid>
               </Grid>

@@ -2,15 +2,11 @@ import {
   Box,
   Typography,
   FormControl,
-  FormLabel,
   TextField,
   Button,
   CircularProgress,
   Rating,
   Grid,
-  InputLabel,
-  MenuItem,
-  Select,
   RadioGroup,
   FormControlLabel,
   Radio,
@@ -43,22 +39,42 @@ export const WorkshopFeedbackForm = ({ feedback, handleChange, handleSubmit, loa
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleReset = () => {
+    setFormData({
+      overallExperience: 0,
+      contentRelevance: '',
+      trainerDelivery: '',
+      practicalExamples: '',
+      workshopPace: '',
+      confidenceApplying: '',
+      workshopRecommendation: '',
+      keyLearning: '',
+      improvements: ''
+    });
+  };
+
   const isFormDisabled = () => {
-    const requiredFields = [
+    // Check if all personal info is filled
+    const personalInfoRequired = ['firstName', 'lastName', 'email', 'phone', 'college'];
+    const personalInfoComplete = personalInfoRequired.every(field => feedback[field] && feedback[field].trim() !== '');
+    
+    // Check if main feedback questions are filled
+    const mainQuestions = [
       'overallExperience', 'contentRelevance', 'trainerDelivery', 
       'practicalExamples', 'workshopPace', 'confidenceApplying', 
       'workshopRecommendation', 'keyLearning', 'improvements'
     ];
-    const personalInfoRequired = ['firstName', 'lastName', 'email', 'phone', 'college'];
-    const personalInfoComplete = personalInfoRequired.every(field => feedback[field]);
-    
-    return requiredFields.some(field => !formData[field]) || !personalInfoComplete;
+    const mainQuestionsComplete = mainQuestions.every(field => {
+      const value = formData[field];
+      return value !== undefined && value !== null && value !== '' && value !== 0;
+    });
+
+    return !personalInfoComplete || !mainQuestionsComplete || loading;
   };
 
   const submitForm = (event) => {
     event.preventDefault();
-    const completeData = { ...formData };
-    handleSubmit(completeData);
+    handleSubmit(formData);
   };
 
   return (
@@ -249,14 +265,36 @@ export const WorkshopFeedbackForm = ({ feedback, handleChange, handleSubmit, loa
           </Grid>
         </Grid>
 
-        {/* Submit Button */}
+        {/* Buttons - Centered with gap */}
         <Grid item xs={12} sx={{ mt: 4 }}>
-          <Box display="flex" justifyContent="center">
+          <Box display="flex" justifyContent="center" gap={3}>
+            <Button
+              type="button"
+              variant="outlined"
+              size="large"
+              onClick={handleReset}
+              disabled={loading}
+              sx={{
+                px: 6,
+                py: 1.5,
+                fontSize: '1.1rem',
+                fontWeight: 'bold',
+                border: '2px solid #ff5e14',
+                color: '#ff5e14',
+                '&:hover': {
+                  border: '2px solid #e05512',
+                  backgroundColor: 'rgba(255, 94, 20, 0.04)'
+                }
+              }}
+            >
+              Reset
+            </Button>
+            
             <Button
               type="submit"
               variant="contained"
               size="large"
-              disabled={isFormDisabled() || loading}
+              disabled={isFormDisabled()}
               startIcon={loading ? <CircularProgress size={20} /> : null}
               sx={{
                 px: 6,
@@ -274,7 +312,7 @@ export const WorkshopFeedbackForm = ({ feedback, handleChange, handleSubmit, loa
                 }
               }}
             >
-              {loading ? 'Submitting...' : 'Submit Workshop Feedback'}
+              {loading ? 'Submitting...' : 'Submit Feedback'}
             </Button>
           </Box>
         </Grid>

@@ -2,15 +2,11 @@ import {
   Box,
   Typography,
   FormControl,
-  FormLabel,
   TextField,
   Button,
   CircularProgress,
   Rating,
   Grid,
-  InputLabel,
-  MenuItem,
-  Select,
   RadioGroup,
   FormControlLabel,
   Radio,
@@ -20,7 +16,7 @@ import React, { useState } from 'react';
 
 export const RegularClassFeedbackForm = ({ feedback, handleChange, handleSubmit, loading }) => {
   const [formData, setFormData] = useState({
-    // Initialize with empty values
+    // Rating questions
     overallExperience: 0,
     contentRelevance: '',
     trainerDelivery: '',
@@ -29,6 +25,8 @@ export const RegularClassFeedbackForm = ({ feedback, handleChange, handleSubmit,
     doubtSupport: '',
     projectGuidance: '',
     workshopRecommendation: '',
+    
+    // Text questions
     keyLearning: '',
     improvements: ''
   });
@@ -42,34 +40,41 @@ export const RegularClassFeedbackForm = ({ feedback, handleChange, handleSubmit,
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // FIXED: Simplified validation - only check critical fields
+  const handleReset = () => {
+    setFormData({
+      overallExperience: 0,
+      contentRelevance: '',
+      trainerDelivery: '',
+      practicalExamples: '',
+      workshopPace: '',
+      doubtSupport: '',
+      projectGuidance: '',
+      workshopRecommendation: '',
+      keyLearning: '',
+      improvements: ''
+    });
+  };
+
   const isFormDisabled = () => {
-    // Only check the most critical required fields
-    const criticalFields = [
-      'overallExperience', 
-      'contentRelevance', 
-      'trainerDelivery',
-      'workshopRecommendation',
-      'keyLearning',
-      'improvements'
-    ];
+    // Check if course is selected
+    const isCourseSelected = !!feedback.course;
     
-    const isCriticalFieldsFilled = criticalFields.every(field => {
+    // Check if main feedback questions are filled
+    const mainQuestions = [
+      'overallExperience', 'contentRelevance', 'trainerDelivery', 
+      'practicalExamples', 'workshopPace', 'doubtSupport', 
+      'projectGuidance', 'workshopRecommendation', 'keyLearning', 'improvements'
+    ];
+    const mainQuestionsComplete = mainQuestions.every(field => {
       const value = formData[field];
       return value !== undefined && value !== null && value !== '' && value !== 0;
     });
 
-    // Also check if course is selected
-    const isCourseSelected = !!feedback.course;
-
-    return !isCriticalFieldsFilled || !isCourseSelected || loading;
+    return !isCourseSelected || !mainQuestionsComplete || loading;
   };
 
-  // FIXED: Proper form submission
   const submitForm = (event) => {
     event.preventDefault();
-    console.log('Form Data to Submit:', formData); // Debug log
-    console.log('Feedback Data:', feedback); // Debug log
     handleSubmit(formData);
   };
 
@@ -79,13 +84,6 @@ export const RegularClassFeedbackForm = ({ feedback, handleChange, handleSubmit,
         <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', textAlign: 'center', mb: 4, color: 'primary.main' }}>
           Regular Class Feedback
         </Typography>
-        
-        {/* Debug Info - Remove in production */}
-        <Box sx={{ mb: 2, p: 2, backgroundColor: '#f5f5f5', borderRadius: 1 }}>
-          <Typography variant="caption">
-            Debug: Course Selected: {feedback.course || 'None'} | Required Fields Filled: {!isFormDisabled() ? 'Yes' : 'No'}
-          </Typography>
-        </Box>
         
         <Grid container spacing={4}>
           {/* Question 1: Overall experience rating */}
@@ -101,9 +99,6 @@ export const RegularClassFeedbackForm = ({ feedback, handleChange, handleSubmit,
                   onChange={(event, newValue) => handleRatingChange('overallExperience', newValue)}
                   size="large"
                 />
-                <Typography variant="caption" sx={{ mt: 1 }}>
-                  (1 = Poor, 5 = Excellent)
-                </Typography>
               </Box>
             </Box>
           </Grid>
@@ -292,9 +287,31 @@ export const RegularClassFeedbackForm = ({ feedback, handleChange, handleSubmit,
           </Grid>
         </Grid>
 
-        {/* Submit Button */}
+        {/* Buttons - Centered with gap */}
         <Grid item xs={12} sx={{ mt: 4 }}>
-          <Box display="flex" justifyContent="center">
+          <Box display="flex" justifyContent="center" gap={3}>
+            <Button
+              type="button"
+              variant="outlined"
+              size="large"
+              onClick={handleReset}
+              disabled={loading}
+              sx={{
+                px: 6,
+                py: 1.5,
+                fontSize: '1.1rem',
+                fontWeight: 'bold',
+                border: '2px solid #ff5e14',
+                color: '#ff5e14',
+                '&:hover': {
+                  border: '2px solid #e05512',
+                  backgroundColor: 'rgba(255, 94, 20, 0.04)'
+                }
+              }}
+            >
+              Reset
+            </Button>
+            
             <Button
               type="submit"
               variant="contained"
