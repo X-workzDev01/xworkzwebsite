@@ -12,25 +12,15 @@ export const Team = () => {
 
   useEffect(() => {
     axios
-      .get("https://ombn.in/xworkz_api/getFaculties")
+      .get(
+        "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/Faculties.json"
+      )
       .then((res) => {
         setTeamData(res.data.Faculties);
       })
       .catch((err) => {
         console.log(err);
-        axios
-          .get(
-            "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/main/Faculties.json"
-          )
-          .then((res) => {
-            console.log("getting data from secondary source");
-            setTeamData(res.data.Faculties);
-          })
-          .catch((err) => {
-            console.log(err);
-            setTeamData(teamData);
-            console.log("getting data from third source");
-          });
+        setTeamData(prevTeamData => prevTeamData);
       });
   }, []);
 

@@ -8,7 +8,7 @@ const WhyXworkz = () => {
   const [error, setError] = useState(null);
 
   // GitHub raw content URL for WhyXworkz data
-  const GITHUB_WHYXWORKZ_URL = "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/main/WhyXworkz.json";
+  const GITHUB_WHYXWORKZ_URL = "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/develop/WhyXworkz.json";
 
   useEffect(() => {
     setLoading(true);

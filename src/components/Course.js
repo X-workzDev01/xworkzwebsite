@@ -25,7 +25,7 @@ const Course = ({ id }) => {
     const fetchCourses = async () => {
       try {
         const response = await axios.get(
-          "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/main/Courses.json"
+          "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/develop/Courses.json"
         );
         setCourses(response.data.Courses);
       } catch (error) {

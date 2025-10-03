@@ -119,7 +119,7 @@ const RegisterPopup = ({ isOpen, onClose, course }) => {
         <div className="popup-layout">
           <div className="popup-image">
             <img 
-              src="https://raw.githubusercontent.com/xworkzodc/Gallery/master/images/56.jpeg" 
+              src="https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/Gallery/5.png" 
               alt="Syllabus Download" 
             />
           </div>

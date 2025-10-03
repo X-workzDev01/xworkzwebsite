@@ -17,7 +17,6 @@ import { Register } from "./components/Register";
 import Software from "./components/Software";
 import Testimonials from "./components/Testimonials";
 import { Feedback } from "./components/Feedback";
-import { Button } from "@mui/material";
 import VerifyCertificate from "./components/VerifyCertificate";
 import Course from "./components/Course";
 import CallBackModal from "./components/CallBackModal";
@@ -38,7 +37,7 @@ const App = () => {
       <NavBar />
       
       {/* Request Call Back Button - Positioned below navbar */}
-      <div className="callback-top-btn">
+      {/* <div className="callback-top-btn">
         <button 
           onClick={() => setShowCallBackModal(true)}
           className="callback-btn-top"
@@ -46,7 +45,7 @@ const App = () => {
           <i className="fas fa-phone-alt"></i>
           <span className="callback-text">Request Call Back</span>
         </button>
-      </div>
+      </div> */}
       
       <div className="main-content">
         <Routes>

@@ -11,7 +11,7 @@ const AcademicPartners = () => {
     const fetchAcademicPartners = async () => {
       try {
         const response = await axios.get(
-          "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/main/AcademicPartners.json"
+          "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/AcademicPartners.json"
         );
         setAcademicPartners(response.data.AcademicPartners);
       } catch (error) {

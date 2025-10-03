@@ -48,7 +48,7 @@ function Footer() {
                 <a href="https://www.instagram.com/xworkzraj" aria-label="Instagram">
                   <i className="fab fa-instagram instagram-bg"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/x-workz-odc" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/x-workz-odc/" aria-label="LinkedIn">
                   <i className="fab fa-linkedin-in linkedin-bg"></i>
                 </a>
               </div>

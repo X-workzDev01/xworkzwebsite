@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Software.css";
-import { Link } from "react-router-dom";
-import NavBar from "./NavBar";
 import axios from "axios";
 
 const Software = () => {
@@ -12,30 +10,18 @@ const Software = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://ombn.in/xworkz_api/getSoftwareLinkData")
+      .get(
+        "https://raw.githubusercontent.com/xworkzodc/JSON/master/SoftwareLinks.json"
+      )
       .then(res => {
         setSoftwareData(res.data.Softwares);
         setLoading(false);
+        setError(null);
       })
       .catch(err => {
         console.log(err);
-        setError("Primary source unavailable, trying secondary source...");
-        
-        axios
-          .get(
-            "https://raw.githubusercontent.com/xworkzodc/JSON/master/SoftwareLinks.json"
-          )
-          .then(res => {
-            console.log("Data retrieved from secondary source");
-            setSoftwareData(res.data.Softwares);
-            setLoading(false);
-            setError(null);
-          })
-          .catch(err => {
-            console.log(err);
-            setError("Failed to load software data. Please try again later.");
-            setLoading(false);
-          });
+        setError("Failed to load software data. Please try again later.");
+        setLoading(false);
       });
   }, []);
 

@@ -12,7 +12,7 @@ const Testimonials = () => {
   useEffect(() => {
     // Primary API call removed as requested.
     // Falling back to the GitHub raw content as the main data source.
-    axios.get("https://raw.githubusercontent.com/xworkzodc/JSON/master/Reviews.json")
+    axios.get("https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/Reviews.json")
       .then(res => {
         setReviewData(res.data.Reviews);
       })

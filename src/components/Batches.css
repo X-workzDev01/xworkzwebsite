@@ -52,38 +52,45 @@
   box-sizing: border-box;
 }
 
-.button-scroll-group {
+.custom-button-group {
   display: inline-flex;
   white-space: nowrap;
+  gap: 10px;
 }
 
-.categories .ui.button {
+.custom-button {
   background: white;
   color: #1e2125;
   border: 1px solid #e9ecef;
   border-radius: 25px;
-  padding: 10px 20px;
-  margin: 0 5px;
+  padding: 12px 25px;
+  margin: 0;
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: inline-block;
   flex-shrink: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  min-width: 120px;
 }
 
-.categories .ui.button:hover {
+.custom-button:hover {
   background: linear-gradient(135deg, #1325e8 -5%, #8f10b7 100%);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(19, 37, 232, 0.3);
+  border-color: transparent;
 }
 
-.categories .ui.button:active,
-.categories .ui.button:focus,
-.categories .ui.button.active {
+.custom-button:active,
+.custom-button:focus,
+.custom-button.active {
   background: linear-gradient(135deg, #1325e8 -5%, #8f10b7 100%);
   color: white;
+  border-color: transparent;
+  outline: none;
 }
 
 .batches-content {
@@ -245,7 +252,7 @@
     padding: 0 20px;
   }
   
-  .categories .ui.button {
+  .custom-button {
     padding: 12px 25px;
     font-size: 1rem;
   }
@@ -297,7 +304,6 @@
   background: #0f1fc7;
 }
 
-
 @media (max-width: 768px) {
   .course {
     max-width: 100%;
@@ -311,19 +317,16 @@
   .button-scroll-container::-webkit-scrollbar {
     display: none; 
   }
+  
+  .custom-button {
+    padding: 12px 20px;
+    min-width: 100px;
+    font-size: 0.9rem;
+  }
 }
-
 
 .course h2,
 .course-info h2 {
   word-wrap: break-word;
   overflow-wrap: break-word;
-}
-
-/* Improve touch targets for mobile */
-@media (max-width: 768px) {
-  .categories .ui.button {
-    padding: 12px 20px;
-    min-width: 100px;
-  }
 }

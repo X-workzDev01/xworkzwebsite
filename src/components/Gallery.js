@@ -13,13 +13,13 @@ export const Gallery = () => {
         
         // Fetch from the JSON file on GitHub
         const response = await axios.get(
-          "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/main/Gallery.json"
+          "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/Gallery.json"
         );
         
         // Create image URLs from the JSON data
         const images = response.data.images.map(item => ({
           id: item.id,
-          imgSrc: `https://raw.githubusercontent.com/x-workzdev/Xworkz-images/main/Gallery/${item.filename}`
+          imgSrc: `https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/Gallery/${item.filename}`
         }));
         
         setGalleryData(images);

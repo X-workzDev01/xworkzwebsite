@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Button } from 'semantic-ui-react'
 import "./Batches.css"
 
 const Batches = () => {
@@ -8,7 +7,7 @@ const Batches = () => {
     const [selectedCategory, setSelectedCategory] = useState("Upcoming");
 
     // GitHub raw content URL for batches data
-    const GITHUB_BATCHES_URL = "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/main/batches.json";
+    const GITHUB_BATCHES_URL = "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/develop/batches.json";
 
     useEffect(() => {
         setLoading(true);
@@ -50,26 +49,26 @@ const Batches = () => {
 
             <div className="categories">
                 <div className="button-scroll-container">
-                    <Button.Group className="button-scroll-group">
-                        <Button 
+                    <div className="custom-button-group">
+                        <button 
                             onClick={() => handleCategoryClick("Upcoming")}
-                            className={selectedCategory === "Upcoming" ? 'active' : ''}
+                            className={`custom-button ${selectedCategory === "Upcoming" ? 'active' : ''}`}
                         >
                             Upcoming
-                        </Button>
-                        <Button 
+                        </button>
+                        <button 
                             onClick={() => handleCategoryClick("Ongoing")}
-                            className={selectedCategory === "Ongoing" ? 'active' : ''}
+                            className={`custom-button ${selectedCategory === "Ongoing" ? 'active' : ''}`}
                         >
                             Ongoing
-                        </Button>
-                        <Button 
+                        </button>
+                        <button 
                             onClick={() => handleCategoryClick("Completed")}
-                            className={selectedCategory === "Completed" ? 'active' : ''}
+                            className={`custom-button ${selectedCategory === "Completed" ? 'active' : ''}`}
                         >
                             Completed
-                        </Button>
-                    </Button.Group>
+                        </button>
+                    </div>
                 </div>
             </div>
 

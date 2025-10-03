@@ -10,7 +10,7 @@ const InterviewQuestions = () => {
     const [activeIndex, setActiveIndex] = useState(-1);
 
     // GitHub raw content base URL
-    const GITHUB_BASE_URL = "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/main/interview-questions/";
+    const GITHUB_BASE_URL = "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/develop/interview-questions/";
 
     useEffect(() => {
         setLoading(true);

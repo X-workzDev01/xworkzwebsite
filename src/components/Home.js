@@ -6,7 +6,6 @@ import Typewriter from "typewriter-effect";
 import code from "../img/coding_img.png";
 import Banner from "./Banner";
 import "./Home.css";
-import HomeModel from "./HomeModel";
 import { Tech } from "./Tech";
 import WhyXworkz from "./WhyXworkz";
 import Course from "./Course";

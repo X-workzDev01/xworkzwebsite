@@ -166,7 +166,7 @@ function NavBar() {
           <a href="https://www.instagram.com/xworkzraj">
             <i className="fab fa-instagram  instagram-bg"></i>
           </a>
-          <a href="https://www.linkedin.com/in/x-workz-odc/">
+          <a href="https://www.linkedin.com/company/x-workz-odc/">
             <i className="fab fa-linkedin linkedin-bg linkedin"></i>
           </a>
         </div>

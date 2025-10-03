@@ -207,7 +207,6 @@ export const Feedback = () => {
         };
       }
 
-      console.log('Submitting data:', submitData);
 
       const endpoint = `${Urlconstant.FEEDBACK_URL}api/feedback/saveFeedback`;
 

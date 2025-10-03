@@ -353,7 +353,7 @@ export const Register = () => {
 
             <Box sx={{ mb: 3, textAlign: 'center' }}>
               <img
-                src="https://raw.githubusercontent.com/xworkzodc/Gallery/master/images/image7.jpg"
+                src="https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/Gallery/2.png"
                 alt="Java Enterprise Application"
                 style={{
                   width: '100%',

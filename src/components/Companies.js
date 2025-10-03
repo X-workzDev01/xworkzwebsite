@@ -12,7 +12,7 @@ const Companies = () => {
       try {
         // Fetch company data from GitHub
         const response = await axios.get(
-          "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/main/Companies.json"
+          "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/Companies.json"
         );
         setCompanyLogos(response.data.Companies);
       } catch (error) {
