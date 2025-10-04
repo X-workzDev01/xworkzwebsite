@@ -12,7 +12,7 @@
 
 .marquee-track {
   display: flex;
-  animation: marquee-scroll 195s linear infinite;
+  animation: marquee-scroll 350s linear infinite;
   gap: 1.2rem;
   padding: 0 0.8rem;
   align-items: flex-start;
@@ -41,8 +41,8 @@
 }
 
 .marquee-item img {
-  height: 280px;
-  width: 400px;
+  height: 300px;
+  width: 450px;
   object-fit: cover;
   transition: all 0.4s ease;
   border-radius: 12px;

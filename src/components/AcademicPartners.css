@@ -29,7 +29,7 @@
 
 .academic-partners-container {
   position: relative;
-  padding: 70px 0; /* Increased padding */
+  padding: 70px 0;
   margin: 40px 0;
   overflow: hidden;
   width: 100%;
@@ -44,9 +44,9 @@
 .marquee-content-fullwidth {
   display: flex;
   align-items: center;
-  animation: marquee-fullwidth 40s linear infinite;
+  animation: marquee-fullwidth 20s linear infinite; /* Changed from 40s to 20s for 2x speed */
   will-change: transform;
-  height: 200px; /* Increased height */
+  height: 200px;
 }
 
 .marquee-fullwidth:hover .marquee-content-fullwidth {
@@ -55,20 +55,20 @@
 
 .partner-item {
   flex: 0 0 auto;
-  margin: 0 50px;
+  margin: 0 30px; /* Reduced margin for faster appearance */
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  height: 180px; /* Increased height */
+  height: 180px;
 }
 
 .partner-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 180px; 
-  width: 220px; /* Slightly increased width */
-  padding: 20px; /* Increased padding */
+  height: 180px;
+  width: 200px; /* Slightly reduced width */
+  padding: 20px;
 }
 
 .partner-logo {
@@ -169,18 +169,20 @@
   }
 }
 
+/* Faster animation for mobile */
 @media (max-width: 1200px) {
   .partner-item {
-    margin: 0 40px;
+    margin: 0 25px;
   }
   
   .partner-link {
     height: 160px;
-    width: 200px;
+    width: 180px;
   }
   
   .marquee-content-fullwidth {
     height: 180px;
+    animation-duration: 18s; /* Faster on smaller screens */
   }
 }
 
@@ -194,17 +196,18 @@
   }
   
   .partner-item {
-    margin: 0 30px;
+    margin: 0 20px;
     height: 140px;
   }
   
   .partner-link {
     height: 140px;
-    width: 170px;
+    width: 150px;
   }
   
   .marquee-content-fullwidth {
     height: 160px;
+    animation-duration: 15s; /* Even faster */
   }
 }
 
@@ -215,18 +218,18 @@
   }
   
   .marquee-content-fullwidth {
-    animation-duration: 30s;
+    animation-duration: 12s; /* Much faster on mobile */
     height: 140px;
   }
   
   .partner-item {
-    margin: 0 25px;
+    margin: 0 15px;
     height: 120px;
   }
   
   .partner-link {
     height: 120px;
-    width: 140px;
+    width: 130px;
     padding: 15px;
   }
   
@@ -249,25 +252,25 @@
   }
   
   .partner-item {
-    margin: 0 20px;
+    margin: 0 12px;
     height: 100px;
   }
   
   .partner-link {
     height: 100px;
-    width: 120px;
+    width: 110px;
     padding: 12px;
   }
   
   .marquee-content-fullwidth {
     height: 120px;
-    animation-duration: 25s;
+    animation-duration: 10s; /* Fastest on mobile */
   }
 }
 
 @media (max-width: 400px) {
   .partner-item {
-    margin: 0 15px;
+    margin: 0 10px;
     height: 90px;
   }
   
@@ -279,6 +282,7 @@
   
   .marquee-content-fullwidth {
     height: 110px;
+    animation-duration: 8s; /* Ultra fast on small mobile */
   }
 }
 
