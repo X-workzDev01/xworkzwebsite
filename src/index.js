@@ -18,7 +18,7 @@ store.dispatch(fetchBatchName());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<BrowserRouter basename="/x-workz-web">
+	<BrowserRouter>
 		<Provider store={store}>
 			<App />
 		</Provider>

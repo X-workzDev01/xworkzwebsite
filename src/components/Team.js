@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Team.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar, A11y, FreeMode, Autoplay } from "swiper";
+import { Navigation, Scrollbar, A11y, FreeMode, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/free-mode";
+import "swiper/css/autoplay";
 import axios from "axios";
 
 export const Team = () => {
