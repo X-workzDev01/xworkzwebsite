@@ -4,16 +4,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .navbar-logo {
   cursor: pointer;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav-menu {
@@ -23,22 +26,25 @@
   align-items: center;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .nav-item {
-  margin: 0 5px;
+  margin: 0;
 }
 
 .nav-links {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 8px 12px;
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 0.5px;
   position: relative;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav-links:hover {
@@ -63,10 +69,11 @@
 
 .register-btn {
   background: linear-gradient(45deg, #ff6b35, #f7931e);
-  padding: 8px 20px;
+  padding: 8px 16px;
   border-radius: 25px;
   transition: all 0.3s ease;
   display: inline-block;
+  font-size: 12px;
 }
 
 .register-btn:hover {
@@ -75,18 +82,24 @@
   color: white;
 }
 
+.header-social-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
 .header-social-icon a {
   color: #fff;
-  font-size: 16px;
-  margin-right: 15px;
+  font-size: 14px;
   transition: all 0.3s ease;
 }
 
 .header-social-icon i {
-  height: 40px;
-  width: 40px;
+  height: 32px;
+  width: 32px;
   text-align: center;
-  line-height: 40px;
+  line-height: 32px;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
@@ -109,60 +122,67 @@
 
 .menu-icon {
   display: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   cursor: pointer;
   color: white;
+  background: none;
+  border: none;
 }
 
-@media screen and (max-width: 960px) {
+/* Mobile styles */
+@media screen and (max-width: 1100px) {
+  .nav-links {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+  
+  .register-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 968px) {
   .navbar {
-    padding: 0 3%;
+    padding: 0 15px;
+    height: 70px;
   }
   
   .menu-icon {
     display: block;
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-    z-index: 1001;
   }
   
   .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 70px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
     background: #000;
     padding: 20px 0;
-    max-height: calc(100vh - 80px);
+    height: calc(100vh - 70px);
     overflow-y: auto;
+    gap: 0;
   }
   
   .nav-menu.active {
     left: 0;
-    opacity: 0.98;
   }
   
   .nav-item {
-    margin: 15px 0;
+    margin: 10px 0;
     width: 100%;
   }
   
   .nav-links {
     text-align: center;
-    padding: 1.5rem;
+    padding: 15px;
     width: 100%;
-    display: table;
-    font-size: 1.2rem;
-  }
-  
-  .nav-links:hover::after {
-    width: 30%;
+    display: block;
+    font-size: 16px;
   }
   
   .header-social-icon {
@@ -170,6 +190,7 @@
   }
 }
 
+/* Small mobile */
 @media screen and (max-width: 480px) {
   .navbar-logo img {
     width: 120px;
@@ -177,34 +198,11 @@
   }
   
   .nav-links {
-    font-size: 1rem;
-    padding: 1.2rem;
-  }
-  
-  .nav-menu {
-    padding: 10px 0;
+    font-size: 14px;
+    padding: 12px;
   }
 }
 
-/* Prevent body scrolling when mobile menu is open */
 body.menu-open {
   overflow: hidden;
-}
-
-/* Custom scrollbar for mobile menu */
-.nav-menu::-webkit-scrollbar {
-  width: 6px;
-}
-
-.nav-menu::-webkit-scrollbar-track {
-  background: #222;
-}
-
-.nav-menu::-webkit-scrollbar-thumb {
-  background: #ff6b35;
-  border-radius: 3px;
-}
-
-.nav-menu::-webkit-scrollbar-thumb:hover {
-  background: #f7931e;
 }
