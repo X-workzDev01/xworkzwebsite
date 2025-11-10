@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Team.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar, A11y, FreeMode, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper";
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "swiper/css/free-mode";
 import "swiper/css/autoplay";
 import axios from "axios";
 
@@ -22,7 +20,6 @@ export const Team = () => {
       })
       .catch((err) => {
         console.log(err);
-        setTeamData(prevTeamData => prevTeamData);
       });
   }, []);
 
@@ -37,17 +34,15 @@ export const Team = () => {
         </div>
 
         <Swiper
-          modules={[Navigation, Scrollbar, A11y, FreeMode, Autoplay]}
-          freeMode={true}
+          modules={[Navigation, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1}
+          navigation={true}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
           }}
           breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
             480: {
               slidesPerView: 2,
               spaceBetween: 20,
@@ -60,13 +55,7 @@ export const Team = () => {
               slidesPerView: 4,
               spaceBetween: 20,
             },
-            1440: {
-              slidesPerView: 4,
-              spaceBetween: 20,
-            },
           }}
-          navigation={true}
-          scrollbar={{ draggable: true }}
           className="team-swiper"
         >
           {teamData && teamData.length > 0 ? (
@@ -92,9 +81,11 @@ export const Team = () => {
               </SwiperSlide>
             ))
           ) : (
-            <div className="team-loading">
-              <p>Loading team members...</p>
-            </div>
+            <SwiperSlide>
+              <div className="team-loading">
+                <p>Loading team members...</p>
+              </div>
+            </SwiperSlide>
           )}
         </Swiper>
       </div>

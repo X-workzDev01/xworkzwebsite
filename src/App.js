@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { About } from "./components/About";
 import JsonData from "./data/data.json";
-import SoftwareData from "./data/softwareLink.json";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -23,29 +22,15 @@ import CallBackModal from "./components/CallBackModal";
 
 const App = () => {
   const [data, setData] = useState({});
-  const [softwareData, setSoftwareData] = useState({});
-  const [courseData, setCourseData] = useState({});
   const [showCallBackModal, setShowCallBackModal] = useState(false);
 
   useEffect(() => {
     setData(JsonData);
-    setSoftwareData(SoftwareData);
   }, []);
 
   return (
     <div className="app-container">
       <NavBar />
-      
-      {/* Request Call Back Button - Positioned below navbar */}
-      {/* <div className="callback-top-btn">
-        <button 
-          onClick={() => setShowCallBackModal(true)}
-          className="callback-btn-top"
-        >
-          <i className="fas fa-phone-alt"></i>
-          <span className="callback-text">Request Call Back</span>
-        </button>
-      </div> */}
       
       <div className="main-content">
         <Routes>
