@@ -384,8 +384,7 @@ export const Register = () => {
 
             <Alert severity="info" sx={{ backgroundColor: 'rgba(255,255,255,0.2)', color: 'white' }}>
               <Typography variant="body2">
-                CSR program available for 2025 passed out students
-              </Typography>
+CSR Internship Program open for students graduating in 2026.              </Typography>
             </Alert>
           </Grid>
 
@@ -624,8 +623,7 @@ export const Register = () => {
 
             <Alert severity="info" sx={{ mt: 3 }}>
               <Typography variant="body2">
-                <strong>Note:</strong> CSR is applicable only for 2025 YOP students. If your college is not listed, please select "Others".
-              </Typography>
+              <strong>Note:</strong> The CSR Internship Program is open only to 2026 YOP students. If your college is not listed, choose "Others".              </Typography>
             </Alert>
 
             <Box sx={{ mt: 2, p: 2, backgroundColor: '#f5f5f5', borderRadius: 1 }}>
@@ -633,7 +631,7 @@ export const Register = () => {
                 For queries, contact:
               </Typography>
               <Typography variant="body2">
-                Amulya: 9845958884 | Kousalya: 9845658883 | Mamatha: 9886971480
+                 Kousalya: 9845658883 | Mamatha: 9886971480 | Bhumika Rathore: 9886971483
               </Typography>
             </Box>
           </Grid>
@@ -708,14 +706,15 @@ export const Register = () => {
             mt: 3,
             mb: 3
           }}>
-            <Typography variant="body2" sx={{ textAlign: 'center' }}>
-              <strong>Amulya:</strong> 9845958884
-            </Typography>
+                    
             <Typography variant="body2" sx={{ textAlign: 'center' }}>
               <strong>Kousalya:</strong> 9845658883
             </Typography>
             <Typography variant="body2" sx={{ textAlign: 'center' }}>
               <strong>Mamatha:</strong> 9886971480
+            </Typography>
+            <Typography variant="body2" sx={{ textAlign: 'center' }}>
+              <strong>Bhumika Rathore:</strong> 9886971483
             </Typography>
           </Box>
         </Box>

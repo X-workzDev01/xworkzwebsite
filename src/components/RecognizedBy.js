@@ -3,6 +3,7 @@ import "./RecognizedBy.css";
 // Import your images
 import xworkzCertificate from "../img/xworkz-certificate.png"; 
 import msmeLogo from "../img/msme-logo.png";
+import internshipCertificate from "../img/Internship.jpg"; // Add this import
 
 const RecognizedBy = () => {
   return (
@@ -17,7 +18,7 @@ const RecognizedBy = () => {
         
         <div className="row justify-content-center align-items-stretch">
           {/* Xworkz Certificate Section */}
-          <div className="col-12 col-md-6 mb-4 mb-md-0">
+          <div className="col-12 col-md-4 mb-4">
             <div className="certificate-card h-100">
               <div className="certificate-image">
                 <img 
@@ -39,7 +40,7 @@ const RecognizedBy = () => {
           </div>
           
           {/* MSME Registration Section */}
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-4 mb-4">
             <div className="msme-card h-100">
               <div className="msme-logo text-center">
                 <img 
@@ -52,7 +53,7 @@ const RecognizedBy = () => {
                 <h4>MSME Registered</h4>
                 <p>Ministry of Micro, Small & Medium Enterprises, Government of India</p>
                 <div className="msme-details">
-                  <p>Registration No: UDYAM-XW-12345</p>
+                  <p>Registration No: UDYAM-KR-03-0494064</p>
                   <p>Registered under MSME Act, 2006</p>
                 </div>
                 <div className="msme-description">
@@ -61,6 +62,29 @@ const RecognizedBy = () => {
                     Small & Medium Enterprises (MSME), reflecting our commitment to 
                     regulatory compliance and industry excellence.
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                    
+          {/* Internship Certificate Section */}
+          <div className="col-12 col-md-4 mb-4">
+            <div className="internship-card h-100">
+              <div className="certificate-image">
+                <img 
+                  src={internshipCertificate} 
+                  alt="Internship Certificate" 
+                  className="img-fluid"
+                />
+              </div>
+              <div className="certificate-content text-center">
+                <h4>Internship Certificate</h4>
+                <p>Real-world industry experience recognition</p>
+                <div className="certificate-details">
+                  <p>Hands-on project development</p>
+                  <p>Industry mentorship</p>
+                  <p>Professional work experience</p>
                 </div>
               </div>
             </div>

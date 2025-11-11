@@ -26,7 +26,7 @@ function Footer() {
             <div className="footer-logo">
               <a href="/">
                 <img
-                  src="https://www.x-workz.in/Logo.png"
+                  src="https://x-workz.com/Logo.png"
                   alt="logo"
                   className="img-fluid"
                 />

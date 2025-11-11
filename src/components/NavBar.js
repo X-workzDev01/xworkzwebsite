@@ -48,13 +48,26 @@ function NavBar() {
     };
   }, [click]);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (click) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+    
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [click]);
+
   return (
     <>
       <ScrollToTop />
       <nav className="navbar">
         <Link to="/" className="navbar-logo" onClick={() => handleNavClick("/")}>
           <img
-            src="https://www.x-workz.in/Logo.png"
+            src="https://x-workz.com/Logo.png"
             width="140"
             height="70"
             alt="Xworkz"

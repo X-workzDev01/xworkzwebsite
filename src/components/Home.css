@@ -63,7 +63,7 @@
 }
 
 .btn-5 {
-  background: rgb(246, 127, 8);
+  background: linear-gradient(45deg, #ff6b35, #f7931e);
 }
 
 .btn-5:hover {

@@ -129,23 +129,111 @@
   border: none;
 }
 
-/* Mobile styles */
-@media screen and (max-width: 1100px) {
+/* Large Laptops */
+@media screen and (max-width: 1440px) {
   .nav-links {
     font-size: 11px;
+    padding: 7px 10px;
+  }
+  
+  .register-btn {
+    padding: 7px 14px;
+    font-size: 11px;
+  }
+}
+
+/* Standard Laptops */
+@media screen and (max-width: 1280px) {
+  .navbar {
+    padding: 0 15px;
+  }
+  
+  .nav-links {
+    font-size: 10px;
     padding: 6px 8px;
   }
   
   .register-btn {
     padding: 6px 12px;
+    font-size: 10px;
+  }
+  
+  .header-social-icon {
+    gap: 6px;
+  }
+  
+  .header-social-icon i {
+    height: 28px;
+    width: 28px;
+    line-height: 28px;
+    font-size: 12px;
+  }
+}
+
+/* 14-inch Laptops (1366x768) - CRITICAL FIX */
+@media screen and (max-width: 1160px) {
+  .navbar {
+    height: 70px;
+    padding: 0 12px;
+  }
+  
+  .navbar-logo img {
+    width: 120px;
+    height: auto;
+  }
+  
+  .nav-menu {
+    gap: 3px;
+  }
+  
+  .nav-links {
+    font-size: 9px;
+    padding: 5px 6px;
+    letter-spacing: 0.3px;
+  }
+  
+  .register-btn {
+    padding: 5px 10px;
+    font-size: 9px;
+  }
+  
+  .header-social-icon {
+    gap: 4px;
+  }
+  
+  .header-social-icon i {
+    height: 26px;
+    width: 26px;
+    line-height: 26px;
     font-size: 11px;
   }
 }
 
+/* Small Laptops & Large Tablets */
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 0 10px;
+  }
+  
+  .nav-links {
+    font-size: 8.5px;
+    padding: 4px 5px;
+  }
+  
+  .register-btn {
+    padding: 4px 8px;
+    font-size: 8.5px;
+  }
+  
+  .header-social-icon {
+    display: none; /* Hide social icons to save space */
+  }
+}
+
+/* Tablet Landscape */
 @media screen and (max-width: 968px) {
   .navbar {
     padding: 0 15px;
-    height: 70px;
   }
   
   .menu-icon {
@@ -185,21 +273,40 @@
     font-size: 16px;
   }
   
+  .register-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+  
   .header-social-icon {
-    display: none;
+    display: none; /* Keep hidden on mobile */
   }
 }
 
 /* Small mobile */
 @media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0 10px;
+    height: 60px;
+  }
+  
   .navbar-logo img {
-    width: 120px;
+    width: 100px;
     height: auto;
+  }
+  
+  .nav-menu {
+    top: 60px;
+    height: calc(100vh - 60px);
   }
   
   .nav-links {
     font-size: 14px;
     padding: 12px;
+  }
+  
+  .menu-icon {
+    font-size: 1.3rem;
   }
 }
 
