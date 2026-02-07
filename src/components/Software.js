@@ -11,7 +11,7 @@ const Software = () => {
     setLoading(true);
     axios
       .get(
-        "https://raw.githubusercontent.com/xworkzodc/JSON/master/SoftwareLinks.json"
+        "https://raw.githubusercontent.com/x-workzdev/JSON/master/SoftwareLinks.json"
       )
       .then(res => {
         setSoftwareData(res.data.Softwares);

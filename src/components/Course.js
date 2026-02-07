@@ -125,12 +125,12 @@ const Course = ({ id }) => {
                 </div>
 
                 <div className="course-footer">
-                  <button 
+                  {/* <button 
                     className="syllabus-btn"
                     onClick={() => handleSyllabusClick(course)}
                   >
                     Download Syllabus
-                  </button>
+                  </button> */}
                   <Link to="/register" className="enroll-btn">
                     Enroll Now
                   </Link>
