@@ -1,10 +1,10 @@
 export const Urlconstant = {
 
    //Production
-   url: "https://ombn.in/dream/",
-   BACTH_URL: "https://ombn.in/attendance-batch/",
-   FEEDBACK_URL: "https://ombn.in/feedback-mock/",
-   spreadsheetId: "1HI3nKYRbXNl2cu9rKwqKp3tznOZ7ziOupokU_daFZ8E",
+   // url: "https://ombn.in/dream/",
+   // BACTH_URL: "https://ombn.in/attendance-batch/",
+   // FEEDBACK_URL: "https://ombn.in/feedback-mock/",
+   // spreadsheetId: "1HI3nKYRbXNl2cu9rKwqKp3tznOZ7ziOupokU_daFZ8E",
 
 
    //pre-Production/
@@ -21,9 +21,9 @@ export const Urlconstant = {
 
    
    //local
-   // url: "http://localhost:8081/",
-   // BACTH_URL: "http://localhost:8084/",
-   // FEEDBACK_URL: "http://localhost:8085/",
-   // spreadsheetId: "1NrTU01N_mU-HnPIQjPOzQhf_7CEXH430RzJb6wdDJ-Q",
+   url: "http://localhost:8081/",
+   BACTH_URL: "http://localhost:8084/",
+   FEEDBACK_URL: "http://localhost:8085/",
+   spreadsheetId: "1NrTU01N_mU-HnPIQjPOzQhf_7CEXH430RzJb6wdDJ-Q",
 
 };
