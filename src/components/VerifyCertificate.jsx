@@ -8,17 +8,15 @@ import {
   DialogTitle,
   DialogContent
 } from "@mui/material";
-import { useLocation } from "react-router-dom";
 import { Urlconstant } from "./constant/Urlconstant";
+import { useParams } from "react-router-dom";
 
 const VerifyCertificate = () => {
   const [certificateDetails, setCertificateDetails] = useState(null);
   const [showInvalidPopup, setShowInvalidPopup] = useState(false);
   const [loading, setLoading] = useState(true);
+  const { uniqueId, certificateType } = useParams();
 
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const uniqueId = searchParams.get("uid");
 
   useEffect(() => {
     if (!uniqueId || uniqueId.trim() === "") {
@@ -27,21 +25,38 @@ const VerifyCertificate = () => {
       return;
     }
 
-    fetch(`${Urlconstant.url}api/getDetailsByUniqueId?uniqueId=${uniqueId}`)
-      .then((response) => response.json())
+    const apiUrl =
+      `${Urlconstant.url}api/getDetailsByUniqueId` +
+      `?uniqueId=${encodeURIComponent(uniqueId)}` +
+      (certificateType
+        ? `&certificateType=${encodeURIComponent(certificateType)}`
+        : "");
+
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("API response not OK");
+        }
+        return response.json();
+      })
       .then((data) => {
-        if (!data || !data.basicInfo) {
+        if (
+          !data ||
+          !data.basicInfo ||
+          !data.adminDto ||
+          !data.adminDto.updatedOn ||
+          data.adminDto.updatedOn === "NA"
+        ) {
           setShowInvalidPopup(true);
         } else {
           setCertificateDetails(data);
         }
       })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
+      .catch(() => {
         setShowInvalidPopup(true);
       })
       .finally(() => setLoading(false));
-  }, [uniqueId]);
+  }, [uniqueId, certificateType]);
 
   if (showInvalidPopup) {
     return (
@@ -57,11 +72,13 @@ const VerifyCertificate = () => {
     );
   }
 
-  if (!certificateDetails || loading) {
+  if (loading || !certificateDetails) {
     return null;
   }
 
   const { basicInfo, educationInfo, csrDto, adminDto } = certificateDetails;
+
+  const isInternship = certificateType == "INTERNSHIP";
 
   return (
     <Box
@@ -83,7 +100,6 @@ const VerifyCertificate = () => {
           borderRadius: 3
         }}
       >
-       
         <Box
           sx={{
             display: "flex",
@@ -93,47 +109,33 @@ const VerifyCertificate = () => {
             mb: 3
           }}
         >
-         
           <Box
             component="img"
             src="https://vajiram-prod.s3.ap-south-1.amazonaws.com/Ministry_of_Micro_Small_Medium_Enterprises_f68dd0df33.jpg"
             alt="MSME Logo"
-            sx={{
-              width: { xs: 80, sm: 120, md: 150 },
-              height: "auto",
-              borderRadius: 2
-            }}
+            sx={{ width: { xs: 80, sm: 120, md: 150 } }}
           />
 
-         
           <Box
             component="img"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST4MLa7W2jjHbAwq7SEZ5VQUEFVB4ORJpnsw&s"
-            alt="Right Mark"
+            alt="Center Mark"
             sx={{
               position: "absolute",
               left: "50%",
               transform: "translateX(-50%)",
-              width: { xs: 60, sm: 80, md: 100 },
-              height: "auto",
-              borderRadius: 2
+              width: { xs: 60, sm: 80, md: 100 }
             }}
           />
 
-        
           <Box
             component="img"
             src="https://www.x-workz.in/Logo.png"
             alt="X-Workz Logo"
-            sx={{
-              width: { xs: 80, sm: 120, md: 150 },
-              height: "auto",
-              borderRadius: 2
-            }}
+            sx={{ width: { xs: 80, sm: 120, md: 150 } }}
           />
         </Box>
 
-        {/* Certificate Title */}
         <Typography
           variant="h4"
           gutterBottom
@@ -143,35 +145,42 @@ const VerifyCertificate = () => {
             fontSize: { xs: "1.5rem", sm: "2rem" }
           }}
         >
-          X-workz Internship Certificate is successfully verified
+          {isInternship
+            ? "X-workz Internship Certificate is successfully verified"
+            : "X-workz Certificate is successfully verified"}
         </Typography>
 
-       
         <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid item xs={12}>
             <Typography variant="h6">
               <strong>Unique ID:</strong> {csrDto?.uniqueId || "NA"}
             </Typography>
           </Grid>
+
           <Grid item xs={12}>
             <Typography variant="h6">
               <strong>Issued To:</strong> {basicInfo?.traineeName || "NA"}
             </Typography>
           </Grid>
+
           <Grid item xs={12}>
             <Typography variant="h6">
               <strong>College Name:</strong>{" "}
               {educationInfo?.collegeName || "NA"}
             </Typography>
           </Grid>
+
+          {isInternship && (
+            <Grid item xs={12}>
+              <Typography variant="h6">
+                <strong>Designation:</strong> Software Intern
+              </Typography>
+            </Grid>
+          )}
+
           <Grid item xs={12}>
             <Typography variant="h6">
-              <strong>Designation:</strong> Software Intern
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="h6">
-              <strong>Issued On:</strong> {adminDto?.updatedOn || "NA"}
+              <strong>Issued On:</strong> {adminDto.updatedOn}
             </Typography>
           </Grid>
         </Grid>

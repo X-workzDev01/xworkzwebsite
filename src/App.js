@@ -31,7 +31,7 @@ const App = () => {
   return (
     <div className="app-container">
       <NavBar />
-      
+
       <div className="main-content">
         <Routes>
           <Route path="/about" element={<About value={data} />} />
@@ -43,17 +43,19 @@ const App = () => {
           <Route path="/InterviewQuestions" element={<InterviewQuestions />} />
           <Route path="/register" element={<Register />} />
           <Route path="/feedback" element={<Feedback />} />
-          <Route path="/verifycertificate" element={<VerifyCertificate />} />
+          <Route
+            path="/verifycertificate/:uniqueId/:certificateType"
+            element={<VerifyCertificate />}
+          />
           <Route path="/courses" element={<Course />} />
         </Routes>
       </div>
-      
-      {/* Call Back Modal */}
-      <CallBackModal 
-        show={showCallBackModal} 
-        onClose={() => setShowCallBackModal(false)} 
+
+      <CallBackModal
+        show={showCallBackModal}
+        onClose={() => setShowCallBackModal(false)}
       />
-      
+
       <Footer />
     </div>
   );
