@@ -162,7 +162,7 @@ export const Register = () => {
         setUsnError("USN is Required *");
         setUsnCheck("");
         setRegisterData.usn("");
-      } else if (value.length >= 5 && value.length <= 12) {
+      } else if (value.length >= 4 && value.length <= 12) {
         setUsnError("");
       } else {
         setUsnError("Enter Valid USN");
