@@ -11,14 +11,14 @@ const Software = () => {
     setLoading(true);
     axios
       .get(
-        "https://raw.githubusercontent.com/xworkzodc/JSON/master/SoftwareLinks.json"
+        "https://raw.githubusercontent.com/x-workzdev/xworkz-courses/develop/SoftwareLinks.json",
       )
-      .then(res => {
+      .then((res) => {
         setSoftwareData(res.data.Softwares);
         setLoading(false);
         setError(null);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         setError("Failed to load software data. Please try again later.");
         setLoading(false);
@@ -57,7 +57,7 @@ const Software = () => {
         </h1>
         <p>Download essential tools and software for your development needs</p>
       </div>
-      
+
       <div className="software col-12">
         {softwareData && softwareData.length > 0 ? (
           softwareData.map((d, i) => (
@@ -68,7 +68,11 @@ const Software = () => {
                 <button type="button">Download</button>
               </a>
 
-              <a href={d.extranalLink} target="_blank" rel="noopener noreferrer">
+              <a
+                href={d.extranalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button type="button">Other Versions</button>
               </a>
               <div className="accent-line" />
