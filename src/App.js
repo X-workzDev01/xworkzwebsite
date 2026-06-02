@@ -19,6 +19,8 @@ import { Feedback } from "./components/Feedback";
 import VerifyCertificate from "./components/VerifyCertificate";
 import Course from "./components/Course";
 import CallBackModal from "./components/CallBackModal";
+import ServerError from "./components/error/ServerError";
+import { startHealthMonitor } from "./components/utils/startHealthMonitor";
 
 const App = () => {
   const [data, setData] = useState({});
@@ -26,6 +28,7 @@ const App = () => {
 
   useEffect(() => {
     setData(JsonData);
+    startHealthMonitor();
   }, []);
 
   return (
@@ -43,6 +46,7 @@ const App = () => {
           <Route path="/InterviewQuestions" element={<InterviewQuestions />} />
           <Route path="/register" element={<Register />} />
           <Route path="/feedback" element={<Feedback />} />
+          <Route path="/server-error" element={<ServerError />} />
           <Route
             path="/verifycertificate/:uniqueId/:certificateType"
             element={<VerifyCertificate />}

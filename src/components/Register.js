@@ -11,9 +11,9 @@ import {
   Box,
   Alert,
   Container,
-  IconButton // Import IconButton
+  IconButton, // Import IconButton
 } from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close'; // Import the Close icon
+import CloseIcon from "@mui/icons-material/Close"; // Import the Close icon
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Checkmark } from "react-checkmark";
@@ -21,6 +21,8 @@ import Popup from "reactjs-popup";
 import "./Home.css";
 import { Urlconstant } from "./constant/Urlconstant";
 import { useSelector } from "react-redux";
+import api from "./interceptors/axiosConfig";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
   const dropdown = useSelector((state) => state.dropdowns.dropdown);
@@ -31,8 +33,11 @@ export const Register = () => {
   const [registerData, setRegisterData] = useState({});
   const [autoSetWhatsAppNumber, setAutoSetWhatsAppNumber] = useState("");
   const [yearOfPassedOut] = useState([
-    2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027,
+    2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028,
   ]);
+
+  const serverError = useSelector((state) => state.dropdowns.serverError);
+  const navigate = useNavigate();
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [wattsappNumberError, setWattsappNumberError] = useState("");
   const [usnError, setUsnError] = useState("");
@@ -46,6 +51,21 @@ export const Register = () => {
 
   const [existingDataPopup, setExistingDataPopup] = useState(false);
   const [existingDataMessage, setExistingDataMessage] = useState("");
+
+  const [serverDown, setServerDown] = useState(false);
+
+  const checkServerIssue = (error) => {
+    const status = error.response?.status;
+
+    return (
+      !error.response ||
+      status === 404 ||
+      status === 502 ||
+      status === 503 ||
+      status === 504 ||
+      status >= 500
+    );
+  };
 
   const handleExistingDataPopup = (message) => {
     setExistingDataMessage(message);
@@ -69,14 +89,14 @@ export const Register = () => {
 
   const handleUsnCheck = (event) => {
     if (event.target.value.length >= 10 && event.target.value.length <= 12) {
-      axios
+      api
         .get(
           Urlconstant.url + `api/csr/checkUsn?usnNumber=${event.target.value}`,
           {
             headers: {
               spreadsheetId: Urlconstant.spreadsheetId,
             },
-          }
+          },
         )
         .then((response) => {
           if (
@@ -88,19 +108,24 @@ export const Register = () => {
           } else {
             setUsnCheck(null);
           }
+        })
+        .catch((error) => {
+          if (checkServerIssue(error)) {
+            setServerDown(true);
+          }
         });
     }
   };
 
   const numberCheckApi = (number, name) => {
-    axios
+    api
       .get(
         Urlconstant.url + `api/csr/checkcontactNumber?contactNumber=${number}`,
         {
           headers: {
             spreadsheetId: Urlconstant.spreadsheetId,
           },
-        }
+        },
       )
       .then((response) => {
         if (name === "contactNumber" && number.length === 10) {
@@ -127,7 +152,11 @@ export const Register = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        if (checkServerIssue(error)) {
+          setServerDown(true);
+        } else {
+          console.log(error);
+        }
       });
   };
 
@@ -204,7 +233,7 @@ export const Register = () => {
     }
   };
   const verifyEmail = (email) => {
-    axios
+    api
       .get(`${Urlconstant.url}api/verify-email?email=${email}`)
       .then((response) => {
         if (response.status === 200) {
@@ -230,7 +259,11 @@ export const Register = () => {
         }
       })
       .catch((error) => {
-        console.log("check emailable credentils");
+        if (checkServerIssue(error)) {
+          setServerDown(true);
+        } else {
+          console.log(error);
+        }
       });
   };
   const handleEmailVeryfy = (e) => {
@@ -240,7 +273,7 @@ export const Register = () => {
   };
 
   const handleEmail = (email) => {
-    axios
+    api
       .get(Urlconstant.url + `api/emailCheck?email=${email}`, {
         headers: {
           spreadsheetId: Urlconstant.spreadsheetId,
@@ -254,7 +287,11 @@ export const Register = () => {
           setEmailCheck("");
         }
       })
-      .catch();
+      .catch((error) => {
+        if (checkServerIssue(error)) {
+          setServerDown(true);
+        }
+      });
   };
 
   const validEmail = (email) => {
@@ -295,7 +332,7 @@ export const Register = () => {
       offeredAs = "CSR Offered";
       // offeredAs = "INTERNSHIP";
       //offeredAs = "Non-CSR Offered";
-    } else if (registerData.yop === 2026) {
+    } else if (registerData.yop === 2026 || registerData.yop === 2027) {
       offeredAs = "INTERNSHIP";
     } else {
       offeredAs = "Non-CSR Offered";
@@ -317,53 +354,76 @@ export const Register = () => {
       offeredAs: offeredAs,
     };
 
-    const response = axios.post(
-      Urlconstant.url + "api/csr/register",
-      registerDto
-    );
-    response.then((response) => {
-      setIsopen(true);
-      setTimeout(() => {
-        setRegisterData([]);
-        setAutoSetWhatsAppNumber("");
-        setverifyHandleEmail("");
+    api
+      .post(Urlconstant.url + "api/csr/register", registerDto)
+
+      .then((response) => {
+        setIsopen(true);
+        setTimeout(() => {
+          setRegisterData([]);
+          setAutoSetWhatsAppNumber("");
+          setverifyHandleEmail("");
+          setbtn(false);
+          setSave(response.data);
+          setIsopen(false);
+        }, 4000);
+      })
+
+      .catch((error) => {
         setbtn(false);
-        setSave(response.data);
-        setIsopen(false);
-      }, 4000);
-    });
+        if (checkServerIssue(error)) {
+          setServerDown(true);
+        }
+      });
   };
+
+  useEffect(() => {
+    if (serverDown || serverError) {
+      navigate("/server-error", {
+        replace: true,
+      });
+    }
+  }, [serverDown, serverError, navigate]);
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Paper elevation={8} sx={{ borderRadius: 2, overflow: 'hidden' }}>
+      <Paper elevation={8} sx={{ borderRadius: 2, overflow: "hidden" }}>
         <Grid container>
           {/* Left Side - Java Enterprise Application Info */}
-          <Grid item xs={12} md={5} sx={{
-            background: 'linear-gradient(135deg, #ff5e14 0%, #ff014f 100%)',
-            color: 'white',
-            p: 4,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center'
-          }}>
-            <Typography variant="h4" component="h2" sx={{ fontWeight: 'bold', mb: 3 }}>
+          <Grid
+            item
+            xs={12}
+            md={5}
+            sx={{
+              background: "linear-gradient(135deg, #ff5e14 0%, #ff014f 100%)",
+              color: "white",
+              p: 4,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="h4"
+              component="h2"
+              sx={{ fontWeight: "bold", mb: 3 }}
+            >
               Enterprise Application Expertise
             </Typography>
 
-            <Box sx={{ mb: 3, textAlign: 'center' }}>
+            <Box sx={{ mb: 3, textAlign: "center" }}>
               <img
                 src="https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/Gallery/2.png"
                 alt="Java Enterprise Application"
                 style={{
-                  width: '100%',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.2)'
+                  width: "100%",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
                 }}
               />
             </Box>
 
-            <Typography variant="h6" sx={{ mb: 2, fontWeight: 'medium' }}>
+            <Typography variant="h6" sx={{ mb: 2, fontWeight: "medium" }}>
               Master Java Enterprise Development
             </Typography>
 
@@ -382,25 +442,35 @@ export const Register = () => {
               </Typography>
             </Box>
 
-            <Alert severity="info" sx={{ backgroundColor: 'rgba(255,255,255,0.2)', color: 'white' }}>
+            <Alert
+              severity="info"
+              sx={{ backgroundColor: "rgba(255,255,255,0.2)", color: "white" }}
+            >
               <Typography variant="body2">
-CSR Internship Program open for students graduating in 2026.              </Typography>
+                CSR Internship Program open for students graduating in
+                2026.{" "}
+              </Typography>
             </Alert>
           </Grid>
 
           {/* Right Side - Registration Form */}
           <Grid item xs={12} md={7} sx={{ p: 4 }}>
-            <Box sx={{ textAlign: 'center', mb: 3 }}>
-              <Typography variant="h4" component="h1" sx={{
-                fontWeight: 'bold',
-                background: 'linear-gradient(45deg, #ff5e14 30%, #ff014f 90%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                mb: 1
-              }}>
+            <Box sx={{ textAlign: "center", mb: 3 }}>
+              <Typography
+                variant="h4"
+                component="h1"
+                sx={{
+                  fontWeight: "bold",
+                  background:
+                    "linear-gradient(45deg, #ff5e14 30%, #ff014f 90%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  mb: 1,
+                }}
+              >
                 REGISTER HERE
               </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+              <Typography variant="body1" sx={{ color: "text.secondary" }}>
                 Join our Java Enterprise Application program
               </Typography>
             </Box>
@@ -446,7 +516,9 @@ CSR Internship Program open for students graduating in 2026.              </Typo
                 <TextField
                   fullWidth
                   required
-                  value={autoSetWhatsAppNumber || registerData.wattsAppNumber || ""}
+                  value={
+                    autoSetWhatsAppNumber || registerData.wattsAppNumber || ""
+                  }
                   onChange={handleSetData}
                   onBlur={handleNumberChange}
                   placeholder="Enter WhatsApp Number"
@@ -469,8 +541,15 @@ CSR Internship Program open for students graduating in 2026.              </Typo
                   name="email"
                   value={registerData.email || ""}
                   size="small"
-                  error={!!emailError || !!emailCheck || !!verifyHandaleEmailerror}
-                  helperText={emailError || emailCheck || verifyHandaleEmailerror || (verifyHandaleEmail && "Email verified successfully")}
+                  error={
+                    !!emailError || !!emailCheck || !!verifyHandaleEmailerror
+                  }
+                  helperText={
+                    emailError ||
+                    emailCheck ||
+                    verifyHandaleEmailerror ||
+                    (verifyHandaleEmail && "Email verified successfully")
+                  }
                 />
               </Grid>
 
@@ -581,9 +660,9 @@ CSR Internship Program open for students graduating in 2026.              </Typo
                     registerData.yop
                       ? registerData.yop === 2025
                         ? "CSR"
-                        : registerData.yop === 2026
-                        ? "INTERNSHIP"
-                        : "Non CSR"
+                        : registerData.yop === 2026 || registerData.yop === 2027
+                          ? "INTERNSHIP"
+                          : "Non CSR"
                       : ""
                   }
                   placeholder="Offered As"
@@ -596,7 +675,7 @@ CSR Internship Program open for students graduating in 2026.              </Typo
               </Grid>
             </Grid>
 
-            <Box sx={{ textAlign: 'center', mt: 3 }}>
+            <Box sx={{ textAlign: "center", mt: 3 }}>
               <Button
                 onClick={handleSubmit}
                 disabled={isDiesabled}
@@ -605,16 +684,18 @@ CSR Internship Program open for students graduating in 2026.              </Typo
                 sx={{
                   px: 4,
                   py: 1,
-                  fontSize: '1.1rem',
-                  background: 'linear-gradient(45deg, #ff5e14 30%, #ff014f 90%)',
-                  boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-                  '&:hover': {
-                    background: 'linear-gradient(45deg, #e05512 30%, #e00146 90%)',
+                  fontSize: "1.1rem",
+                  background:
+                    "linear-gradient(45deg, #ff5e14 30%, #ff014f 90%)",
+                  boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(45deg, #e05512 30%, #e00146 90%)",
                   },
-                  '&:disabled': {
-                    background: '#cccccc',
-                    color: '#666666'
-                  }
+                  "&:disabled": {
+                    background: "#cccccc",
+                    color: "#666666",
+                  },
                 }}
               >
                 {btn ? "Processing..." : "Register Now"}
@@ -623,15 +704,24 @@ CSR Internship Program open for students graduating in 2026.              </Typo
 
             <Alert severity="info" sx={{ mt: 3 }}>
               <Typography variant="body2">
-              <strong>Note:</strong> The CSR Internship Program is open only to 2026 YOP students. If your college is not listed, choose "Others".              </Typography>
+                <strong>Note:</strong> The CSR Internship Program is open only
+                to 2026 YOP students. If your college is not listed, choose
+                "Others".{" "}
+              </Typography>
             </Alert>
 
-            <Box sx={{ mt: 2, p: 2, backgroundColor: '#f5f5f5', borderRadius: 1 }}>
-              <Typography variant="body2" sx={{ fontWeight: 'bold', color: '#ff5e14' }}>
+            <Box
+              sx={{ mt: 2, p: 2, backgroundColor: "#f5f5f5", borderRadius: 1 }}
+            >
+              <Typography
+                variant="body2"
+                sx={{ fontWeight: "bold", color: "#ff5e14" }}
+              >
                 For queries, contact:
               </Typography>
               <Typography variant="body2">
-                 Kousalya: 9845658883 | Mamatha: 9886971480 | Bhumika Rathore: 9886971483
+                Kousalya: 9845658883 | Mamatha: 9886971480 | Bhumika Rathore:
+                9886971483
               </Typography>
             </Box>
           </Grid>
@@ -644,16 +734,25 @@ CSR Internship Program open for students graduating in 2026.              </Typo
         modal
         closeOnDocumentClick
         contentStyle={{
-          width: '400px',
-          padding: '30px',
-          borderRadius: '12px',
-          textAlign: 'center',
-          backgroundColor: '#FFFFFF',
+          width: "400px",
+          padding: "30px",
+          borderRadius: "12px",
+          textAlign: "center",
+          backgroundColor: "#FFFFFF",
         }}
       >
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Checkmark size="5rem" color="#ff5e14" />
-          <Typography variant="h5" sx={{ mt: 2, color: '#ff5e14', fontWeight: 'bold' }}>
+          <Typography
+            variant="h5"
+            sx={{ mt: 2, color: "#ff5e14", fontWeight: "bold" }}
+          >
             Registration Successful!
           </Typography>
           <Typography variant="body1" sx={{ mt: 1 }}>
@@ -668,29 +767,32 @@ CSR Internship Program open for students graduating in 2026.              </Typo
         modal
         closeOnDocumentClick
         contentStyle={{
-          width: '400px',
-          padding: '25px',
-          borderRadius: '12px',
-          textAlign: 'center',
-          backgroundColor: '#FFFFFF',
-          position: 'relative' // Added for positioning the close button
+          width: "400px",
+          padding: "25px",
+          borderRadius: "12px",
+          textAlign: "center",
+          backgroundColor: "#FFFFFF",
+          position: "relative", // Added for positioning the close button
         }}
       >
         {/* Close Button */}
         <IconButton
           onClick={() => setExistingDataPopup(false)}
           sx={{
-            position: 'absolute',
+            position: "absolute",
             top: 8,
             right: 8,
-            color: 'grey.500',
+            color: "grey.500",
           }}
         >
           <CloseIcon />
         </IconButton>
 
         <Box>
-          <Typography variant="h6" sx={{ color: '#ff014f', mb: 2, fontWeight: 'bold' }}>
+          <Typography
+            variant="h6"
+            sx={{ color: "#ff014f", mb: 2, fontWeight: "bold" }}
+          >
             {existingDataMessage}
           </Typography>
           <Typography variant="body1" sx={{ mb: 2 }}>
@@ -699,21 +801,22 @@ CSR Internship Program open for students graduating in 2026.              </Typo
           <Typography variant="body1" sx={{ mb: 3 }}>
             Please contact our HR team for assistance.
           </Typography>
-          <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center', // This will center the items
-            mt: 3,
-            mb: 3
-          }}>
-                    
-            <Typography variant="body2" sx={{ textAlign: 'center' }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center", // This will center the items
+              mt: 3,
+              mb: 3,
+            }}
+          >
+            <Typography variant="body2" sx={{ textAlign: "center" }}>
               <strong>Kousalya:</strong> 9845658883
             </Typography>
-            <Typography variant="body2" sx={{ textAlign: 'center' }}>
+            <Typography variant="body2" sx={{ textAlign: "center" }}>
               <strong>Mamatha:</strong> 9886971480
             </Typography>
-            <Typography variant="body2" sx={{ textAlign: 'center' }}>
+            <Typography variant="body2" sx={{ textAlign: "center" }}>
               <strong>Bhumika Rathore:</strong> 9886971483
             </Typography>
           </Box>
