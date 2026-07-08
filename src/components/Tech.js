@@ -1,24 +1,41 @@
 import React from "react";
 import "./Tech.css";
 
-// Import all your images
-import spring from "../img/spring.png";
-import java from "../img/java.png";
-import mySql from "../img/mysql.png";
-import angular from "../img/angular.png";
-import html from "../img/html.png";
-import css from "../img/css.png";
-import hibernate from "../img/hibernate.png";
-import javaScript from "../img/javaScript.png";
-import git from "../img/git.png";
-import python from "../img/python.png";
-import genAi from "../img/gen-ai.png";
-import springAi from "../img/spring-ai.png";
-import jquery from "../img/jquery.png";
-import bootstrap from "../img/bootstrap.png";
-import django from "../img/django.png";
-import flask from "../img/flask.png";
-import datajpa from "../img/datajpa.png";
+// GitHub image URLs
+const spring =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/spring.png";
+const java =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/java.png";
+const mySql =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/mysql.png";
+const angular =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/angular.png";
+const html =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/html.png";
+const css =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/css.png";
+const hibernate =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/hibernate.png";
+const javaScript =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/javaScript.png";
+const git =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/git.png";
+const python =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/python.png";
+const genAi =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/genai.png";
+const springAi =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/springai.png";
+const jquery =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/jquery.png";
+const bootstrap =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/bootstrap.png";
+const django =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/django.png";
+const flask =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/flask.png";
+const datajpa =
+  "https://raw.githubusercontent.com/x-workzdev/Xworkz-images/develop/techlogo/datajpa.png";
 
 export const Tech = () => {
   const technologies = [

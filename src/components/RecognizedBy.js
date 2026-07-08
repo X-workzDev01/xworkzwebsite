@@ -1,8 +1,8 @@
 import React from "react";
 import "./RecognizedBy.css";
 // Import your images
-import xworkzCertificate from "../img/xworkz-certificate.png"; 
-import msmeLogo from "../img/msme-logo.png";
+import xworkzCertificate from "../img/xworkzcertificate.png"; 
+import msmeLogo from "../img/msmelogo.png";
 import internshipCertificate from "../img/Internship.jpg"; // Add this import
 
 const RecognizedBy = () => {
